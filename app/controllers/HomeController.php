@@ -6,7 +6,7 @@ class HomeController extends FrontController
     {
 
         $localEpisodes = [];
-        foreach (\admin\Episodes::where('enum', Config::get('enums.episode')['summary'])->where('published', 1)->where('type', 2)->with('season')->orderBy('created_at','DESC')->limit(27)->remember(1)->get() as $local) {
+        foreach (\admin\Episodes::where('enum', Config::get('enums.episode')['summary'])->where('published', 1)->where('type', 2)->with('season')->orderBy('created_at','DESC')->limit(18)->remember(1)->get() as $local) {
             $localTemp = $local->toArray();
             $localTemp['season'] = $local->season->number;
             $localTemp['serial'] = admin\Seasons::where('id', $local->season->id)->with(['serial'])->first()->serial->title;
@@ -14,7 +14,7 @@ class HomeController extends FrontController
         }
 
         $foreignEpisodes = [];
-        foreach (\admin\Episodes::where('enum', Config::get('enums.episode')['summary'])->where('published', 1)->where('type', 1)->with('season')->orderBy('created_at','DESC')->limit(27)->remember(1)->get() as $foreign) {
+        foreach (\admin\Episodes::where('enum', Config::get('enums.episode')['summary'])->where('published', 1)->where('type', 1)->with('season')->orderBy('created_at','DESC')->limit(18)->remember(1)->get() as $foreign) {
             $foreignTemp = $foreign->toArray();
             $foreignTemp['season'] = $foreign->season->number;
             $foreignTemp['serial'] = admin\Seasons::where('id', $foreign->season->id)->with(['serial'])->first()->serial->title;
@@ -23,7 +23,7 @@ class HomeController extends FrontController
 
 
         $programEpisodes = [];
-        foreach (\admin\Episodes::where('enum', Config::get('enums.episode')['summary'])->where('published', 1)->where('type', 3)->with('season')->orderBy('created_at','DESC')->limit(27)->remember(1)->get() as $program) {
+        foreach (\admin\Episodes::where('enum', Config::get('enums.episode')['summary'])->where('published', 1)->where('type', 3)->with('season')->orderBy('created_at','DESC')->limit(18)->remember(1)->get() as $program) {
             $programTemp = $program->toArray();
             $programTemp['season'] = $program->season->number;
             $programTemp['serial'] = admin\Seasons::where('id', $program->season->id)->with(['serial'])->first()->serial->title;
@@ -31,7 +31,7 @@ class HomeController extends FrontController
         }
 
         $galleryTemp = [];
-        foreach (admin\Episodes::where('enum', Config::get('enums.episode')['sgallery'])->where('published', 1)->orderBy('created_at','DESC')->limit(8)->get() as $gallery) {
+        foreach (admin\Episodes::where('enum', Config::get('enums.episode')['sgallery'])->where('published', 1)->orderBy('created_at','DESC')->limit(15)->get() as $gallery) {
             $gTemp = $gallery->toArray();
             $gTemp['season'] = $gallery->season->number;
             $gTemp['user'] = $gallery->user->name;
@@ -113,7 +113,7 @@ class HomeController extends FrontController
             'cRating' => $checkRating,
             'ratingDate' => $ratingDate,
             'galleries' => $galleryTemp,
-            'trailers' => admin\Episodes::where('enum', Config::get('enums.episode')['trailer'])->where('published', 1)->orderBy('created_by','DESC')->limit(3)->get()->toArray(),
+            'trailers' => admin\Episodes::where('enum', Config::get('enums.episode')['trailer'])->where('published', 1)->orderBy('created_by','DESC')->limit(15)->get()->toArray(),
             'social' => $social,
             'featured' => $featured,
             'featuredItems' => $featuredItems,

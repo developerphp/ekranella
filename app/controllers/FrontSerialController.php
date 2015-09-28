@@ -12,8 +12,9 @@ class FrontSerialController extends FrontController
         $data = [
             'as' => 'YERLİ DİZİLER',
             'type' => 2,
-            'popularSerials' => \admin\Serials::where('type', 2)->where('is_popular', 1)->orderBy('title', 'ASC')->limit(8)->get(),
-            'allSerials' => \admin\Serials::where('type', 2)->orderBy('title', 'ASC')->limit(9)->get(),
+            'social' => ConfigController::getSocial(),
+            // 'popularSerials' => \admin\Serials::where('type', 2)->where('is_popular', 1)->orderBy('title', 'ASC')->limit(8)->get(),
+            'allSerials' => \admin\Serials::where('type', 2)->orderBy('title', 'ASC')->get(),
         ];
         return View::make('front.serial.index', $data);
     }
@@ -23,8 +24,9 @@ class FrontSerialController extends FrontController
         $data = [
             'as' => 'YABANCI DİZİLER',
             'type' => 1,
+            'social' => ConfigController::getSocial(),
             'popularSerials' => \admin\Serials::where('type', 1)->where('is_popular', 1)->orderBy('title', 'ASC')->limit(8)->get(),
-            'allSerials' => \admin\Serials::where('type', 1)->orderBy('title', 'ASC')->limit(9)->get(),
+            'allSerials' => \admin\Serials::where('type', 1)->orderBy('title', 'ASC')->get(),
         ];
         return View::make('front.serial.index', $data);
     }
@@ -34,8 +36,9 @@ class FrontSerialController extends FrontController
         $data = [
             'as' => 'PROGRAMLAR',
             'type' => 3,
+            'social' => ConfigController::getSocial(),
             'popularSerials' => \admin\Serials::where('type', 3)->where('is_popular', 1)->orderBy('title', 'ASC')->limit(8)->get(),
-            'allSerials' => \admin\Serials::where('type', 3)->orderBy('title', 'ASC')->limit(9)->get(),
+            'allSerials' => \admin\Serials::where('type', 3)->orderBy('title', 'ASC')->get(),
         ];
         return View::make('front.serial.index', $data);
     }
@@ -70,7 +73,7 @@ class FrontSerialController extends FrontController
         error_reporting(E_ALL);
         ini_set('display_errors', 1);
         $serial = \admin\Serials::where('permalink', $permalink)->with(['channel', 'season'])->first();
-        $episodes = \admin\Serials::episodes($serial->id, true, 0, 3);
+        $episodes = \admin\Serials::episodes($serial->id, true, 0, 2);
 
         admin\ViewsController::upSerialViews($serial);
 
@@ -84,15 +87,16 @@ class FrontSerialController extends FrontController
         if ($serial) {
             $data = [
                 'serial' => $serial,
-                'episodes' => $episodes,
+                'episodes' => $episodes,                
                 'specials' => admin\Serials::specials($serial->id, 3, true),
-                'trailers' => admin\Serials::trailers($serial->id, 3, true),
+                'trailers' => admin\Serials::trailers($serial->id, 2, true),
                 'sgalleries' => admin\Serials::sgalleries($serial->id, 3, true),
                 'specialNews' => admin\News::where('serial_id', $serial->id)->where('type', 2)->take(3)->orderBy('created_at', 'DESC')->get()->toArray(),
-                'news' => admin\News::where('serial_id', $serial->id)->where('type', 1)->take(3)->orderBy('created_at', 'DESC')->get()->toArray(),
+                'news' => admin\News::where('serial_id', $serial->id)->where('type', 1)->take(2)->orderBy('created_at', 'DESC')->get()->toArray(),
                 'interviews' => admin\Interviews::where('serial_id', $serial->id)->take(3)->orderBy('created_at', 'DESC')->get()->toArray(),
                 'photoNews' => admin\News::where('serial_id', $serial->id)->where('type', 3)->take(3)->orderBy('created_at', 'DESC')->get()->toArray(),
                 'sidebarOthers' => $sidebarOthers,
+                'social' => ConfigController::getSocial(),
                 'headers' => ['title' => $serial->title, 'description' => \BaseController::shorten($serial->info, 200)]
             ];
             return View::make('front.serial.detail', $data);
@@ -156,6 +160,7 @@ class FrontSerialController extends FrontController
                 'gallery' => $gallery,
                 'galleryPage' => $galleryPage,
                 'galleryTotal' => $galleryTotal,
+                'social' => ConfigController::getSocial(),
                 'others' => $others,
                 'sidebarOthers' => $sidebarOthers,
                 'largeImage' => $episode->img,

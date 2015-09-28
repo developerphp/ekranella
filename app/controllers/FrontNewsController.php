@@ -10,6 +10,7 @@ class FrontNewsController extends \FrontController
 {
     public function getNews($permalink, $galleryPage = 1, $page = 1)
     {
+
         $newsObject = new admin\News();
         $news = $newsObject->where('permalink', $permalink)->with(['user', 'tags', 'gallery'])->first();
         if ($news->published != 1) {
@@ -72,9 +73,15 @@ class FrontNewsController extends \FrontController
                 'others' => $others,
                 'sidebarOthers' => $sidebarOtherNews,
                 'largeImage' => $news->img,
-                'headers' => ['title' => $news->title , 'description' => \BaseController::shorten($news->summary, 200)]
+                'headers' => ['title' => $news->title , 'description' => \BaseController::shorten($news->summary, 200)],
+                'social' => ConfigController::getSocial(),
             ];
-            return View::make('front.news.newsDetail', $data);
+            if ($as=="Foto Haber") {
+                return View::make('front.news.photonewsDetail', $data);
+            }
+            else {                
+                return View::make('front.news.newsDetail', $data);
+            }            
         } else {
             return Redirect::to('index');
         }

@@ -1,0 +1,111 @@
+
+@mixin cover_bg($style) {
+    -webkit-background-size: $style;
+    -moz-background-size: $style;
+    -o-background-size: $style;
+    background-size:$style;
+    background-repeat: no-repeat;    
+}
+
+@mixin grayscale($percentage){
+	 filter: grayscale($percentage);
+    -webkit-filter: grayscale($percentage);
+    filter: gray; 
+}
+
+@mixin border-radius($radius:20px) {
+  -webkit-border-radius: $radius;
+   -khtml-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+       -o-border-radius: $radius;
+          border-radius: $radius;
+}
+
+
+@mixin transition($property, $duration, $function) {
+	-webkit-transition: $property $duration $function;
+	 -khtml-transition: $property $duration $function;
+	   -moz-transition: $property $duration $function;
+	    -ms-transition: $property $duration $function;
+	     -o-transition: $property $duration $function;
+	        transition: $property $duration $function;
+}
+
+
+@mixin box-shadow($horizontal, $vertical, $blur-radius, $spread, $color) {
+	-webkit-box-shadow: $horizontal $vertical $blur-radius $spread $color;
+	 -khtml-box-shadow: $horizontal $vertical $blur-radius $spread $color;
+	   -moz-box-shadow: $horizontal $vertical $blur-radius $spread $color;
+	    -ms-box-shadow: $horizontal $vertical $blur-radius $spread $color;
+	     -o-box-shadow: $horizontal $vertical $blur-radius $spread $color;
+            box-shadow: $horizontal $vertical $blur-radius $spread $color;
+}
+
+
+@mixin outline($thickness, $outline, $color, $offset){
+	       outline: $thickness $outline $color;
+	outline-offset: $offset;
+}
+
+@mixin transform($scale, $rotate, $translatex, $translatey, $skewx, $skewy){
+ -webkit-transform: scale($scale) rotate($rotate) translateX($translatex) translateY($translatey) skewX($skewx) skewY($skewy);
+  -khtml-transform: scale($scale) rotate($rotate) translateX($translatex) translateY($translatey) skewX($skewx) skewY($skewy);
+	-moz-transform: scale($scale) rotate($rotate) translateX($translatex) translateY($translatey) skewX($skewx) skewY($skewy);
+     -ms-transform: scale($scale) rotate($rotate) translateX($translatex) translateY($translatey) skewX($skewx) skewY($skewy);
+      -o-transform: scale($scale) rotate($rotate) translateX($translatex) translateY($translatey) skewX($skewx) skewY($skewy);
+         transform: scale($scale) rotate($rotate) translateX($translatex) translateY($translatey) skewX($skewx) skewY($skewy);
+}
+
+@mixin translate($tranlatex, $translatey){
+    -webkit-transform: translate($tranlatex,$translatey);
+	   -moz-transform: translate($tranlatex,$translatey); 
+	    -ms-transform: translate($tranlatex,$translatey); 
+	     -o-transform: translate($tranlatex,$translatey); 
+            transform: translate($tranlatex,$translatey); 
+}
+@mixin columns($count, $gap){
+	-webkit-column-count: $count;
+	  -webkit-column-gap: $gap;	
+	 -khtml-column-count: $count;
+	   -khtml-column-gap: $gap;
+	   -moz-column-count: $count;
+	     -moz-column-gap: $gap;
+	    -ms-column-count: $count;
+	      -ms-column-gap: $gap;    
+	     -o-column-count: $count;
+	       -o-column-gap: $gap;
+	        column-count: $count;
+	          column-gap: $gap;
+}
+
+@mixin background-size($style: cover){
+-webkit-background-size: $style;
+  -moz-background-size: $style;
+  -o-background-size: $style;
+  background-size: $style;
+}
+
+@mixin rotate($deg){
+	transform:rotate($deg);
+-ms-transform:rotate($deg); 
+-moz-transform:rotate($deg); 
+-webkit-transform:rotate($deg);
+-o-transform:rotate($deg);
+}
+
+
+@mixin Opacity($value){
+  $IEValue: $value*100;
+  opacity: $value;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity="+$IEValue+")";
+  filter: alpha(opacity=$IEValue);
+}
+
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}

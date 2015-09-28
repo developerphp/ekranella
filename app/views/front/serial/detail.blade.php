@@ -2,259 +2,418 @@
 
 @section('content')
     <?php $enums = \Config::get('enums.episode') ?>
-    <div class="header-image">
-        @if($serial->is_masked ==1)
-            <div class="masked"></div> @endif
-        <div class="img" style="background-image:url('{{{asset($serial->cover)}}}')"></div>
-    </div>
-    <div class="two-column">
-        <div class="left">
-            <article class="main">
-                <h1>{{{$serial->title}}}</h1>
-
-                <h2>Genel Bilgi</h2>
-                <ul class="info">
-                    <li>
+    <section class="main_banner" style="background-image: url({{{asset('http://www.ekranella.com/'.$serial->cover)}}});">
+        <div class="container txt">
+            <div class="box_title series2_title">YABANCI DİZİ</div>
+            <div class="desc">{{{$serial->title}}}</div>
+        </div>
+    </section>
+    <section id="show_detail" class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="row share_box">
+                    <div class="col-md-4">GENEL BİLGİ</div>
+                    <div class="col-md-offset-2 col-md-6 share">
+                        <span>paylaş</span>
+                        <a href=""><img src="{{asset('assets/img/share/share_box/facebook.png')}}" alt="share"></a>
+                        <a href=""><img src="{{asset('assets/img/share/share_box/blogger.png')}}" alt="share"></a>
+                        <a href=""><img src="{{asset('assets/img/share/share_box/google.png')}}" alt="share"></a>
+                        <a href=""><img src="{{asset('assets/img/share/share_box/pinterest.png')}}" alt="share"></a>
+                        <a href=""><img src="{{asset('assets/img/share/share_box/tumblr.png')}}" alt="share"></a>
+                        <a href=""><img src="{{asset('assets/img/share/share_box/twitter.png')}}" alt="share"></a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 show_desc">
+                        <span class="main_title">
                         <strong>{{{$serial->channel()->first()->title}}}</strong><?php $date = unserialize($serial->airing);?>
                         , @if($date) @foreach($date as $day) <?php $day = explode(',', $day); ?> {{{trim($day[0])}}}
-                        , {{{trim($day[1])}}} / @endforeach @endif<br>{{$serial->start_year}}
+                        , {{{trim($day[1])}}} / @endforeach @endif {{$serial->start_year}}
                         / @if($serial->end_year == 0) Devam Ediyor @else {{$serial->end_year}} @endif @if(count($serial->season()->get())>0) / <strong>Sezon
                             Sayısı</strong>: {{$serial->season()->orderBy('number', 'DESC')->first()->toArray()['number']}} @endif
-                    </li>
-                    @if($serial->extra ) <?php $extra = explode('/', $serial->extra);?> @if(count($extra)>1)
-                        <li>Türkiye'de:<br><strong>{{{$extra[0]}}}<span class="pink">{{{$extra[1]}}}</span></strong>
-                        </li>@endif @endif
-                    @if($serial->cast)
-                        <li>Oyuncular:<br><strong>{{$serial->cast}}</strong></li>@endif
-                    @if($serial->writer)
-                        <li>Yazar:<br><strong>{{$serial->writer}}</strong></li>@endif
-                    @if($serial->director)
-                        <li>Yönetmen:<br><strong>{{$serial->director}}</strong></li>@endif
-                    @if($serial->producer)
-                        <li>Yapımcı:<br><strong>{{$serial->producer}}</strong></li>@endif
-                </ul>
-                <div id="textContent">
-                    {{$serial->info}}
+                        </span>
+                        @if($serial->extra ) <?php $extra = explode('/', $serial->extra);?> @if(count($extra)>1)
+                        <span class="title">TÜRKİYE’DE:</span>
+                        <span class="desc">{{{$extra[0]}}} , {{{$extra[1]}}}</span>
+                        @endif @endif
+                        @if($serial->cast)
+                        <span class="title">OYUNCULAR:</span>
+                        <span class="desc">{{$serial->cast}}</span>
+                        @endif
+                        <span class="title">MÜZİK:</span>
+                        <span class="desc">Kadir Konakçı</span>
+                        @if($serial->writer)
+                        <span class="title">YAZAR:</span>
+                        <span class="desc">{{$serial->writer}}</span>
+                        @endif
+                        @if($serial->director)
+                        <span class="title">YÖNETMEN:</span>
+                        <span class="desc">{{$serial->director}}</span>
+                        @endif
+                        @if($serial->producer)
+                        <span class="title">YAPIMCI:</span>
+                        <span class="desc">{{$serial->producer}}</span>
+                        @endif
+                    </div>
                 </div>
                 @if(count($episodes)>0)
-                    <h2 style="margin-bottom: -5px">Özetliyorum</h2>
-                    <div class="tabser">
-                        <ul class="tabs-head">
-                            <?php $i = true; ?>
-                            @foreach($episodes as $key => $value)
-                                <li @if($i) class="active" @endif ><a href="#tab{{$key}}">SEZON {{$key}}</a>
-                                </li> <?php $i = false; ?>
-                            @endforeach
-                        </ul>
-                        <?php $i = true; ?>
-                        @foreach($episodes as $key => $value)
-                            <div class="tab @if($i) active @endif " id="tab{{$key}}">
-                                <ul>
-                                    @foreach($value as $episode)
-                                        <li>
-                                            <a href="{{action('front.serial.episodeDetail', ['permalink' => $episode['permalink']])}}">
-                                                <div class="img">
-                                                    <figure><img
-                                                                src="{{asset('uploads/'.$episode['img'].'_thumb.jpg')}}"
-                                                                alt=""></figure>
-                                                </div>
-                                                <div class="text">
-                                                    <h3>{{$episode['title']}}</h3>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="page_select series2_selected">
+                            <div class="button active">ÖZETLİYORUM</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">                    
+                    <?php $i=1; ?>
+                    @foreach($episodes as $key => $value)                    
+                        @foreach($value as $episode)
+                            <div class="col-md-6 home_boxes">
+                                <a class="box square" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$episode['img'].'_square.jpg')}});" href="{{action('front.serial.episodeDetail', ['permalink' => $episode['permalink']])}}">
+                                    <div class="txt">
+                                        <div class="alt_desc">
 
-                                                    <p>{{\BaseController::shorten($episode['summary'], 300)}}</p>
-                                                    <small><strong>Sezon: {{$episode['season']}},
-                                                            Bölüm: {{$episode['number']}}</strong> @if($episode['airing_date'])
-                                                            | {{$episode['airing_date']}}@endif</small>
-                                                    <span class="pink">@if($episode['is_author']) {{$episode['username']}} @else {{$episode['guest_author']}} @endif</span>
-                                                </div>
-                                            </a>
-                                        </li>
-                                    @endforeach
-                                </ul>
-                                <a href="{{action('front.serial.enumIndex', ['permalink' => $serial->permalink, 'enum' => $enums['summary']])}}" class="more">DEVAMI</a>
+                                            Sezon: {{$episode['season']}},
+                                            Bölüm: {{$episode['number']}}</strong> @if($episode['airing_date'])
+                                            | {{$episode['airing_date']}}@endif
+                                        </div>
+                                        <div class="desc">{{$episode['title']}}</div>
+                                        <div class="alt_desc">@if($episode['is_author']) {{$episode['username']}} @else {{$episode['guest_author']}} @endif</div>
+                                    </div>
+                                </a>
+                            </div>                            
+                        @endforeach                        
+                        <?php
+                        $i++;
+                        if ($i==2) { break; }                         
+                        ?>
+                    @endforeach
+                </div>
+                <div class="row">
+                    <div class="col-md-12 more_button">
+                        <div class="more_button">
+                            <a class="more" href="{{action('front.serial.enumIndex', ['permalink' => $serial->permalink, 'enum' => $enums['summary']])}}">DEVAMI</a>
+                            <div class="line"></div>
+                        </div>
+                    </div>
+                </div>
+                @endif
+
+                @if((count($specials)>0) || (count($specialNews)>0))
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="page_select exclusive_selected">
+                                <div class="button active">ÖZEL</div>
                             </div>
-                            <?php $i = false; ?>
+                        </div>
+                    </div>
+                    <div class="row">
+                        @foreach($specials as $special)
+                        <div class="col-md-6 home_boxes">
+                            <a class="box square" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$special['img'].'_square.jpg')}});" href="{{action('front.serial.specialDetail', ['permalink' => $special['permalink']])}}">
+                                <div class="txt">
+                                    <div class="box_title exclusive_title">ÖZEL</div>
+                                    <div class="alt_desc">
+
+                                                Sezon: {{$special['season']}},
+                                                Bölüm: {{$special['number']}}</strong> @if($special['airing_date'])
+                                                | {{$special['airing_date']}}@endif
+                                            </div>
+                                    <div class="desc">{{$special['title']}}</div>
+                                    <div class="alt_desc">@if($special['is_author']) {{$special['username']}} @else {{$special['guest_author']}} @endif</div>
+                                </div>
+                            </a>
+                        </div>
+                        @endforeach
+
+                        @foreach($specialNews as $new)
+                        <div class="col-md-6 home_boxes">
+                            <a class="box square" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$new['img'].'_square.jpg')}});" href="{{action('front.serial.specialDetail', ['permalink' => $new['permalink']])}}">
+                                <div class="txt">
+                                    <div class="box_title exclusive_title">ÖZEL</div>
+                                    <div class="desc">{{$new['title']}}</div>
+                                    <div class="alt_desc"></div>
+                                </div>
+                            </a>
+                        </div>
                         @endforeach
                     </div>
-                @endif
-                @if(count($specials)>0)
-                    <h2>Özel</h2>
-                    <div class="tabser">
-                        <ul>
-                            @foreach($specials as $special)
-                                <li>
-                                    <a href="{{action('front.serial.specialDetail', ['permalink' => $special['permalink']])}}">
-                                        <div class="img">
-                                            <figure><img src="{{asset('uploads/'.$special['img'].'_thumb.jpg')}}"
-                                                         alt=""></figure>
-                                        </div>
-                                        <div class="text">
-                                            <h3>{{$special['title']}}</h3>
-
-                                            <p>{{\BaseController::shorten($special['summary'], 200)}}</p>
-                                            <small><strong>Sezon: {{$special['season']}},
-                                                    Bölüm: {{$special['number']}}</strong> @if($special['airing_date'])
-                                                    | {{$special['airing_date']}}@endif</small>
-                                            <span class="pink">@if($special['is_author']) {{$special['username']}} @else {{$special['guest_author']}} @endif</span>
-                                        </div>
-                                    </a>
-                                </li>
-                            @endforeach
-                        </ul>
-                        @if(!(count($specialNews)>0))<a href="{{action('front.news.specialNews', ['permalink' => $serial->permalink])}}" class="more">DEVAMI</a>@endif
+                    <div class="row">
+                        <div class="col-md-12 more_button">
+                            <div class="more_button">
+                                <a href="{{action('front.news.specialNews', ['permalink' => $serial->permalink])}}" class="more">DEVAMI</a>
+                                <div class="line"></div>
+                            </div>
+                        </div>
                     </div>
                 @endif
-                @if(count($specialNews)>0)<!-- special news only -->
-                    @if(!(count($specials)>0))<h2>Özel</h2>@endif
-                    <div class="tabser">
-                        <ul>
-                            @foreach($specialNews as $new)
-                                <li>
-                                    <a href="{{action('front.news.specialNewsDetail', ['permalink' => $new['permalink']])}}"> <!-- , 'enum' => $new['type'] -->
-                                        <div class="img">
-                                            <figure><img src="{{asset('uploads/'.$new['img'].'_thumb.jpg')}}"
-                                                         alt=""></figure>
-                                        </div>
-                                        <div class="text">
-                                            <h3>{{$new['title']}}</h3>
 
-                                            <p>{{\BaseController::shorten($new['summary'], 200)}}</p>
-                                        </div>
-                                    </a>
-                                </li>
-                            @endforeach
-                        </ul>
-                        <a href="{{action('front.news.specialNews', ['permalink' => $serial->permalink])}}" class="more">DEVAMI</a>
+                @if(count($news)>0)
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="page_select news_selected">
+                                <div class="button active">HABERLER</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        @foreach($news as $new)
+                        <div class="col-md-6 home_boxes">
+                            <a class="box square" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$new['img'].'_square.jpg')}});" href="{{action('front.news.newsDetail', ['permalink' => $new['permalink'], 'enum' => $new['type']])}}">
+                                <div class="txt">
+                                    <div class="box_title exclusive_title">HABERLER</div>
+                                    <div class="desc">{{$new['title']}}</div>
+                                </div>
+                            </a>
+                        </div>
+                        @endforeach
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 more_button">
+                            <div class="more_button">
+                                <a href="{{action('front.list.newsIndex', ['permalink' => $serial->permalink])}}" class="more">DEVAMI</a>
+                                <div class="line"></div>
+                            </div>
+                        </div>
                     </div>
                 @endif
-                @if(count($news)>0)<!-- special news only -->
-                    <h2>Haberler</h2>
-                    <div class="tabser">
-                        <ul>
-                            @foreach($news as $new)
-                                <li>
-                                    <a href="{{action('front.news.newsDetail', ['permalink' => $new['permalink'], 'enum' => $new['type']])}}">
-                                        <div class="img">
-                                            <figure><img src="{{asset('uploads/'.$new['img'].'_thumb.jpg')}}"
-                                                         alt=""></figure>
-                                        </div>
-                                        <div class="text">
-                                            <h3>{{$new['title']}}</h3>
-
-                                            <p>{{\BaseController::shorten($new['summary'], 200)}}</p>
-                                        </div>
-                                    </a>
-                                </li>
-                            @endforeach
-                        </ul>
-                        <a href="{{action('front.list.newsIndex', ['permalink' => $serial->permalink])}}" class="more">DEVAMI</a>
+                @if(count($photoNews)>0)
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="page_select gallery_selected">
+                                <div class="button active">FOTO HABERLER</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        @foreach($photoNews as $new)
+                        <div class="col-md-6 home_boxes">
+                            <a class="box square" style="background-image: url({{asset('http://www.ekranella.com.tr/uploads/'.$new['img'].'_square.jpg')}});" href="{{action('front.news.newsDetail', ['permalink' => $new['permalink'], 'enum' => $new['type']])}}">
+                                <div class="txt">
+                                    <div class="box_title exclusive_title">HABERLER</div>
+                                    <div class="desc">{{$new['title']}}</div>
+                                </div>
+                            </a>
+                        </div>
+                        @endforeach
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 more_button">
+                            <div class="more_button">
+                                <a class="more">DEVAMI</a>
+                                <div class="line"></div>
+                            </div>
+                        </div>
                     </div>
                 @endif
-                @if(count($photoNews)>0)<!-- special news only -->
-                    <h2>Foto Haberler</h2>
-                    <div class="tabser">
-                        <ul>
-                            @foreach($photoNews as $new)
-                                <li>
-                                    <a href="{{action('front.news.newsDetail', ['permalink' => $new['permalink'], 'enum' => $new['type']])}}">
-                                        <div class="img">
-                                            <figure><img src="{{asset('uploads/'.$new['img'].'_thumb.jpg')}}"
-                                                         alt=""></figure>
-                                        </div>
-                                        <div class="text">
-                                            <h3>{{$new['title']}}</h3>
 
-                                            <p>{{\BaseController::shorten($new['summary'], 200)}}</p>
-                                        </div>
-                                    </a>
-                                </li>
-                            @endforeach
-                        </ul>
-                        <a href="{{action('front.news.photoNews', ['permalink' => $serial->permalink])}}" class="more">DEVAMI</a>
-                    </div>
-                @endif
                 @if(count($sgalleries)>0)
-                    <h2>Galeriler</h2>
-                    <div class="sgallery-list">
-                        <ul class="galery">
-                            <li class="big"><a
-                                        href="{{action('front.serial.sgalleryDetail', ['permalink' => $sgalleries[0]['permalink']])}}">
-                                    <figure><img src="{{asset('uploads/'.$sgalleries[0]['img'].'_thumb.jpg')}}"
-                                                 alt="{{$sgalleries[0]['title']}}"></figure>{{$sgalleries[0]['title']}}
-                                    <br><strong> {{$sgalleries[0]['season']}}. Sezon {{$sgalleries[0]['number']}}.
-                                        Bölüm</strong></a></li><?php unset($sgalleries[0]); ?>
-                            @foreach($sgalleries as $sgallery)
-                                <li>
-                                    <a href="{{action('front.serial.sgalleryDetail', ['permalink' => $sgallery['permalink']])}}">
-                                        <figure><img src="{{asset('uploads/'.$sgallery['img'].'_thumb.jpg')}}"
-                                                     alt="{{$sgallery['title']}}"></figure>
-                                        <div class="serialitemtitle">{{$sgallery['title']}}</div>
-                                        <strong> {{$sgallery['season']}}. Sezon {{$sgallery['number']}}.
-                                            Bölüm</strong></a></li>
-                            @endforeach
-                        </ul>
-                        <a href="{{action('front.serial.enumIndex', ['permalink' => $serial->permalink, 'enum' => $enums['sgallery']])}}" class="more">DEVAMI</a>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="page_select gallery_selected">
+                                <div class="button active">GALERİLER</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        @foreach($sgalleries as $sgallery)
+                        <div class="col-md-6 home_boxes">
+                            <a class="box square" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$sgallery['img'].'_square.jpg')}});" href="{{action('front.serial.sgalleryDetail', ['permalink' => $sgallery['permalink']])}}">
+                                <div class="txt">
+                                    <div class="box_title exclusive_title">GALERİLER</div>
+                                    <div class="desc">{{$sgallery['title']}}</div>
+                                </div>
+                            </a>
+                        </div>
+                        @endforeach
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 more_button">
+                            <div class="more_button">
+                                <a class="more">DEVAMI</a>
+                                <div class="line"></div>
+                            </div>
+                        </div>
                     </div>
                 @endif
+
                 @if(count($trailers)>0)
-                    <h2>Fragmanlar</h2>
-                    <div class="sgallery-list">
-                        <ul class="galery">
-                            <li class="big"><a
-                                        href="{{action('front.serial.trailerDetail', ['permalink' => $trailers[0]['permalink']])}}">
-                                    <figure><img src="{{asset('uploads/'.$trailers[0]['img'].'_thumb.jpg')}}"
-                                                 alt="{{$trailers[0]['title']}}"></figure>{{$trailers[0]['title']}} <br><strong> {{$trailers[0]['season']}}
-                                        . Sezon {{$trailers[0]['number']}}. Bölüm</strong>
-
-                                    <div class="masked"><span class="icn-play"></span></div>
-                                </a></li><?php unset($trailers[0]); ?>
-                            @foreach($trailers as $sgallery)
-                                <li>
-                                    <a href="{{action('front.serial.trailerDetail', ['permalink' => $sgallery['permalink']])}}">
-                                        <figure><img src="{{asset('uploads/'.$sgallery['img'].'_thumb.jpg')}}"
-                                                     alt="{{$sgallery['title']}}"></figure>
-                                        <div class="serialitemtitle">{{$sgallery['title']}}</div>
-                                        <strong> {{$sgallery['season']}}. Sezon {{$sgallery['number']}}.
-                                            Bölüm</strong>
-
-                                        <div class="masked"><span class="icn-play"></span></div>
-                                    </a></li>
-                            @endforeach
-                        </ul>
-                        <a href="{{action('front.serial.enumIndex', ['permalink' => $serial->permalink, 'enum' => $enums['trailer']])}}" class="more">DEVAMI</a>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="page_select trailers_selected">
+                                <div class="button active">FRAGMANLAR</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                    @foreach($trailers as $sgallery)                    
+                        <div class="col-md-6 home_boxes">
+                            <a class="box square" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$sgallery['img'].'_square.jpg')}});" href="{{action('front.serial.trailerDetail', ['permalink' => $sgallery['permalink']])}}">
+                                <div class="txt">
+                                    <div class="box_title exclusive_title">FRAGMANLAR</div>
+                                    <div class="desc">{{$sgallery['title']}}</div>
+                                    <div class="alt_desc">{{$sgallery['season']}}. Sezon {{$sgallery['number']}}.Bölüm</div>
+                                </div>
+                            </a>
+                        </div>                    
+                    @endforeach
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 more_button">
+                            <div class="more_button">
+                                <a class="more" href="{{action('front.serial.enumIndex', ['permalink' => $serial->permalink, 'enum' => $enums['trailer']])}}">DEVAMI</a>
+                                <div class="line"></div>
+                            </div>
+                        </div>
                     </div>
                 @endif
-                @if(count($interviews)>0)<!-- special news only -->
-                    <h2>Röportajlar</h2>
-                    <div class="tabser">
-                        <ul>
-                            @foreach($interviews as $interview)
-                                <li>
-                                    <a href="{{action('front.interviews.interviewDetail', ['permalink' => $interview['permalink']])}}">
-                                        <div class="img">
-                                            <figure><img src="{{asset('uploads/'.$interview['img'].'_thumb.jpg')}}"
-                                                         alt=""></figure>
-                                        </div>
-                                        <div class="text">
-                                            <h3>{{$interview['title']}}</h3>
 
-                                            <p>{{\BaseController::shorten($interview['summary'], 200)}}</p>
-                                        </div>
-                                    </a>
-                                </li>
-                            @endforeach
-                        </ul>
-                        <a href="{{action('front.interviews.index', ['permalink' => $serial->permalink])}}" class="more">DEVAMI</a>
+                @if(count($interviews)>0)
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="page_select interview_selected">
+                                <div class="button active">RÖPORTAJLAR</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        @foreach($interviews as $interview)
+                        <div class="col-md-6 home_boxes">
+                            <a class="box square" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$interview['img'].'_thumb.jpg')}});" href="{{action('front.interviews.interviewDetail', ['permalink' => $interview['permalink']])}}">
+                                <div class="txt">
+                                    <div class="box_title exclusive_title">RÖPORTAJLAR</div>
+                                    <div class="desc">{{$interview['title']}}</div>
+                                </div>
+                            </a>
+                        </div>
+                        @endforeach
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 more_button">
+                            <div class="more_button">
+                                <a class="more" href="{{action('front.interviews.index', ['permalink' => $serial->permalink])}}">DEVAMI</a>
+                                <div class="line"></div>
+                            </div>
+                        </div>
                     </div>
                 @endif
-                <h2>Yorumlar</h2>
-
-                <div class="comments">
-                    @include('front.includes.fbcomment')
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="page_select series2_selected">
+                            <div class="button active">YORUMLAR</div>
+                        </div>
+                    </div>
                 </div>
-            </article>
+                <div class="row">
+                    <div class="col-md-12">
+                    @include('front.includes.fbcomment')
+                    </div>
+                </div>
+            </div>
+
+            <!--sidebar-->
+                <div class="col-md-3 sidebar">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="page_select">
+                                <div class="button">SON YAZILAR</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 home_boxes">
+                            <a class="box rectangle" style="background-image: url(assets/img/box_img.jpg);">
+                                <div class="txt">
+                                    <div class="box_title news_title">HABERLER</div>
+                                    <div class="desc">Festival Ajanı: Festival Ahalisi Teknede</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-12 home_boxes">
+                            <a class="box rectangle" style="background-image: url(assets/img/box_img2.jpg);">
+                                <div class="txt">
+                                    <div class="box_title news_title">HABERLER</div>
+                                    <div class="desc">Festival Ajanı: Festival Ahalisi Teknede</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-12 home_boxes">
+                            <a class="box rectangle" style="background-image: url(assets/img/box_img3.jpg);">
+                                <div class="txt">
+                                    <div class="box_title news_title">HABERLER</div>
+                                    <div class="desc">Festival Ajanı: Festival Ahalisi Teknede</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-12 home_boxes">
+                            <a class="box rectangle" style="background-image: url(assets/img/box_img4.jpg);">
+                                <div class="txt">
+                                    <div class="box_title news_title">HABERLER</div>
+                                    <div class="desc">Festival Ajanı: Festival Ahalisi Teknede</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-12 home_boxes">
+                            <a class="box rectangle" style="background-image: url(assets/img/box_img2.jpg);">
+                                <div class="txt">
+                                    <div class="box_title news_title">HABERLER</div>
+                                    <div class="desc">Festival Ajanı: Festival Ahalisi Teknede</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row sidebar_title">
+                        <div class="col-md-12">
+                            <div class="page_select">
+                                <div class="button">TAKİP ET</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row sidebar_title">
+                        <div class="col-md-12">
+                            <div class="page_select ekranella_selected">
+                                <div class="button active">EKRANELLA</div>
+                            </div>
+                            <img src="assets/img/ekranella_kitap.jpg" alt="kitap" width="100%">
+                        </div>
+                    </div>
+                    <div class="row sidebar_title">
+                        <div class="col-md-12">
+                            <div class="page_select interview_selected">
+                                <div class="button active">RÖPORTAJ</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 home_boxes">
+                            <a class="box rectangle" style="background-image: url(assets/img/box_img2.jpg);">
+                                <div class="txt">
+                                    <div class="box_title news_title">RÖPORTAJ</div>
+                                    <div class="desc">Festival Ajanı: Festival Ahalisi Teknede</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row sidebar_title">
+                        <div class="col-md-12">
+                            <div class="page_select ekranella_selected">
+                                <div class="button active">KÖŞE YAZILARI</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 home_boxes">
+                            <a class="box rectangle" style="background-image: url(assets/img/box_img3.jpg);">
+                                <div class="txt">
+                                    <div class="box_title news_title">KÖSE YAZILARI</div>
+                                    <div class="desc">Festival Ajanı: Festival Ahalisi Teknede</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            <!--sidebar-->
+
         </div>
-        <!-- sidebar -->
-        @include('front.includes.sidebar')
-    </div>
+    </section>
 @endsection

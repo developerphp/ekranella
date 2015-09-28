@@ -13,6 +13,7 @@ class FrontAuthorsController extends \FrontController
         $authors = \User::orderBy('name','ASC')->get();
         $data = [
             'as' => 'YAZARLAR',
+            'social' => ConfigController::getSocial(),
             'authors' => $authors
         ];
         return View::make('front.authors.index', $data);
@@ -27,6 +28,7 @@ class FrontAuthorsController extends \FrontController
             'as' => 'YAZAR',
             'author' => $author,
             'posts' => $posts,
+            'social' => ConfigController::getSocial(),
             'headers' => ['title'=> $author->name , 'description' => \BaseController::shorten($author->bio, 200)]
         ];
         return View::make('front.authors.detail', $data);

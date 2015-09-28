@@ -1,155 +1,110 @@
 @extends('front.layout')
 
 @section('content')
-    <div class="header-image">
-        <div class="masked"></div>
-        <div class="img" style="background-image:url('{{asset('uploads')}}/{{$news->img}}_main.jpg')"></div>
-    </div>
-    <div class="two-column">
-        <div class="left">
-            <article class="main details">
-                <h1>{{$as}}</h1>
+<div class="news_page">
+    <?php
+    $time = strtotime($news->created_at);
+    $created_at = date('d/m/Y H:i', $time);
+    if($news->serial_id != 0){
+        $related = $news->serial()->first()->toArray();
+        $url = action('front.serial.detail', ['permalink' => $related['permalink']]);
+        $sharedesc = $related['title'] . '-' . $news->title;
+    } else {
+        if($news->type == 2){
+            $sharedesc = $news->title . ', Ekranella Özel';
+        }else{
+            $sharedesc = $news->title . ', Ekranella Haber';
+        }
+    }
+    ?>
+    <section class="main_banner" style="background-image: url({{asset('http://www.ekranella.com/uploads')}}/{{$news->img}}_main.jpg);">
+        <div class="container txt">
+            <div class="box_title news_title">HABERLER</div>
+            <div class="desc">{{$news->title}}</div>
+        </div>
+    </section>
+    <section id="show_detail" class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="row share_box">
+                    <div class="col-md-4">{{$created_at}}</div>
+                    <div class="col-md-offset-2 col-md-6 share">
+                        <span>paylaş</span>
+                        <a href=""><img src="{{asset('assets/img/share/share_box/facebook.png')}}" alt="share"></a>
+                        <a href=""><img src="{{asset('assets/img/share/share_box/blogger.png')}}" alt="share"></a>
+                        <a href=""><img src="{{asset('assets/img/share/share_box/google.png')}}" alt="share"></a>
+                        <a href=""><img src="{{asset('assets/img/share/share_box/pinterest.png')}}" alt="share"></a>
+                        <a href=""><img src="{{asset('assets/img/share/share_box/tumblr.png')}}" alt="share"></a>
+                        <a href=""><img src="{{asset('assets/img/share/share_box/twitter.png')}}" alt="share"></a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1 news_box">
 
-                <h2 id="headtitle">{{$news->title}}</h2>
-                <ul class="info">
-                    <?php
-                    $time = strtotime($news->created_at);
-                    $created_at = date('d/m/Y H:i', $time);
-                    if($news->serial_id != 0){
-                        $related = $news->serial()->first()->toArray();
-                        $url = action('front.serial.detail', ['permalink' => $related['permalink']]);
-                        $sharedesc = $related['title'] . '-' . $news->title;
-                    } else {
-                        if($news->type == 2){
-                            $sharedesc = $news->title . ', Ekranella Özel';
-                        }else{
-                            $sharedesc = $news->title . ', Ekranella Haber';
-                        }
-                    }
-
-                    ?>
-
-
-                    <li>
-                        @if($news->serial_id != 0)
-                         <a href="{{$url}}" style="text-decoration: none"><strong class="pink">{{$related['title']}}</strong></a></big> <br/> <br/>
+                        @if($galleryPage == 1 ||  $galleryPage == 'all')
+                        <div class="txt">
+                                {{$content}}
+                        </div>
+                            @if($contentTotalPage > 1)
+                            <div class="row">
+                                <div class="col-md-12">
+                                    @for($i = 1; $i < $contentTotalPage + 1; $i++)
+                                    <a href="/haber/{{ $permalink }}/{{ $galleryPage }}/{{$i}}#headtitle" class="page_select @if($i == $page) active @endif"><span>{{ $i }}</span></a>
+                                    @endfor
+                                </div>
+                            </div>
+                            @endif
                         @endif
 
-                        {{$created_at}} <br>
-                        @if($news->is_author)<a href="{{action('front.authors.detail', ['id' => $news->user->id])}}" style="text-decoration: none"><strong class="pink">{{$news->user->name}}</strong></a>@else <strong class="pink">{{$news->guest_author}}</strong> @endif</li>
-                </ul>
-
-                @if($galleryPage == 1 ||  $galleryPage == 'all')
-                    <div id="textContent"  >
-                        {{$content}}
+                        @if(count($news->tags) > 0)
+                        <div class="tags">
+                            <span class="title fotohaber_title">ETİKETLER :</span> 
+                            <?php $t=1; ?>
+                            @foreach($news->tags as $tag)
+                            <a href="{{action('front.search.index').'?q='.$tag->title}}">{{$tag->title}}</a>
+                            @if($t<>count($news->tags)) , @endif
+                            <?php $t++; ?>
+                            @endforeach
+                        </div>
+                        @endif
                     </div>
-                    @if($contentTotalPage > 1)
-                        <div class="paginationWrap" style="margin-bottom: 20px">
-                            <ul class="pagination">
-                                @for($i = 1; $i < $contentTotalPage + 1; $i++)
-                                    <li class="paginateBtn @if($i == $page) active @endif"><a href="/haber/{{ $permalink }}/{{ $galleryPage }}/{{$i}}#headtitle">{{ $i }}</a></li>
-                                @endfor
-                                <li class="showAllBtn"><a href="/haber/{{ $permalink }}/{{ $galleryPage }}/all#headtitle">Tek Parça</a></li>
-                            </ul>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="page_select fotohaber_selected">
+                            <div class="button active">YORUMLAR</div>
                         </div>
-                    @endif
-                @endif
-
-                @if($gallery != null)
-                    <div id="galleryContent">
-
-                    <a name="galeri"></a>
-                    <div style="height: 60px"></div>
-                    @foreach($gallery as $image)
-                        <div class="galleryContainer">
-                            @if($galleryPage != 1 && $galleryPage != 'all')
-                                <a href="{{action('FrontNewsController@getNews', ['permalink' => $news->permalink, 'galleryPage' => $galleryPage - 1])}}#galeri">
-                                    <div class="galleryPrev">
-                                        <img src="{{asset('a/img/prev.png')}}" class="galleryNavButton"/>
-                                    </div>
-                                </a>
-                            @endif
-                            <a href="{{asset($image['img'])}}" @if($image['text'] != "") data-title="{{{$image['text']}}}"
-                               @endif data-lightbox="gallery">
-                                <figure><img src="{{asset($image['img'])}}" alt="" id="galleryImage"></figure>
-                            </a>
-                            @if($galleryPage != $galleryTotal  && $galleryPage != 'all')
-                                <a href="{{action('FrontNewsController@getNews', ['permalink' => $news->permalink, 'galleryPage' => $galleryPage + 1])}}#galeri">
-                                    <div class="galleryNext">
-                                        <img src="{{asset('a/img/next.png')}}" class="galleryNavButton"/>
-                                    </div>
-                                </a>
-                            @endif
+                        @include('front.includes.fbcomment')
+                    </div>
+                </div>
+                <br/><br/>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="page_select news_selected">
+                            <div class="button active">DİĞER HABERLER</div>
                         </div>
-                        @if($image['text'] != "")<p>{{$image['text']}}</p>@endif
+                    </div>
+                </div>
+                <div class="row">
+                    @foreach($others as $other)
+                    <div class="col-md-6 home_boxes">
+                        <a class="box square" style="background-image: url({{asset('http://www.ekranella.com/uploads/'. $other->img . '_thumb.jpg')}});" href="{{action('FrontNewsController@getNews', ['permalink' => $other->permalink])}}">
+                            <div class="txt">
+                                <div class="box_title news_title">HABERLER</div>
+                                <div class="desc">{{$other->title}}</div>
+                                <div class="alt_desc">{{$other->date}}</div>
+                            </div>
+                        </a>
+                    </div>
                     @endforeach
-                    @if($galleryTotal > 1)
-                        <div class="subtext">
-                            <a href="{{action('FrontNewsController@getNews', ['permalink' => $news->permalink, 'galleryPage' => 'all'])}}">Tek parça</a>
-                            <ul class="pagi">
-                                @if($galleryPage != 1 && $galleryPage != 'all')
-                                    <li>
-                                        <a href="{{action('FrontNewsController@getNews', ['permalink' => $news->permalink, 'galleryPage' => $galleryPage - 1])}}#galeri"><</a>
-                                    </li>@endif
-                                @for($i = 1; $i <= $galleryTotal; $i++)
-                                    <li @if($galleryPage == $i) class="active" @endif><a
-                                                href="{{action('FrontNewsController@getNews', ['permalink' => $news->permalink, 'galleryPage' => $i])}}#galeri">{{$i}}</a>
-                                    </li>
-                                @endfor
-                                @if($galleryPage != $galleryTotal  && $galleryPage != 'all')
-                                    <li>
-                                        <a href="{{action('FrontNewsController@getNews', ['permalink' => $news->permalink, 'galleryPage' => $galleryPage + 1])}}#galeri">></a>
-                                    </li>@endif
-                            </ul>
-                        </div>
-                    @endif
-                        </div>
-                @endif
-                <div class="sharethis">
-                    @include('front.includes.share')
                 </div>
-                @if(count($news->tags) > 0)
-                <div class="subtext">
-                    <ul class="tags">
-                        <li>Etiketler:</li>
-                        @foreach($news->tags as $tag)
-                            <li><a href="{{action('front.search.index').'?q='.$tag->title}}">{{$tag->title}}</a></li>
-                        @endforeach
-                    </ul>
-                </div>
-                @endif
-                <h2>Yorumlar</h2>
+            </div>
 
-                <div class="comments">
-                    @include('front.includes.fbcomment')
-                </div>
-                <h2>Diğer Haberler</h2>
+            <!--sidebar-->
+                @include('front.includes.sidebar')
+            <!--sidebar-->
 
-                <div class="tabser">
-                    <ul>
-                        @foreach($others as $other)
-                            <li>
-                                <a href="{{action('FrontNewsController@getNews', ['permalink' => $other->permalink])}}">
-                                    <div class="img">
-                                        <figure><img src="{{asset('uploads/'. $other->img . '_thumb.jpg')}}" alt="">
-                                        </figure>
-                                    </div>
-                                    <div class="text">
-                                        <h3>{{$other->title}}</h3>
-                                        <p>
-                                            {{\BaseController::shorten($other->summary, 150)}}
-                                        </p>
-                                        <small>{{$other->date}}</small>
-                                        <span class="pink">@if($other->is_author) {{$other->user->name}} @else {{$other->guest_author}} @endif</span>
-                                    </div>
-                                </a>
-                            </li>
-                        @endforeach
-                    </ul>
-                </div>
-                <div class="clear"></div>
-            </article>
         </div>
-        @include('front.includes.sidebar')
-    </div>
+    </section>
+</div>
 @endsection
