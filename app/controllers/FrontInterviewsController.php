@@ -16,10 +16,13 @@ class FrontInterviewsController extends \FrontController
                 return Redirect::to('index');
             }
         }
+
+        //->paginate(10)
+
         if(!isset($serial))
-            return View::make('front.interviews.index', ['interviews' => admin\Interviews::where('published', 1)->orderBy('created_at', 'desc')->paginate(10)]);
+            return View::make('front.interviews.index', ['interviews' => admin\Interviews::where('published', 1)->orderBy('created_at', 'desc')->get(),'social' => ConfigController::getSocial()]);
         else
-            return View::make('front.interviews.index', ['interviews' => admin\Interviews::where('published', 1)->where('serial_id', $serial->id)->orderBy('created_at', 'desc')->paginate(10)]);
+            return View::make('front.interviews.index', ['interviews' => admin\Interviews::where('published', 1)->where('serial_id', $serial->id)->orderBy('created_at', 'desc')->get(),'social' => ConfigController::getSocial()]);
     }
 
     public function getInterview($permalink, $page = 1)

@@ -1,43 +1,38 @@
 @extends('front.layout')
 
 @section('content')
-<div class="header-image">
-    <div class="masked"></div>
-</div>
-<div class="two-column">
-    <div class="left">
-        <article class="main">
-            <h1>Röportajlar</h1>
-            <br/>
-            <div class="tabser">
-                <div class="tab active" id="tab1">
-                    <ul>
-                        @foreach($interviews as $interview)
-                        <li>
-                            <a href="{{action('front.interviews.interviewDetail',['permalink'=>$interview->permalink])}}">
-                                <div class="img">
-                                    <figure><img src="{{asset('uploads/'.$interview->img.'_thumb.jpg')}}" alt="{{$interview->title}}"></figure>
-                                </div>
-                                <div class="text">
-                                    <h3>{{$interview->title}}</h3>
-                                    <p>{{\BaseController::shorten($interview->summary, 150)}}</p>
-                                    <?php $time = strtotime($interview->created_at);
-                                    $date = iconv('latin5','utf-8',strftime("%d %B %Y", $time));?>
-                                    <small>{{{$date}}} | {{$interview->subject}} röportajı</small>
-                                    <span class="pink">@if($interview->is_author){{$interview->user()->first()->name}}@else{{$interview->guest_author}}@endif</span>
-                                </div>
-                            </a>
-                        </li>
-                        @endforeach
 
-                    </ul>
-                    <div class="paginationWrap"><?php echo $interviews->links(); ?></div>
-
+<section id="shows_list" class="container page_margin">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="page_select interview_selected">
+                    <div class="button active">RÖPORTAJLAR</div>
+                    <div class="search">
+                        <div class="icon">
+                            <input class="text" type="text" placeholder="ARA" name="search" id="liveInput">
+                            <input class="button" type="submit" name="submit" value="">
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="clear"></div>
-        </article>
-    </div>
-    @include('front.includes.sidebar')
-</div>
+        </div>        
+        <div class="row endlessEpisode" id="searchList">
+            @foreach($interviews as $interview)
+                <div class="col-md-4 home_boxes">
+                    <a href="{{action('front.interviews.interviewDetail',['permalink'=>$interview->permalink])}}" class="box square" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$interview->img.'_thumb.jpg')}})">
+                        <div class="txt">
+                            <div class="box_title interview_title">RÖPORTAJLAR</div>
+                            <div class="desc">{{\BaseController::shorten($interview->title,40)}}</div>
+                            <div class="alt_desc">
+                            {{\BaseController::shorten($interview->summary, 150)}}<br/>
+                            <?php $time = strtotime($interview->created_at);
+                            $date = strftime("%d %B %Y", $time);?>
+                            <!-- <small>{{{$date}}} | {{$interview->subject}} röportajı</small> -->
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            @endforeach
+        </div>   
+    </section> 
 @endsection

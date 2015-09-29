@@ -195,7 +195,8 @@ class FrontNewsController extends \FrontController
         $data = [
             'as' => 'Özel',
             'permalink' => $serial_permalink,
-            'itemList' => $itemList
+            'itemList' => $itemList,
+            'social' => ConfigController::getSocial(),
         ];
 
         return View::make('front.news.specialIndex', $data);
@@ -266,10 +267,13 @@ class FrontNewsController extends \FrontController
         $newsQuery = $newsObject->where('published', 1)->where('type', 3);
         if (isset($serial))
             $newsQuery = $newsQuery->where('serial_id', $serial->id);
-        $newsList = $newsQuery->orderBy('created_at','DESC')->paginate(5);
+        // $newsList = $newsQuery->orderBy('created_at','DESC')->paginate(5);
+        $newsList = $newsQuery->orderBy('created_at','DESC')->get();
         $data = [
-            'as' => 'Foto Haberler',
-            'newsList' => $newsList
+            'as' => 'FOTO HABER',
+            'newsList' => $newsList,
+            'social' => ConfigController::getSocial(),
+            'color_class' => 'fotohaber'
         ];
         if (isset($serial))
             $data['serial'] = $serial;

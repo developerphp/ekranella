@@ -1,45 +1,37 @@
 @extends('front.layout')
 
 @section('content')
-<div class="header-image">
-    <div class="masked"></div>
-</div>
-<div class="two-column">
-    <div class="left">
-        <article class="main">
-            <h1>{{$as}}
-                <small>@if(isset($serial)) - {{$serial->title}}@endif</small>
-            </h1>
-            <br/>
-            <div class="tabser">
-                <div class="tab active" id="tab1">
-                    <ul>
-                        @foreach($newsList as $news)
-                        <li>
-                            <a href="{{action('front.news.newsDetail',['permalink'=>$news->permalink])}}">
-                                <div class="img">
-                                    <figure><img src="{{asset('uploads/'.$news->img.'_thumb.jpg')}}" alt="{{$news->title}}"></figure>
-                                </div>
-                                <div class="text">
-                                    <h3>{{$news->title}}</h3>
-                                    <p>{{\BaseController::shorten($news->summary, 150)}}</p>
-                                    <?php $time = strtotime($news->created_at);
-                                    $date = iconv('latin5','utf-8',strftime("%d %B %Y", $time));?>
-                                    <small>{{{$date}}}</small>
-                                    <span class="pink">@if($news->is_author) {{$news->user()->first()->name}} @else {{$news->guest_author}} @endif</span>
-                                </div>
-                            </a>
-                        </li>
-                        @endforeach
-
-                    </ul>
-                    <div class="paginationWrap"><?php echo $newsList->links(); ?></div>
-
+    <section id="shows_list" class="container page_margin">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="page_select {{$color_class}}_selected">
+                    <div class="button active">
+                        {{$as}}
+                        <small>@if(isset($serial)) - {{$serial->title}}@endif</small>
+                    </div>
+                    <div class="search">
+                        <div class="icon">
+                            <input class="text" type="text" placeholder="ARA" name="search" id="liveInput">
+                            <input class="button" type="submit" name="submit" value="">
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="clear"></div>
-        </article>
-    </div>
-    @include('front.includes.sidebar')
-</div>
+        </div>        
+        <div class="row endlessEpisode" id="searchList">
+            @foreach($newsList as $news)
+                <div class="col-md-4 home_boxes">
+                    <a href="{{action('front.news.newsDetail',['permalink'=>$news->permalink])}}" class="box square" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$news->img.'_thumb.jpg')}})">
+                        <div class="txt">
+                            <div class="box_title {{$color_class}}_title">{{$as}}</div>
+                            <div class="desc">{{\BaseController::shorten($news->title,40)}}</div>
+                            <div class="alt_desc">
+                            {{\BaseController::shorten($news->summary, 150)}}
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            @endforeach
+        </div>   
+    </section> 
 @endsection

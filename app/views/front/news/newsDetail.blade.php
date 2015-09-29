@@ -12,14 +12,16 @@
     } else {
         if($news->type == 2){
             $sharedesc = $news->title . ', Ekranella Özel';
+            $class='exclusive_title';
         }else{
             $sharedesc = $news->title . ', Ekranella Haber';
+            $class='news_title';
         }
     }
     ?>
     <section class="main_banner" style="background-image: url({{asset('http://www.ekranella.com/uploads')}}/{{$news->img}}_main.jpg);">
         <div class="container txt">
-            <div class="box_title news_title">HABERLER</div>
+            <div class="box_title {{$class}}">{{$as}}</div>
             <div class="desc">{{$news->title}}</div>
         </div>
     </section>

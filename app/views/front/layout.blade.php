@@ -94,8 +94,10 @@
                     <a href="{{action('front.rating.index')}}">REYTİNG</a>
                 </nav>
                 <div class="col-md-1 search">
-                    <span>| </span> 
-                    <div class="icon">ARA</div>
+                    <a href="">
+                        <span>| </span> 
+                        <div class="icon">ARA</div>
+                    </a>
                 </div>
             </div>
         </div>
