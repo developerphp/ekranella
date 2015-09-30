@@ -1355,3 +1355,77 @@ section {
 .fotohaber_page .news_box .tags .title {
   color: #e74c3c !important;
 }
+
+.interview_page .news_box .main_title {
+  color: #f1a9a0 !important;
+}
+.interview_page .news_box .info {
+  margin: 20px 0;
+}
+.interview_page .news_box .info li {
+  color: #000;
+}
+.interview_page .news_box .info li a {
+  display: block;
+  font-weight: normal;
+  color: #f1a9a0 !important;
+}
+.interview_page .news_box .active {
+  background: #f1a9a0 !important;
+}
+.interview_page .news_box .tags .title {
+  color: #f1a9a0 !important;
+}
+.interview_page .news_box .txt, .interview_page .news_box #home_banner1 .banner .txt2, #home_banner1 .banner .interview_page .news_box .txt2, .interview_page .news_box #home_banner2 .banner .txt2, #home_banner2 .banner .interview_page .news_box .txt2 {
+  margin-bottom: 10px;
+}
+.interview_page .news_box .txt .interview, .interview_page .news_box #home_banner1 .banner .txt2 .interview, #home_banner1 .banner .interview_page .news_box .txt2 .interview, .interview_page .news_box #home_banner2 .banner .txt2 .interview, #home_banner2 .banner .interview_page .news_box .txt2 .interview {
+  margin-bottom: 20px;
+  background: url(../img/interview_icon.png) no-repeat left top;
+  padding-left: 40px;
+  font-size: 16px;
+  line-height: 28px;
+}
+.interview_page .news_box .txt .interview p, .interview_page .news_box #home_banner1 .banner .txt2 .interview p, #home_banner1 .banner .interview_page .news_box .txt2 .interview p, .interview_page .news_box #home_banner2 .banner .txt2 .interview p, #home_banner2 .banner .interview_page .news_box .txt2 .interview p {
+  margin-bottom: 10px;
+}
+.interview_page .news_box .txt .interview strong, .interview_page .news_box #home_banner1 .banner .txt2 .interview strong, #home_banner1 .banner .interview_page .news_box .txt2 .interview strong, .interview_page .news_box #home_banner2 .banner .txt2 .interview strong, #home_banner2 .banner .interview_page .news_box .txt2 .interview strong {
+  font-weight: bold;
+}
+
+.search_box {
+  display: none;
+  position: absolute;
+  top: 128px;
+  left: 0;
+  background: #d25380;
+  width: 100%;
+}
+.search_box .txt, .search_box #home_banner1 .banner .txt2, #home_banner1 .banner .search_box .txt2, .search_box #home_banner2 .banner .txt2, #home_banner2 .banner .search_box .txt2 {
+  border: 0;
+  color: #fff;
+  font-size: 16px;
+  padding: 25px 0px 5px 0px;
+  margin-bottom: 20px;
+  background: none;
+  border-bottom: 2px solid #fff;
+  width: 100%;
+}
+.search_box .txt::-webkit-input-placeholder, .search_box #home_banner1 .banner .txt2::-webkit-input-placeholder, #home_banner1 .banner .search_box .txt2::-webkit-input-placeholder, .search_box #home_banner2 .banner .txt2::-webkit-input-placeholder, #home_banner2 .banner .search_box .txt2::-webkit-input-placeholder {
+  color: #fff;
+}
+.search_box .txt::-moz-placeholder, .search_box #home_banner1 .banner .txt2::-moz-placeholder, #home_banner1 .banner .search_box .txt2::-moz-placeholder, .search_box #home_banner2 .banner .txt2::-moz-placeholder, #home_banner2 .banner .search_box .txt2::-moz-placeholder {
+  color: #fff;
+}
+.search_box .txt:-ms-input-placeholder, .search_box #home_banner1 .banner .txt2:-ms-input-placeholder, #home_banner1 .banner .search_box .txt2:-ms-input-placeholder, .search_box #home_banner2 .banner .txt2:-ms-input-placeholder, #home_banner2 .banner .search_box .txt2:-ms-input-placeholder {
+  color: #fff;
+}
+.search_box .icon {
+  width: 18px;
+  height: 18px;
+  background: url(../img/header/search_wh.png) center no-repeat;
+  position: absolute;
+  top: 26px;
+  right: 15px;
+  cursor: pointer;
+}

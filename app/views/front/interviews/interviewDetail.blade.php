@@ -1,6 +1,9 @@
 @extends('front.layout')
 
 @section('content')
+
+ <div class="news_page fotohaber_page interview_page">
+
     <?php
     $sharedesc = $interview->title . ', Ekranella Röportaj';
     if ($interview->serial_id != 0) {
@@ -8,94 +11,97 @@
         $url = action('front.serial.detail', ['permalink' => $related['permalink']]);
     }
     ?>
-    <style>
-        .devil-icon {
-            background: url('{{asset('a/img/ahmetkafasi.png')}}') no-repeat;
-            padding-left: 16px;
-            margin-left: 18px;
-        }
-    </style>
-    <div class="header-image">
-        <div class="masked"></div>
-    </div>
-    <div class="two-column">
-        <div class="left">
-            <article class="main details">
-                <h1>Röportaj</h1>
-
-                <h2>{{$interview->title}}</h2>
-                <ul class="info">
-                    <li>
-                        @if($interview->serial_id != 0)
-                            <a href="{{$url}}" style="text-decoration: none"><strong
-                                        class="pink">{{$related['title']}}</strong></a> <br/>
-                        @endif
-                        @if($interview->subject !="")<strong>{{$interview->subject}} Röportajı</strong>@endif</li>
-                </ul>
-                <div id="textContent">
-                    {{ $content }}
-                </div>
-                @if($contentTotalPage > 1)
-                    <div class="paginationWrap" style="margin-bottom: 20px">
-                        <ul class="pagination">
-                            @for($i = 1; $i < $contentTotalPage + 1; $i++)
-                                <li class="paginateBtn @if($i == $page) active @endif"><a href="/roportaj/{{ $permalink }}/{{$i}}#headtitle">{{ $i }}</a></li>
-                            @endfor
-                            <li class="showAllBtn"><a href="/roportaj/{{ $permalink }}/all#headtitle">Tek Parça</a></li>
-                        </ul>
-                    </div>
-                @endif
-                <div class="sharethis">
-                    @include('front.includes.share')
-                </div>
-                @if(count($interview->tags) > 0)
-                    <div class="subtext">
-                        <ul class="tags">
-                            <li>Etiketler:</li>
-                            @foreach($interview->tags as $tag)
-                                <li>
-                                    <a href="{{action('front.search.index').'?q='.$tag->title}}javascript:;">{{$tag->title}}</a>
-                                </li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
-                <h2>Yorumlar</h2>
-
-                <div class="comments">
-                    @include('front.includes.fbcomment')
-                </div>
-                @if(count($others)>0)
-                    <h2>Diğer Röportajlar</h2>
-
-                    <div class="tabser">
-                        <ul>
-                            @foreach($others as $other)
-                                <li>
-                                    <a href="{{action('FrontInterviewsController@getInterview', ['permalink' => $other->permalink])}}">
-                                        <div class="img">
-                                            <figure><img src="{{asset('uploads/'.$other->img.'_thumb.jpg')}}"
-                                                         alt="{{$other->title}}">
-                                            </figure>
-                                        </div>
-                                        <div class="text">
-                                            <h3>{{$other->title}}</h3>
-
-                                            <p>
-                                                {{\BaseController::shorten($other->summary, 150)}}
-                                            </p>
-                                            <small>{{$other->date}}</small>
-                                            <span class="pink">@if($other->is_author){{$other->user->name}}@else{{$other->guest_author}}@endif</span>
-                                        </div>
-                                    </a>
-                                </li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
-                <div class="clear"></div>
-            </article>
+    <section class="main_banner" style="background-image: url({{asset('assets/img/roportaj.jpg')}});">
+        <div class="container txt">
+            <div class="box_title interview_title">RÖPORTAJ</div>
+            <div class="desc">{{$interview->title}}</div>
         </div>
-        @include('front.includes.sidebar')
-    </div>
+    </section>
+    <section id="show_detail" class="container two-column">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="row share_box">
+                    <div class="col-md-4">12/12/2012 12.45</div>
+                    <div class="col-md-offset-2 col-md-6 share">
+                        <span>paylaş</span>
+                        <a href=""><img src="{{asset('assets/img/share/share_box/facebook.png')}}" alt="share"></a>
+                        <a href=""><img src="{{asset('assets/img/share/share_box/blogger.png')}}" alt="share"></a>
+                        <a href=""><img src="{{asset('assets/img/share/share_box/google.png')}}" alt="share"></a>
+                        <a href=""><img src="{{asset('assets/img/share/share_box/pinterest.png')}}" alt="share"></a>
+                        <a href=""><img src="{{asset('assets/img/share/share_box/tumblr.png')}}" alt="share"></a>
+                        <a href=""><img src="{{asset('assets/img/share/share_box/twitter.png')}}" alt="share"></a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1 news_box">
+                        @if($interview->serial_id != 0)
+                        <div class="main_title">{{$related['title']}}</div>
+                        @endif
+                        <div class="txt">
+                                {{ $content }}
+                        </div>             
+                        @if($contentTotalPage > 1)           
+                        <div class="row">
+                            <div class="col-md-12">
+                                @for($i = 1; $i < $contentTotalPage + 1; $i++)
+                                <a href="/roportaj/{{ $permalink }}/{{$i}}#headtitle" class="page_select @if($i == $page) active @endif"><span>{{$i}}</span></a>
+                                @endfor
+                            </div>
+                        </div>
+                        @endif
+
+                        @if(count($interview->tags) > 0)
+                        <div class="tags">
+                            <span class="title fotohaber_title">ETİKETLER :</span> 
+                            <?php 
+                            $i=1;
+                            ?>
+                            @foreach($interview->tags as $tag)
+                            <a  href="{{action('front.search.index').'?q='.$tag->title}}javascript:;">{{$tag->title}}</a>
+                            @if($i<count($interview->tags)) , @endif
+                            <?php $i++;?>
+                            @endforeach
+                        </div>
+                        @endif
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="page_select interview_selected">
+                            <div class="button active">YORUMLAR</div>
+                        </div>
+                        @include('front.includes.fbcomment')
+                    </div>
+                </div>
+
+                @if(count($others)>0)
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="page_select news_selected">
+                            <div class="button active">DİĞER RÖPORTAJLAR</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    @foreach($others as $other)
+                    <div class="col-md-6 home_boxes">                        
+                        <a href="{{action('FrontInterviewsController@getInterview', ['permalink' => $other->permalink])}}" class="box square" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$other->img.'_thumb.jpg')}});">
+                            <div class="txt">
+                                <div class="box_title interview_title">RÖPORTAJLAR</div>
+                                <div class="desc">{{$other->title}}</div>
+                                <div class="alt_desc">{{$other->date}}</div>
+                            </div>
+                        </a>
+                    </div>
+                    @endforeach
+                </div>
+                @endif
+            </div>
+
+           @include('front.includes.sidebar')
+
+        </div>
+
+    </section>
+</div>
 @endsection

@@ -94,14 +94,23 @@
                     <a href="{{action('front.rating.index')}}">REYTİNG</a>
                 </nav>
                 <div class="col-md-1 search">
-                    <a href="">
                         <span>| </span> 
                         <div class="icon">ARA</div>
-                    </a>
                 </div>
             </div>
         </div>
     </header>
+    <div class="search_box">
+        <div class="container">
+            <div class="row">
+                <form method="get" action="{{action('front.search.index')}}" class="col-md-12">
+                    <input type="text" name="q" class="txt" placeholder="ARA">
+                    <input type="submit" class="icon" value="">
+                </form>
+                
+            </div>
+        </div>
+    </div>
     @yield('slider','')
     @yield('content')
     <footer>

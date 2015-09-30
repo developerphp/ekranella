@@ -88,7 +88,8 @@ class FrontInterviewsController extends \FrontController
                 'others' => $others,
                 'headers' => ['title'=> $interview->title, 'description' => \BaseController::shorten($interview->summary, 200)],
                 'largeImage' => $interview->img,
-                'sidebarOthers' => $sidebarOtherInterviews
+                'sidebarOthers' => $sidebarOtherInterviews,
+                'social' => ConfigController::getSocial()
             ];
             return View::make('front.interviews.interviewDetail', $data);
         } else {

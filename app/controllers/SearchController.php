@@ -16,7 +16,8 @@ class SearchController extends \FrontController
             'as' => 'Arama',
             'items' => $items,
             'keyword' => $keyword,
-            'headers' => ['title'=> $keyword , 'description' => $keyword . ' araması için gösterilen sonuçlar']
+            'headers' => ['title'=> $keyword , 'description' => $keyword . ' araması için gösterilen sonuçlar'],
+            'social' => ConfigController::getSocial(),
         ];
         return View::make('front.search.index', $data);
     }

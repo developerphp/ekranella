@@ -34,6 +34,6 @@ class FrontRatingController extends \FrontController
             $rating['somera'] = Rating::where('type', 3)->where('date', $date)->orderBy('order')->limit(5)->get();
         }
 
-        return View::make('front.rating.index', ['rating' => $rating, 'ratingDate' => $ratingDate, 'pickerDate' => $pickerDate, 'type' => $type, 'count' => $count, 'skip'=> $skip, 'headers' => ['title'=> 'Reytingler', 'description' => 'Reyting Listesi']]);
+        return View::make('front.rating.index', ['rating' => $rating,'social' => ConfigController::getSocial(), 'ratingDate' => $ratingDate, 'pickerDate' => $pickerDate, 'type' => $type, 'count' => $count, 'skip'=> $skip, 'headers' => ['title'=> 'Reytingler', 'description' => 'Reyting Listesi']]);
     }
 }
