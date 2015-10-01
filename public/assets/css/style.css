@@ -1429,3 +1429,69 @@ section {
   right: 15px;
   cursor: pointer;
 }
+
+/*ratings_page*/
+.ratings_page {
+  padding-top: 80px;
+}
+.ratings_page .page_select {
+  float: left;
+  width: 100%;
+}
+.ratings_page .page_select .title {
+  float: left;
+  width: 280px;
+}
+.ratings_page .page_select .title span {
+  font-size: 14px;
+  font-weight: 300;
+}
+.ratings_page .page_select .title:after {
+  display: none;
+}
+.ratings_page .page_select .buttons .button {
+  float: right;
+}
+.ratings_page .dates {
+  margin-top: 80px;
+}
+.ratings_page .dates .main_title {
+  font-size: 20px;
+  width: 100%;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #000;
+  font-weight: bold;
+}
+.ratings_page .dates .date_box {
+  width: calc(20% - 20px);
+  padding: 8px 0;
+  margin: 0 10px 10px 10px;
+  background: #d25380;
+  color: #fff;
+  font-size: 14px;
+  float: left;
+  text-align: center;
+  font-weight: 300;
+}
+.ratings_page .share {
+  margin-top: 80px;
+}
+.ratings_page .share .main_title {
+  font-size: 20px;
+  width: 100%;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #000;
+  font-weight: bold;
+}
+.ratings_page .share a {
+  display: inline-block;
+  margin-right: 10px;
+  width: 40px;
+}
+.ratings_page .share a img {
+  width: 100%;
+}
+
+/*ratings_page*/

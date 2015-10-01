@@ -1282,3 +1282,73 @@ section{
 		cursor: pointer;
 	}
 }
+
+/*ratings_page*/
+
+.ratings_page{
+	padding-top: 80px;
+	.page_select{
+		float: left;
+		width: 100%;
+		.title{
+			float: left;
+			width: 280px;
+			span{
+				font-size: 14px;
+				font-weight: 300;
+			}
+			&:after{
+					display: none;
+				}
+		}
+		.buttons{
+			.button{
+				float: right;
+
+			}
+		}
+	}
+	.dates{
+		margin-top: 80px;
+		.main_title{
+			font-size: 20px;
+			width: 100%;
+			padding-bottom: 5px;
+			margin-bottom: 20px;
+			border-bottom: 2px solid #000;
+			font-weight: bold;
+		}
+		.date_box{
+			width: calc(20% - 20px);
+			padding: 8px 0;
+			margin: 0 10px 10px 10px;
+			background: $c_ekranella;
+			color: #fff;
+			font-size: 14px;
+			float: left;
+			text-align: center;
+			font-weight: 300;
+		}
+	}
+	.share{
+		margin-top: 80px;
+		.main_title{
+			font-size: 20px;
+			width: 100%;
+			padding-bottom: 5px;
+			margin-bottom: 20px;
+			border-bottom: 2px solid #000;
+			font-weight: bold;
+		}
+		a{
+			display: inline-block;
+			margin-right: 10px;
+			width: 40px;
+			img{
+				width: 100%;
+			}
+		}
+	}
+}
+
+/*ratings_page*/

@@ -13,7 +13,8 @@ class FrontRatingController extends \FrontController
 
         $date = date('d/m/Y', time() - 60 * 60 * 24*($skip+1));
         $RatingTime = time() - 60 * 60 * 24*($skip+1);
-        $ratingDate = iconv('latin5','utf-8',strftime("%d %B %Y %A", $RatingTime));
+        // $ratingDate = iconv('latin5','utf-8',strftime("%d %B %Y %A", $RatingTime));
+        $ratingDate = strftime("%d %B %Y %A", $RatingTime);
 
         $pickerDate = date('d/m/Y', time() - 60 * 60 * 24*($skip+1));
 
@@ -26,7 +27,7 @@ class FrontRatingController extends \FrontController
         if(count($rating['somera'])<1){
             $date = date('d/m/Y', time() - 60 * 60 * 24*($skip+2));
             $RatingTime = time() - 60 * 60 * 24*($skip+2);
-            $ratingDate = iconv('latin5','utf-8',strftime("%d %B %Y %A", $RatingTime));
+            $ratingDate = strftime("%d %B %Y %A", $RatingTime);
 
             $count =  (Rating::where('type', 1)->count()) / 20;
             $rating['total'] = Rating::where('type', 1)->where('date', $date)->orderBy('order')->limit(20)->get();

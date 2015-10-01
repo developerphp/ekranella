@@ -37,6 +37,7 @@
     <link rel="icon" type="image/png" href="{{ asset('assets/img/favicon.png') }}">
 
     <script src="{{ asset('assets/js/jquery.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery-ui.js') }}"></script>
     <script src="{{ asset('assets/js/bootstrap.js') }}"></script>
     <script src="{{ asset('assets/js/main.js') }}"></script>
 
