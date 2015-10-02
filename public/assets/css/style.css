@@ -1191,7 +1191,7 @@ section {
 }
 
 #home_slider .slider .item img {
-  width: 120%;
+  height: 100%;
 }
 
 #home_slider .slider .item:after {
