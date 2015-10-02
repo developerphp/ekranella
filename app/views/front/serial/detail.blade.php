@@ -41,7 +41,7 @@
                         <span class="desc">{{$serial->cast}}</span>
                         @endif
                         <span class="title">MÜZİK:</span>
-                        <span class="desc">Kadir Konakçı</span>
+                        <span class="desc">-</span>
                         @if($serial->writer)
                         <span class="title">YAZAR:</span>
                         <span class="desc">{{$serial->writer}}</span>
