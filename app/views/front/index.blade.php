@@ -466,7 +466,7 @@
                 <div class="page_select ratings_selected">
                     <div class="button active" data-href="#total_ratings">TOTAL</div>
                     <div class="button" data-href="#ab_ratings">AB</div>
-                    <div class="button" data-href="#somera_ratings">SOMERA</div>                    
+                    <div class="button" data-href="#somera_ratings">SOMERA</div>
                 </div>
             </div>
         </div>
@@ -500,7 +500,7 @@
                 <div class="page_select ratings_selected">
                     <div class="button" data-href="#total_ratings">TOTAL</div>
                     <div class="button active" data-href="#ab_ratings">AB</div>
-                    <div class="button" data-href="#somera_ratings">SOMERA</div>                    
+                    <div class="button" data-href="#somera_ratings">SOMERA</div>
                 </div>
             </div>
         </div>

@@ -11,6 +11,8 @@ class FrontNewsController extends \FrontController
     public function getNews($permalink, $galleryPage = 1, $page = 1)
     {
 
+
+
         $newsObject = new admin\News();
         $news = $newsObject->where('permalink', $permalink)->with(['user', 'tags', 'gallery'])->first();
         if ($news->published != 1) {
@@ -19,13 +21,13 @@ class FrontNewsController extends \FrontController
         $as = '';
         switch ($news->type) {
             case 1:
-                $as = 'Haber';
+                $as = 'HABER';
                 break;
             case 2:
-                $as = 'Özel';
+                $as = 'ÖZEL';
                 break;
             case 3:
-                $as = 'Foto Haber';
+                $as = 'FOTO HABER';
                 break;
             default;
         }
@@ -75,6 +77,7 @@ class FrontNewsController extends \FrontController
                 'largeImage' => $news->img,
                 'headers' => ['title' => $news->title , 'description' => \BaseController::shorten($news->summary, 200)],
                 'social' => ConfigController::getSocial(),
+                'class' => 'news_title'
             ];
             if ($as=="Foto Haber") {
                 return View::make('front.news.photonewsDetail', $data);
@@ -197,6 +200,7 @@ class FrontNewsController extends \FrontController
             'permalink' => $serial_permalink,
             'itemList' => $itemList,
             'social' => ConfigController::getSocial(),
+
         ];
 
         return View::make('front.news.specialIndex', $data);

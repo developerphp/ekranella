@@ -21,7 +21,7 @@
                     <a href="{{action($item['action'],['permalink'=>$item['permalink']])}}" class="box square" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$item['img'].'_thumb.jpg')}})">
                         <div class="txt">
                             <div class="box_title exclusive_title">{{$as}}</div>
-                            <div class="desc">$item->title}}</div>
+                            <div class="desc">{{$item->title}}</div>
                             <div class="alt_desc">
                             {{\BaseController::shorten($item['summary'], 150)}}<br/>                            
                             </div>
