@@ -457,6 +457,232 @@ a {
 }
 
 /*titles*/
+/*page_selected*/
+.news_selected .page_select {
+  border-bottom: 3px solid #913d88 !important;
+}
+
+.news_selected .page_select .button:after {
+  border-color: transparent transparent #913d88 transparent !important;
+}
+
+.news_selected .page_select .active {
+  background: #913d88 !important;
+}
+
+.news_selected .indicators ul li {
+  background: #913d88 !important;
+}
+
+.gallery_selected .page_select {
+  border-bottom: 3px solid #66cc99 !important;
+}
+
+.gallery_selected .page_select .button:after {
+  border-color: transparent transparent #66cc99 transparent !important;
+}
+
+.gallery_selected .page_select .active {
+  background: #66cc99 !important;
+}
+
+.gallery_selected .indicators ul li {
+  background: #66cc99 !important;
+}
+
+.series2_selected .page_select {
+  border-bottom: 3px solid #2ecc71 !important;
+}
+
+.series2_selected .page_select .button:after {
+  border-color: transparent transparent #2ecc71 transparent !important;
+}
+
+.series2_selected .page_select .active {
+  background: #2ecc71 !important;
+}
+
+.series2_selected .indicators ul li {
+  background: #2ecc71 !important;
+}
+
+.ratings_selected .page_select {
+  border-bottom: 3px solid #663399 !important;
+}
+
+.ratings_selected .page_select .button:after {
+  border-color: transparent transparent #663399 transparent !important;
+}
+
+.ratings_selected .page_select .active {
+  background: #663399 !important;
+}
+
+.ratings_selected .indicators ul li {
+  background: #663399 !important;
+}
+
+.editors_selected .page_select {
+  border-bottom: 3px solid #34495e !important;
+}
+
+.editors_selected .page_select .button:after {
+  border-color: transparent transparent #34495e transparent !important;
+}
+
+.editors_selected .page_select .active {
+  background: #34495e !important;
+}
+
+.editors_selected .indicators ul li {
+  background: #34495e !important;
+}
+
+.ekranella_selected .page_select {
+  border-bottom: 3px solid #d25380 !important;
+}
+
+.ekranella_selected .page_select .button:after {
+  border-color: transparent transparent #d25380 transparent !important;
+}
+
+.ekranella_selected .page_select .active {
+  background: #d25380 !important;
+}
+
+.ekranella_selected .indicators ul li {
+  background: #d25380 !important;
+}
+
+.interview_selected .page_select {
+  border-bottom: 3px solid #f1a9a0 !important;
+}
+
+.interview_selected .page_select .button:after {
+  border-color: transparent transparent #f1a9a0 transparent !important;
+}
+
+.interview_selected .page_select .active {
+  background: #f1a9a0 !important;
+}
+
+.interview_selected .indicators ul li {
+  background: #f1a9a0 !important;
+}
+
+.exclusive_selected .page_select {
+  border-bottom: 3px solid #f1c40f !important;
+}
+
+.exclusive_selected .page_select .button:after {
+  border-color: transparent transparent #f1c40f transparent !important;
+}
+
+.exclusive_selected .page_select .active {
+  background: #f1c40f !important;
+}
+
+.exclusive_selected .indicators ul li {
+  background: #f1c40f !important;
+}
+
+.series_selected .page_select {
+  border-bottom: 3px solid #3498db !important;
+}
+
+.series_selected .page_select .button:after {
+  border-color: transparent transparent #3498db transparent !important;
+}
+
+.series_selected .page_select .active {
+  background: #3498db !important;
+}
+
+.series_selected .indicators ul li {
+  background: #3498db !important;
+}
+
+.trailers_selected .page_select {
+  border-bottom: 3px solid #19b5fe !important;
+}
+
+.trailers_selected .page_select .button:after {
+  border-color: transparent transparent #19b5fe transparent !important;
+}
+
+.trailers_selected .page_select .active {
+  background: #19b5fe !important;
+}
+
+.trailers_selected .indicators ul li {
+  background: #19b5fe !important;
+}
+
+.likes_selected .page_select {
+  border-bottom: 3px solid #f72459 !important;
+}
+
+.likes_selected .page_select .button:after {
+  border-color: transparent transparent #f72459 transparent !important;
+}
+
+.likes_selected .page_select .active {
+  background: #f72459 !important;
+}
+
+.likes_selected .indicators ul li {
+  background: #f72459 !important;
+}
+
+.shows_selected .page_select {
+  border-bottom: 3px solid #bf3a2b !important;
+}
+
+.shows_selected .page_select .button:after {
+  border-color: transparent transparent #bf3a2b transparent !important;
+}
+
+.shows_selected .page_select .active {
+  background: #bf3a2b !important;
+}
+
+.shows_selected .indicators ul li {
+  background: #bf3a2b !important;
+}
+
+.cases_selected .page_select {
+  border-bottom: 3px solid #95a5a6 !important;
+}
+
+.cases_selected .page_select .button:after {
+  border-color: transparent transparent #95a5a6 transparent !important;
+}
+
+.cases_selected .page_select .active {
+  background: #95a5a6 !important;
+}
+
+.cases_selected .indicators ul li {
+  background: #95a5a6 !important;
+}
+
+.fotohaber_selected .page_select {
+  border-bottom: 3px solid #e74c3c !important;
+}
+
+.fotohaber_selected .page_select .button:after {
+  border-color: transparent transparent #e74c3c transparent !important;
+}
+
+.fotohaber_selected .page_select .active {
+  background: #e74c3c !important;
+}
+
+.fotohaber_selected .indicators ul li {
+  background: #e74c3c !important;
+}
+
+/*page_selected*/
 header {
   font-size: 13px;
   border-bottom: 1px solid #e9e9e9;
@@ -663,6 +889,7 @@ section {
 
 .container .indicators .active span {
   display: block;
+  color: #fff;
 }
 
 .container .home_boxes .box {
