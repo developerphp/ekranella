@@ -224,7 +224,7 @@
                             else { $class="square"; $imageclass="square"; }
                             ?>
                             <div class="col-md-6 home_boxes">
-                                <a class="box {{$class}}" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$gallery['img'].'_'.$imageclass.'.jpg')}});">
+                                <a class="box {{$class}}" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$gallery['img'].'_'.$imageclass.'.jpg')}});" href="{{action('front.serial.sgalleryDetail', ['permalink'=>$gallery['permalink']])}}">
                                     <div class="txt">
                                         <div class="box_title gallery_title">GALERİLER</div>
                                         <div class="desc">{{$gallery['title']}}</div>
@@ -274,7 +274,7 @@
                             else { $class="square"; $imageclass="square"; }
                             ?>
                             <div class="col-md-6 home_boxes">
-                                <a class="box {{$class}}" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$trailer['img'].'_'.$imageclass.'.jpg')}});">
+                                <a class="box {{$class}}" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$trailer['img'].'_'.$imageclass.'.jpg')}});" href="{{action('front.serial.trailerDetail', ['permalink'=>$trailer['permalink']])}}">
                                     <div class="txt">
                                         <div class="box_title trailers_title">FRAGMANLAR</div>
                                         <div class="desc">{{$trailer['title']}}</div>

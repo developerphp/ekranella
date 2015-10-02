@@ -10,6 +10,8 @@ class FrontInterviewsController extends \FrontController
 {
     public function getIndex($serial_permalink = 'tum')
     {
+
+        
         if ($serial_permalink != "tum") {
             $serial = admin\Serials::where('permalink', $serial_permalink)->first();
             if (count($serial) < 1) {

@@ -181,6 +181,7 @@ class FrontNewsController extends \FrontController
             $news['alias'] = 'Özel';
             array_push($itemList, $news);
         }
+        
         foreach ($specialsList as $special) {
             $username = $special->user()->first()->name;
             $special->toArray();

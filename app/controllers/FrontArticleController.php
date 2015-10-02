@@ -41,7 +41,8 @@ class FrontArticleController extends \FrontController
                 'page' => $page,
                 'others' => $others,
                 'headers' => ['title'=> $article->title, 'description' => \BaseController::shorten($article->summary, 200)],
-                'largeImage' => $article->img
+                'largeImage' => $article->img,
+                'social' => ConfigController::getSocial(),
             ];
             return View::make('front.article.articleDetail', $data);
         } else {
