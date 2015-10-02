@@ -6,10 +6,10 @@
 
 @section('content')
     
-    <section id="home_news" class="home_sections container">
+    <section id="home_news" class="home_sections container news_h_selected">
         <div class="row">
             <div class="col-md-12">
-                <div class="page_select news_selected">
+                <div class="page_select">
                     <div class="button active" data-href="#home_news">HABERLER</div>
                     <div class="button" data-href="#home_liked">BEĞENİLENLER</div>                                      
                 </div>
@@ -77,10 +77,10 @@
             return \Config::get('enums.' . $item['item_enum' . 's']);
     }
     ?>
-    <section id="home_liked" class="home_sections container hide">
+    <section id="home_liked" class="home_sections container hide likes_h_selected">
         <div class="row">
             <div class="col-md-12">
-                <div class="page_select likes_selected">
+                <div class="page_select">
                     <div class="button" data-href="#home_news">HABERLER</div>
                     <div class="button active" data-href="#home_liked">BEĞENİLENLER</div>                    
                 </div>
@@ -191,10 +191,10 @@
             </div>
         </div>
     </section>
-    <section id="home_gallery" class="home_sections container">
+    <section id="home_gallery" class="home_sections container gallery_h_selected">
         <div class="row">
             <div class="col-md-12">
-                <div class="page_select gallery_selected">
+                <div class="page_select">
                     <div class="button active" data-href="#home_gallery">GALERİLER</div>
                     <div class="button" data-href="#home_trailers">FRAGMANLAR</div>                    
                 </div>
@@ -241,10 +241,10 @@
             </div>
         </div>
     </section>
-    <section id="home_trailers" class="home_sections container hide">
+    <section id="home_trailers" class="home_sections container hide trailers_h_selected">
         <div class="row">
             <div class="col-md-12">
-                <div class="page_select trailers_selected">
+                <div class="page_select">
                     <div class="button" data-href="#home_gallery">GALERİLER</div>
                     <div class="button active" data-href="#home_trailers">FRAGMANLAR</div>                    
                 </div>
@@ -301,10 +301,10 @@
             </div>
         </div>
     </section>
-    <section id="local_series" class="container home_sections">
+    <section id="local_series" class="container home_sections series_h_selected">
         <div class="row">
             <div class="col-md-12">
-                <div class="page_select series_selected">
+                <div class="page_select">
                     <div class="button active" data-href="#local_series">YERLİ DİZİLER</div>
                     <div class="button" data-href="#foreign_series">YABANCI DİZİLER</div>
                     <div class="button" data-href="#programs">PROGRAMLAR</div>                    
@@ -354,10 +354,10 @@
             </div>
         </div>
     </section>
-    <section id="foreign_series" class="container home_sections hide">
+    <section id="foreign_series" class="container home_sections hide series2_h_selected">
         <div class="row">
             <div class="col-md-12">
-                <div class="page_select series2_selected">
+                <div class="page_select">
                     <div class="button" data-href="#local_series">YERLİ DİZİLER</div>
                     <div class="button active" data-href="#foreign_series">YABANCI DİZİLER</div>
                     <div class="button" data-href="#programs">PROGRAMLAR</div>                    
@@ -407,10 +407,10 @@
             </div>
         </div>
     </section>
-    <section id="programs" class="container home_sections hide">
+    <section id="programs" class="container home_sections hide shows_h_selected">
         <div class="row">
             <div class="col-md-12">
-                <div class="page_select shows_selected">
+                <div class="page_select">
                     <div class="button" data-href="#local_series">YERLİ DİZİLER</div>
                     <div class="button" data-href="#foreign_series">YABANCI DİZİLER</div>
                     <div class="button active" data-href="#programs">PROGRAMLAR</div>                    
@@ -460,10 +460,10 @@
             </div>
         </div>
     </section>
-    <section id="total_ratings" class="container home_sections home_ratings">
+    <section id="total_ratings" class="container home_sections home_ratings ratings_h_selected">
         <div class="row">
             <div class="col-md-12">
-                <div class="page_select ratings_selected">
+                <div class="page_select">
                     <div class="button active" data-href="#total_ratings">TOTAL</div>
                     <div class="button" data-href="#ab_ratings">AB</div>
                     <div class="button" data-href="#somera_ratings">SOMERA</div>
@@ -494,10 +494,10 @@
             </div>
         </div>
     </section>
-    <section id="ab_ratings" class="container home_sections home_ratings hide">
+    <section id="ab_ratings" class="container home_sections home_ratings hide ratings_h_selected">
         <div class="row">
             <div class="col-md-12">
-                <div class="page_select ratings_selected">
+                <div class="page_select">
                     <div class="button" data-href="#total_ratings">TOTAL</div>
                     <div class="button active" data-href="#ab_ratings">AB</div>
                     <div class="button" data-href="#somera_ratings">SOMERA</div>
@@ -528,10 +528,10 @@
             </div>
         </div>
     </section>
-    <section id="somera_ratings" class="container home_sections home_ratings hide">
+    <section id="somera_ratings" class="container home_sections home_ratings hide ratings_h_selected">
         <div class="row">
             <div class="col-md-12">
-                <div class="page_select ratings_selected">
+                <div class="page_select">
                     <div class="button" data-href="#total_ratings">TOTAL</div>
                     <div class="button" data-href="#ab_ratings">AB</div>
                     <div class="button active" data-href="#somera_ratings">SOMERA</div>                    

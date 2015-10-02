@@ -70,7 +70,7 @@
                         <div class="item @if($i==0) active @endif">
                             <a href="{{$url}}">
                                 <div class="txt">
-                                    <div class="box_title series2_title"><?php echo $categorie_title ?></div>
+                                    <div class="box_title ekranella_title"><?php echo $categorie_title ?></div>
                                     <div class="title">{{$slide['title']}}</div>
                                     <div class="desc">{{strip_tags($slide['text'])}}</div>
                                 </div>

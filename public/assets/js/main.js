@@ -53,7 +53,7 @@ $(document).ready(function(){
     }
 
     var $menu_open = 0;
-    $(".search").click(function() {
+    $("#searchit").click(function() {
         if($menu_open == 0){
             $(".search_box").slideDown( 200 );
             $menu_open = 1;

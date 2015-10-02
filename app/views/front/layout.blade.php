@@ -83,7 +83,7 @@
         <div class="container bottom">
             <div class="row">
                 <div class="col-md-4">
-                    <a href="{{url()}}"><img src="{{asset('assets/img/logo_txt.png')}}" alt="logo"></a>
+                    <a href="{{url()}}"><img style="width: 300px; margin-top: 8px;" src="{{asset('assets/img/logo.gif')}}" alt="logo"></a>
                 </div>
                 <nav class="col-md-7">
                     <a href="{{action('FrontSerialController@getLocalSerial')}}">YERLİ DİZİLER</a>
@@ -94,7 +94,7 @@
                     <a href="{{action('front.interviews.index')}}">RÖPORTAJ</a>
                     <a href="{{action('front.rating.index')}}">REYTİNG</a>
                 </nav>
-                <div class="col-md-1 search">
+                <div id="searchit" class="col-md-1 search">
                         <span>| </span> 
                         <div class="icon">ARA</div>
                 </div>
