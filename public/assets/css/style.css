@@ -1991,4 +1991,48 @@ section {
   width: 100%;
 }
 
+#datepicker {
+  margin-top: 30px;
+  background: #19b5fe;
+  color: #fff;
+  padding: 40px 0 30px 40px;
+}
+
+#datepicker th {
+  padding: 10px;
+  text-align: center;
+}
+
+#datepicker td {
+  padding: 10px;
+  text-align: center;
+}
+
+#datepicker td a:hover {
+  border-bottom: 1px solid;
+}
+
+#datepicker .ui-datepicker-unselectable {
+  color: #ddd;
+}
+
+#datepicker .ui-datepicker-next, #datepicker #datepicker .ui-datepicker-prev {
+  display: none;
+}
+
+#datepicker .ui-datepicker-title {
+  margin-bottom: 20px;
+  padding-left: 8px;
+  text-transform: uppercase;
+  font-size: 22px;
+}
+
+#datepicker .ui-datepicker-current-day a {
+  border-bottom: 1px solid;
+}
+
+#datepicker .ui-datepicker-current-day a:hover {
+  color: #fff;
+}
+
 /*ratings_page*/

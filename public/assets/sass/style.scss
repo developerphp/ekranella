@@ -1688,4 +1688,44 @@ section{
 	}
 }
 
+#datepicker{
+	margin-top: 30px;
+	background: #19b5fe;
+	color: #fff;
+	padding: 40px 0 30px 40px;
+	th{
+		padding: 10px;
+		text-align: center;
+	}
+	td{
+		padding: 10px;
+		text-align: center;
+		a{
+			&:hover{
+  				border-bottom: 1px solid;
+			}
+		}
+	}
+	.ui-datepicker-unselectable{
+		color: #ddd;
+	}
+	.ui-datepicker-next, #datepicker .ui-datepicker-prev{
+		display: none;
+	}
+	.ui-datepicker-title{
+		margin-bottom: 20px;
+		padding-left: 8px;
+		text-transform: uppercase;
+		font-size: 22px;
+	}
+	.ui-datepicker-current-day{
+		a{
+			border-bottom: 1px solid;
+			&:hover {
+ 				color: #fff; 
+			}
+		}
+	}
+}
+
 /*ratings_page*/

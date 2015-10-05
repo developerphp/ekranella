@@ -120,12 +120,7 @@
                 <div class="date_box"><a href="{{action('front.rating.index',['type'=>'total'])}}">{{date('d/m/Y', time() - 60 * 60 * 24)}}</a></div>
                 @endif
             </div>
-            <div class="col-md-4 calendar">
-                <!--calendar-->
-            </div>
-        </div>
-        <div class="row share">
-            <div class="col-md-8">
+            <div class="col-md-8 share">
                 <div class="main_title">PAYLAŞ</div>
                 <a href=""><img src="{{asset('assets/img/share/ratings/facebook.png')}}"></a>
                 <a href=""><img src="{{asset('assets/img/share/ratings/twitter.png')}}"></a>
@@ -134,8 +129,10 @@
                 <a href=""><img src="{{asset('assets/img/share/ratings/blogger.png')}}"></a>
                 <a href=""><img src="{{asset('assets/img/share/ratings/google.png')}}"></a>
             </div>
+            <div class="col-md-4 calendar">
+                <div id="datepicker"></div>
+            </div>
         </div>
-        <div id="datepicker" style="margin: auto;width: 224px;margin-top: 30px;"></div>
         <script>
             $(function() {
 
