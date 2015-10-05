@@ -11,7 +11,12 @@
     <section id="show_detail" class="container">
         <div class="row">
             <div class="col-md-9">
-                @include('front.includes.share')
+                <div class="row share_box">
+                    <div class="col-md-4">
+                        hebele
+                    </div>
+                    @include('front.includes.share')
+                </div>
                 <div class="row">
                     <div class="col-md-12 show_desc">
                         <span class="main_title">

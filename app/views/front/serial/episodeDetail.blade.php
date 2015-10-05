@@ -39,7 +39,12 @@
     <section id="show_detail" class="container">
         <div class="row">
             <div class="col-md-9">
-                @include('front.includes.share')
+                <div class="row share_box">
+                    <div class="col-md-4">
+                        hebele
+                    </div>
+                    @include('front.includes.share')
+                </div>
                 <div class="row">
                     <div class="col-md-10 col-md-offset-1 news_box">                    
                     @if($episode->enum != $enums['trailer'])
