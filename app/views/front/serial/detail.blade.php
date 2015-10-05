@@ -34,8 +34,10 @@
                         <span class="title">OYUNCULAR:</span>
                         <span class="desc">{{$serial->cast}}</span>
                         @endif
+                        @if($serial->music)
                         <span class="title">MÜZİK:</span>
-                        <span class="desc">-</span>
+                        <span class="desc">{{$serial->music}}</span>
+                        @endif
                         @if($serial->writer)
                         <span class="title">YAZAR:</span>
                         <span class="desc">{{$serial->writer}}</span>

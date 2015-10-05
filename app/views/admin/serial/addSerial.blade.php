@@ -251,6 +251,14 @@
                     <div class="row no-margin">
                         <div class="col-sm-8">
                             <div class="form-group">
+                                <label class="control-label">Müzik</label>
+                                <input class="tags" type="hidden" name="music" value="{{$item->music}}"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row no-margin">
+                        <div class="col-sm-8">
+                            <div class="form-group">
                                 <label class="control-label">{{$as}} Twitter Hesabı</label> <small>twitter hesabını başında @ olmadan giriniz</small>
                                 <input type="text" class="form-control twitter" name="twitter"
                                        value="{{{$item->twitter}}}"/>

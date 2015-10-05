@@ -14,7 +14,7 @@ class FrontSerialController extends FrontController
             'type' => 2,
             'social' => ConfigController::getSocial(),
             // 'popularSerials' => \admin\Serials::where('type', 2)->where('is_popular', 1)->orderBy('title', 'ASC')->limit(8)->get(),
-            'allSerials' => \admin\Serials::where('type', 2)->orderBy('title', 'ASC')->get(),
+            'allSerials' => \admin\Serials::where('type', 2)->orderBy('views', 'DESC')->get(),
         ];
         return View::make('front.serial.index', $data);
     }
@@ -25,8 +25,8 @@ class FrontSerialController extends FrontController
             'as' => 'YABANCI DİZİLER',
             'type' => 1,
             'social' => ConfigController::getSocial(),
-            'popularSerials' => \admin\Serials::where('type', 1)->where('is_popular', 1)->orderBy('title', 'ASC')->limit(8)->get(),
-            'allSerials' => \admin\Serials::where('type', 1)->orderBy('title', 'ASC')->get(),
+            'popularSerials' => \admin\Serials::where('type', 1)->where('is_popular', 1)->orderBy('views', 'DESC')->limit(8)->get(),
+            'allSerials' => \admin\Serials::where('type', 1)->orderBy('views', 'DESC')->get(),
         ];
         return View::make('front.serial.index', $data);
     }
@@ -37,8 +37,8 @@ class FrontSerialController extends FrontController
             'as' => 'PROGRAMLAR',
             'type' => 3,
             'social' => ConfigController::getSocial(),
-            'popularSerials' => \admin\Serials::where('type', 3)->where('is_popular', 1)->orderBy('title', 'ASC')->limit(8)->get(),
-            'allSerials' => \admin\Serials::where('type', 3)->orderBy('title', 'ASC')->get(),
+            'popularSerials' => \admin\Serials::where('type', 3)->where('is_popular', 1)->orderBy('views', 'DESC')->limit(8)->get(),
+            'allSerials' => \admin\Serials::where('type', 3)->orderBy('views', 'DESC')->get(),
         ];
         return View::make('front.serial.index', $data);
     }

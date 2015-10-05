@@ -122,12 +122,12 @@
             </div>
             <div class="col-md-8 share">
                 <div class="main_title">PAYLAŞ</div>
-                <a href=""><img src="{{asset('assets/img/share/ratings/facebook.png')}}"></a>
-                <a href=""><img src="{{asset('assets/img/share/ratings/twitter.png')}}"></a>
-                <a href=""><img src="{{asset('assets/img/share/ratings/pinterest.png')}}"></a>
-                <a href=""><img src="{{asset('assets/img/share/ratings/tumblr.png')}}"></a>
-                <a href=""><img src="{{asset('assets/img/share/ratings/blogger.png')}}"></a>
-                <a href=""><img src="{{asset('assets/img/share/ratings/google.png')}}"></a>
+                <a target="_blank" href="http://www.facebook.com/share.php?u={{Request::url()}}"><img src="{{asset('assets/img/share/ratings/facebook.png')}}" alt="share"></a>
+                <a target="_blank" href="https://www.blogger.com/blog-this.g?u={{Request::url()}}"><img src="{{asset('assets/img/share/ratings/blogger.png')}}" alt="share"></a>
+                <a target="_blank" href="https://plus.google.com/share?url={{Request::url()}}"><img src="{{asset('assets/img/share/ratings/google.png')}}" alt="share"></a>
+                <a target="_blank" href="http://pinterest.com/pin/create/button/?url={{Request::url()}}"><img src="{{asset('assets/img/share/ratings/pinterest.png')}}" alt="share"></a>
+                <a target="_blank" href="http://www.tumblr.com/share/link?url={{Request::url()}}"><img src="{{asset('assets/img/share/ratings/tumblr.png')}}" alt="share"></a>
+                <a target="_blank" href="http://www.twitter.com/share?url={{Request::url()}}"><img src="{{asset('assets/img/share/ratings/twitter.png')}}" alt="share"></a>                
             </div>
             <div class="col-md-4 calendar">
                 <div id="datepicker"></div>

@@ -13,7 +13,8 @@ class FrontFeaturedController extends \FrontController
         $archives = admin\Featured::where('published', 0)->orderBy('created_at', 'desc')->get();
         $data = [
             'as' => 'DOSYALAR',
-            'archives' => $archives
+            'archives' => $archives,
+            'social' => ConfigController::getSocial()
         ];
         return View::make('front.featured.archive', $data);
     }
@@ -24,7 +25,8 @@ class FrontFeaturedController extends \FrontController
             $featured = admin\Featured::where('permalink', $permalink)->with('tags')->first();
             $data = [
                 'featured' => $featured,
-                'featuredTags' => $this->getItems($featured)
+                'featuredTags' => $this->getItems($featured),
+                'social' => ConfigController::getSocial()
             ];
             if($featured->published == 1){
                 $featured['headers'] = ['title'=> $featured->title , 'description' => \BaseController::shorten($featured->title, 200)];
