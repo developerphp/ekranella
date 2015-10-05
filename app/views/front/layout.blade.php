@@ -78,6 +78,14 @@
                     @if($social['twitter'] != '')<a href="{{$social['twitter']}}" target="_blank"><img src="{{ asset('assets/img/header/twitter.png') }}" alt="logo"></a>@endif
                     @if($social['instagram'] != '')<a href="{{$social['instagram']}}" target="_blank"><img src="{{ asset('assets/img/header/instagram.png') }}" alt="logo"></a>@endif
                 </div>
+                <div class="line">|</div>
+                <nav>
+                    <a href="{{action('front.interviews.index')}}">RÖPORTAJ</a>
+                    <a href="{{action('front.rating.index')}}">REYTİNG</a>
+                    <a href="{{action('front.authors.index')}}">YAZARLAR</a>
+                    <a href="{{action('front.authors.index')}}">DOSYALAR</a>
+                    <a href="{{action('front.authors.index')}}">BÖLÜM</a>
+                </nav>
             </div>
         </div>
         <div class="container bottom">
@@ -85,19 +93,18 @@
                 <div class="col-md-4">
                     <a href="{{url()}}"><img style="width: 300px; margin-top: 8px;" src="{{asset('assets/img/logo.gif')}}" alt="logo"></a>
                 </div>
-                <nav class="col-md-7">
+                <nav class="col-md-8">
                     <a href="{{action('FrontSerialController@getLocalSerial')}}">YERLİ DİZİLER</a>
                     <a href="{{action('FrontSerialController@getForeignSerial')}}">YABANCI DİZİLER</a>
                     <a href="{{action('FrontSerialController@getProgram')}}">PROGRAMLAR</a>
-                    <a href="{{action('front.news.specialNews')}}">ÖZEL</a>
                     <a href="{{action('front.news.photoNews')}}">FOTOHABER</a>
-                    <a href="{{action('front.interviews.index')}}">RÖPORTAJ</a>
-                    <a href="{{action('front.rating.index')}}">REYTİNG</a>
+                    <a class="special" href="{{action('front.news.specialNews')}}">ÖZEL</a>
+                    <div id="searchit" class="search">
+                        <div class="icon">ARA
+                            <div class="pic"></div>
+                        </div>
+                    </div>
                 </nav>
-                <div id="searchit" class="col-md-1 search">
-                        <span>| </span> 
-                        <div class="icon">ARA</div>
-                </div>
             </div>
         </div>
     </header>

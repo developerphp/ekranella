@@ -679,6 +679,19 @@ header{
 		background: $c_ekranella;
 		padding-top: 10px;
 		padding-bottom: 10px;
+		nav{
+			float: right;
+			color: #fff;
+			a{
+				margin-left: 12px;
+   				font-size: 12px;
+			}
+		}
+		.line{
+			float: right;
+		    margin: 0 10px 0 30px;
+		    color: #fff;
+		}
 		.social{
 			float: right;
 			a{
@@ -693,33 +706,41 @@ header{
 		padding-top: 20px;
 		padding-bottom: 20px;
 		nav{
+			text-align: right;
 			a{
 				margin-top: 17px;
 			    margin-left: 15px;
 			    display: inline-block;
 			    font-weight: bold;
 			}
+			.special{
+				border-left: 2px solid $c_ekranella;
+			    border-right: 2px solid $c_ekranella;
+			    padding: 0 10px;
+			}
 		}
 		.search{
-			text-align: right;
-			span{
-				margin-top: 17px;
-				display: inline-block;
-			}
+			cursor: pointer;
+			float: right;
+			margin-left: 20px;
 			.icon{
 				margin-top: 17px;
 				display: inline-block;
 				position: relative;
 				padding-left: 20px;
 				margin-left: 10px;
-				&:before{
-					content:"";
+				.pic{
 					width: 15px;
 					height: 15px;
 					background: url(../img/header/search.png) center no-repeat;
 					position: absolute;
 					top: 1px;
 					left: 0;
+					transition: all ease 0.1s;
+				}
+				.pic_close{
+					background: url(../img/header/close.png) center no-repeat;
+					transition: all ease 0.1s;
 				}
 			}
 		}
@@ -834,22 +855,31 @@ section{
 			ul{
 				li{
 					border-radius: 50%;
-					padding: 5px 0;
-					width: 10px;
-					font-size: 12px;
-					display: inline-block;
-					cursor: pointer;
+				    height: 20px;
+				    width: 20px;
+				    font-size: 12px;
+				    display: block;
+				    cursor: pointer;
+				    position: relative;
+				    margin-top: 2.5px;
+				    float: left;
+				    margin-left: 8px;
 					span{
 						display: none;
 					}
 				}
 			}
 			.active{
-				width: 26px;
-				text-align: center;
+				width: 25px;
+			    height: 25px;
+			    margin-top: 0px;
 				span{
 					display: block;
-					color: #fff;
+				    color: #fff;
+				    position: absolute;
+				    top: 4px;
+				    text-align: center;
+				    width: 100%;
 				}
 			}
 		}
@@ -1037,8 +1067,9 @@ section{
 				margin-top: 30px;
 				display: inline-block;
 				font-size: 20px;
-				padding: 7px 30px;
+				padding: 10px 0;
 				background: $c_interview;
+				width: 250px;
 				&:hover{
 					color: #fff;
 				}
@@ -1280,6 +1311,9 @@ section{
 		left: 0px;
 		right: 50px;
 		z-index: 2;
+		.box_title{
+			font-size: 16px;
+		}
 		.desc{
 			font-size: 55px;
 			color: #fff;
@@ -1435,6 +1469,14 @@ section{
 			margin: 50px 0;
 			font-size: 16px;
 			line-height: 28px;
+			iframe{
+				width: 100%;
+				margin: 30px 0;
+			}
+			img{
+				width: 100%;
+				margin: 30px 0;
+			}
 		}
 		img{
 			width: 100%;

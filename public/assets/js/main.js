@@ -56,10 +56,12 @@ $(document).ready(function(){
     $("#searchit").click(function() {
         if($menu_open == 0){
             $(".search_box").slideDown( 200 );
+            $(".pic").addClass( "pic_close", 200 );
             $menu_open = 1;
         }
         else{
             $(".search_box").slideUp( 200 );
+            $(".pic").removeClass( "pic_close", 200 );
             $menu_open = 0;
         }
         

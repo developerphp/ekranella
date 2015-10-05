@@ -11,18 +11,7 @@
     <section id="show_detail" class="container">
         <div class="row">
             <div class="col-md-9">
-                <div class="row share_box">
-                    <div class="col-md-4">GENEL BİLGİ</div>
-                    <div class="col-md-offset-2 col-md-6 share">
-                        <span>paylaş</span>
-                        <a href=""><img src="{{asset('assets/img/share/share_box/facebook.png')}}" alt="share"></a>
-                        <a href=""><img src="{{asset('assets/img/share/share_box/blogger.png')}}" alt="share"></a>
-                        <a href=""><img src="{{asset('assets/img/share/share_box/google.png')}}" alt="share"></a>
-                        <a href=""><img src="{{asset('assets/img/share/share_box/pinterest.png')}}" alt="share"></a>
-                        <a href=""><img src="{{asset('assets/img/share/share_box/tumblr.png')}}" alt="share"></a>
-                        <a href=""><img src="{{asset('assets/img/share/share_box/twitter.png')}}" alt="share"></a>
-                    </div>
-                </div>
+                @include('front.includes.share')
                 <div class="row">
                     <div class="col-md-12 show_desc">
                         <span class="main_title">
