@@ -6,175 +6,130 @@
         case $enums['summary']:
             $action = 'front.serial.episodeDetail';
             $sharedesc = $serial->title . '-' . $episode->title;
+            $class="news_title";
             break;
         case $enums['specials']:
             $action = 'front.serial.specialDetail';
             $sharedesc = $serial->title . '-' . $episode->title;
+            $class="news_title";
             break;
         case $enums['trailer']:
             $action = 'front.serial.trailerDetail';
             $sharedesc =  $serial->title . ' Sezon: ' . $season->number . ' Bölüm: ' . $episode->number . ' Fragmanı';
+            $class="news_title";
             break;
         case $enums['sgallery']:
             $action = 'front.serial.sgalleryDetail';
             $sharedesc =  $serial->title . ' Sezon: ' . $season->number . ' Bölüm: ' . $episode->number . ' Galeri';
+            $class="news_title";
             break;
         default;
     }
+
+    $time = strtotime($episode['created_at']);
+    $created_at = date('d/m/Y H:i', $time);
     ?>
-    <div class="header-image">
-        @if($serial->is_masked == 1)
-            <div class="masked"></div>@endif
-        <div class="img" style="background-image:url('{{asset($serial->cover)}}')"></div>
-    </div>
-    <div class="two-column">
-        <div class="left">
-            <article class="main details">
-                <a href="{{action('front.serial.detail', ['permalink' => $serial->permalink])}}"
-                   style="text-decoration: none; color: inherit"><h1>{{$serial->title}}
-                        <span>@if($episode->number != 0)Sezon: <strong>{{$season->number}}</strong> Bölüm: <strong>{{$episode->number}}</strong> @endif</span>
-                    </h1></a>
-
-                <h2 id="headtitle">{{$episode->title}}</h2>
-                <ul class="info">
-                    <?php
-                    $time = strtotime($episode['created_at']);
-                    $created_at = date('d/m/Y H:i', $time);
-                    ?>
-
-                    <li>{{$created_at}} | {{$alias}} <br>
-                        @if($episode->is_author)<a class="authorLink" href="{{action('front.authors.detail', ['id' => $episode->user->id])}}"
-                           style="text-decoration: none"><strong class="pink">{{$episode->user->name}}</strong></a> @else <strong class="pink">{{$episode->guest_author}}</strong> @endif </li>
-                </ul>
-                @if($episode->enum != $enums['trailer'])
-                        <div id="textContent" class="" data-type="{{$alias}}" data-item_id="{{$episode->id}}">
-                            {{$content}}
+    <div class="news_page">    
+    <section class="main_banner" style="background-image:url('{{asset('http://www.ekranella.com/'.$serial->cover)}}')">
+        <div class="container txt">            
+            <div class="desc">{{$episode->title}}</div>
+            <div class="small_desc" style="color:#fff;">{{$serial->title}}</div>
+        </div>
+    </section>
+    <section id="show_detail" class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="row share_box">
+                    <div class="col-md-4">
+                        {{$created_at}}                        
+                    </div>
+                    <div class="col-md-offset-2 col-md-6 share">
+                        <span>paylaş</span>
+                        <a href=""><img src="{{asset('assets/img/share/share_box/facebook.png')}}" alt="share"></a>
+                        <a href=""><img src="{{asset('assets/img/share/share_box/blogger.png')}}" alt="share"></a>
+                        <a href=""><img src="{{asset('assets/img/share/share_box/google.png')}}" alt="share"></a>
+                        <a href=""><img src="{{asset('assets/img/share/share_box/pinterest.png')}}" alt="share"></a>
+                        <a href=""><img src="{{asset('assets/img/share/share_box/tumblr.png')}}" alt="share"></a>
+                        <a href=""><img src="{{asset('assets/img/share/share_box/twitter.png')}}" alt="share"></a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1 news_box">                    
+                    @if($episode->enum != $enums['trailer'])
+                        <div class="txt">
+                                {{$content}}
                         </div>
                         @if($contentTotalPage > 1)
-                        <div class="paginationWrap" style="margin-bottom: 20px">
-                            <ul class="pagination">
-                        @for($i = 1; $i < $contentTotalPage + 1; $i++)
-                                    <li class="paginateBtn @if($i == $page) active @endif"><a href="/bolum/{{ $permalink }}/{{ $galleryPage }}/{{$i}}#headtitle">{{ $i }}</a></li>
-                        @endfor
-                            <li class="showAllBtn"><a href="/bolum/{{ $permalink }}/{{ $galleryPage }}/all#headtitle">Tek Parça</a></li>
-                            </ul>
+                        <div class="row">
+                            <div class="col-md-12">
+                                @for($i = 1; $i < $contentTotalPage + 1; $i++)
+                                <a href="/bolum/{{ $permalink }}/{{ $galleryPage }}/{{$i}}#headtitle" class="page_select @if($i == $page) active @endif"><span>{{ $i }}</span></a>
+                                @endfor
+                            </div>
                         </div>
                         @endif
-                @else
-                    <div class="video-container">
-                        {{htmlspecialchars_decode($episode->content)}}
-                    </div>
-                @endif
 
-                @if($gallery != null && $episode->enum != $enums['trailer'])
-                    <script>
-                        $('.authorLink').remove();
-                    </script>
-                    <div id="galleryContent">
-                        <a name="galeri"></a>
-
-                        <div style="height: 60px"></div>
-                        @foreach($gallery as $image)
-                            <div class="galleryContainer">
-                                @if($galleryPage != 1 && $galleryPage != 'all')
-                                    <a href="{{action($action, ['permalink' => $episode->permalink, 'galleryPage' => $galleryPage - 1])}}#galeri">
-                                        <div class="galleryPrev">
-                                            <img src="{{asset('a/img/prev.png')}}" class="galleryNavButton"/>
-                                        </div>
-                                    </a>
-                                @endif
-                                <a href="{{asset($image['img'])}}" @if($image['text'] != "") data-title="{{{$image['text']}}}"
-                                   @endif data-lightbox="gallery">
-                                    <figure style="padding: 20px;"><img src="{{asset($image['img'])}}" alt="" id="galleryImage"></figure>
-                                </a>
-                                @if($galleryPage != $galleryTotal  && $galleryPage != 'all')
-                                    <a href="{{action($action, ['permalink' => $episode->permalink, 'galleryPage' => $galleryPage + 1])}}#galeri">
-                                        <div class="galleryNext">
-                                            <img src="{{asset('a/img/next.png')}}" class="galleryNavButton"/>
-                                        </div>
-                                    </a>
-                                @endif
-                            </div>
-                            @if($image['text'] != "")<p>{{$image['text']}}</p>@endif
-                        @endforeach
-
-                        @if($galleryTotal > 1)
-                            <div class="subtext">
-                                <a href="{{action($action, ['permalink' => $episode->permalink, 'galleryPage' => 'all'])}}">Tek
-                                    parça</a>
-                                <ul class="pagi">
-                                    @if($galleryPage != 1 && $galleryPage != 'all')
-                                        <li>
-                                            <a href="{{action($action, ['permalink' => $episode->permalink, 'galleryPage' => $galleryPage - 1])}}#galeri"><</a>
-                                        </li>@endif
-                                    @for($i = 1; $i <= $galleryTotal; $i++)
-                                        <li @if($galleryPage == $i) class="active" @endif>
-                                            <a href="{{action($action, ['permalink' => $episode->permalink, 'galleryPage' => $i])}}#galeri">{{$i}}</a>
-                                        </li>
-                                    @endfor
-                                    @if($galleryPage != $galleryTotal  && $galleryPage != 'all')
-                                        <li>
-                                            <a href="{{action($action, ['permalink' => $episode->permalink, 'galleryPage' => $galleryPage + 1])}}#galeri">></a>
-                                        </li>@endif
-                                </ul>
-                            </div>
-                        @endif
-                    </div>
-                @endif
-
-                <div class="sharethis">
-                    @include('front.includes.share')
-                </div>
-                @if(count($episode->tags)>0)
-                    <div class="subtext">
-                        <ul class="tags">
-                            <li>Etiketler:</li>
+                        @if(count($episode->tags) > 0)
+                        <div class="tags">
+                            <span class="title fotohaber_title">ETİKETLER :</span> 
+                            <?php $t=1; ?>
                             @foreach($episode->tags as $tag)
-                                <li><a href="{{action('front.search.index').'?q='.$tag->title}}">{{$tag->title}}</a>
-                                </li>
+                            <a href="{{action('front.search.index').'?q='.$tag->title}}">{{$tag->title}}</a>
+                            @if($t<>count($episode->tags)) , @endif
+                            <?php $t++; ?>
                             @endforeach
-                        </ul>
+                        </div>
+                        @endif
+                    @else
+                        {{htmlspecialchars_decode($episode->content)}}
+                    @endif
                     </div>
-                @endif
-
-                <h2>Yorumlar</h2>
-
-                <div class="comments">
-                    @include('front.includes.fbcomment')
                 </div>
-                <h2>Diğer Yazılar</h2>
-
-                <div class="tabser">
-                    <ul>
-                        @foreach($others as $other)
-                            <li>
-                                <a href="{{action($other['action'], ['permalink' => $other->permalink])}}">
-                                    <div class="img">
-                                        <figure><img src="{{asset('uploads')}}/{{$other->img}}_thumb.jpg" alt="">
-                                        </figure>
-                                    </div>
-                                    <div class="text">
-                                        <h3>{{$other->title}}</h3>
-
-                                        <p>
-                                            {{\BaseController::shorten($other->summary, 100)}}
-                                        </p>
-                                        <small><strong>Sezon: {{$other->season->number}},
-                                                Bölüm: {{$other->number}}</strong> @if(isset($others->airing_date))
-                                                | {{$others->airing_date}}@endif</small>
-                                        <span class="pink">@if($other->is_author) {{$other->user->name}} @else {{$other->guest_author}} @endif</span>
-                                        <small>{{$other['alias']}}</small>
-                                    </div>
-                                </a>
-                            </li>
-                        @endforeach
-                    </ul>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="page_select fotohaber_selected">
+                            <div class="button active">YORUMLAR</div>
+                        </div>
+                        @include('front.includes.fbcomment')
+                    </div>
                 </div>
-                <div class="clear"></div>
-            </article>
+                <br/><br/>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="page_select news_selected">
+                            <div class="button active">DİĞER YAZILAR</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    @foreach($others as $other)
+                    <div class="col-md-6 home_boxes">
+                        <a class="box square" style="background-image: url({{asset('http://www.ekranella.com/uploads')}}/{{$other->img}}_thumb.jpg);" href="{{action($other['action'], ['permalink' => $other->permalink])}}">
+                            <div class="txt">
+<!--                                 <div class="box_title news_title">KÖŞE YAZILARI</div> -->
+                                <div class="desc">{{$other->title}}</div>
+                                <div class="alt_desc">
+                                {{\BaseController::shorten($other->summary, 100)}} <br/>
+                                Sezon: {{$other->season->number}},
+                                Bölüm: {{$other->number}}</strong> @if(isset($others->airing_date))
+                                | {{$others->airing_date}}@endif<br/>
+                                @if($other->is_author) {{$other->user->name}} @else {{$other->guest_author}} @endif<br/>
+                                {{$other['alias']}}
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+
+            <!--sidebar-->
+                @include('front.includes.sidebar')
+            <!--sidebar-->
+
         </div>
-        @include('front.includes.sidebar')
-    </div>
+    </section>
+</div>
     <style>
         .video-container {
             position: relative;

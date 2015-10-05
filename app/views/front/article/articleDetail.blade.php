@@ -1,80 +1,107 @@
 @extends('front.layout')
 
 @section('content')
-    <?php $sharedesc =  $article->title . ', Ekranella Köşe Yazısı'; ?>
-    <div class="header-image">
-        <div class="masked"></div>
-    </div>
-    <div class="two-column">
-        <div class="left">
-            <article class="main details">
-                <h1>Köşe Yazısı</h1>
-
-                <h2 id="headtitle">{{$article->title}}</h2>
-                <ul class="info">
-                    <?php
-                    $time = strtotime($article->created_at);
-                    $created_at = date('d/m/Y H:i', $time);
-                    ?>
-
-                    <li>{{$created_at}} <br>
-                        @if($article->is_author)<a href="{{action('front.authors.detail', ['id' => $article->user->id])}}" style="text-decoration: none"><strong class="pink">{{$article->user->name}}</strong></a>@else<strong class="pink">{{$article->guest_author}}</strong>@endif</li>
-                </ul>
-                <div id="textContent"  >
-                    {{$content}}
-                </div>
-                @if($contentTotalPage > 1)
-                    <div class="paginationWrap" style="margin-bottom: 20px">
-                        <ul class="pagination">
-                            @for($i = 1; $i < $contentTotalPage + 1; $i++)
-                                <li class="paginateBtn @if($i == $page) active @endif"><a href="/kose/{{ $permalink }}/{{$i}}#headtitle">{{ $i }}</a></li>
-                            @endfor
-                            <li class="showAllBtn"><a href="/kose/{{ $permalink }}/all#headtitle">Tek Parça</a></li>
-                        </ul>
-                    </div>
-                @endif
-                <div class="sharethis">
-                    @include('front.includes.share')
-                </div>
-                @if(count($article->tags) > 0)
-                <div class="subtext">
-                    <ul class="tags">
-                        <li>Etiketler:</li>
-                        @foreach($article->tags as $tag)
-                            <li><a href="{{action('front.search.index').'?q='.$tag->title}}">{{$tag->title}}</a></li>
-                        @endforeach
-                    </ul>
-                </div>
-                @endif
-                <h2>Yorumlar</h2>
-
-                <div class="comments">
-                    @include('front.includes.fbcomment')
-                </div>
-                <h2>Diğer Köşe Yazıları</h2>
-
-                <div class="tabser">
-                    <ul>
-                        @foreach($others as $other)
-                            <li>
-                                <a href="{{action('FrontArticleController@getArticle', ['permalink' => $other->permalink])}}">
-                                    <div class="img" style="width: 100px; height: 100px">
-                                        <figure><img src="{{asset('')}}{{$other->user->pp}}" alt="" style="width: 100px; height: 100px">
-                                        </figure>
-                                    </div>
-                                    <div class="text">
-                                        <h3>{{$other->title}}</h3>
-                                        <small>{{$other->date}}</small>
-                                        <span class="pink">@if($other->is_author){{$other->user->name}}@else{{$other->guest_author}}@endif</span>
-                                    </div>
-                                </a>
-                            </li>
-                        @endforeach
-                    </ul>
-                </div>
-                <div class="clear"></div>
-            </article>
+    <div class="news_page">
+    <?php 
+    $sharedesc =  $article->title . ', Ekranella Köşe Yazısı'; 
+    $as = 'KÖŞE YAZISI';
+    $class = 'news_title';
+    $time = strtotime($article->created_at);
+    $created_at = date('d/m/Y H:i', $time);
+    ?>
+    <section class="main_banner">
+        <div class="container txt">
+            <div class="box_title {{$class}}">{{$as}}</div>
+            <div class="desc">{{$article->title}}</div>
         </div>
-        @include('front.includes.sidebar')
-    </div>
+    </section>
+    <section id="show_detail" class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="row share_box">
+                    <div class="col-md-4">
+                        {{$created_at}}
+                        @if($article->is_author) / <a href="{{action('front.authors.detail', ['id' => $article->user->id])}}" style="text-decoration: none"><strong class="pink">{{$article->user->name}}</strong></a>@else<strong class="pink">{{$article->guest_author}}</strong>@endif
+                    </div>
+                    <div class="col-md-offset-2 col-md-6 share">
+                        <span>paylaş</span>
+                        <a href=""><img src="{{asset('assets/img/share/share_box/facebook.png')}}" alt="share"></a>
+                        <a href=""><img src="{{asset('assets/img/share/share_box/blogger.png')}}" alt="share"></a>
+                        <a href=""><img src="{{asset('assets/img/share/share_box/google.png')}}" alt="share"></a>
+                        <a href=""><img src="{{asset('assets/img/share/share_box/pinterest.png')}}" alt="share"></a>
+                        <a href=""><img src="{{asset('assets/img/share/share_box/tumblr.png')}}" alt="share"></a>
+                        <a href=""><img src="{{asset('assets/img/share/share_box/twitter.png')}}" alt="share"></a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1 news_box">
+
+                        
+                        <div class="txt">
+                                {{$content}}
+                        </div>
+                        @if($contentTotalPage > 1)
+                        <div class="row">
+                            <div class="col-md-12">
+                                @for($i = 1; $i < $contentTotalPage + 1; $i++)
+                                <a href="/kose/{{ $permalink }}/{{$i}}#headtitle" class="page_select @if($i == $page) active @endif"><span>{{ $i }}</span></a>
+                                @endfor
+                            </div>
+                        </div>
+                        @endif
+
+                        @if(count($article->tags) > 0)
+                        <div class="tags">
+                            <span class="title fotohaber_title">ETİKETLER :</span> 
+                            <?php $t=1; ?>
+                            @foreach($article->tags as $tag)
+                            <a href="{{action('front.search.index').'?q='.$tag->title}}">{{$tag->title}}</a>
+                            @if($t<>count($article->tags)) , @endif
+                            <?php $t++; ?>
+                            @endforeach
+                        </div>
+                        @endif
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="page_select fotohaber_selected">
+                            <div class="button active">YORUMLAR</div>
+                        </div>
+                        @include('front.includes.fbcomment')
+                    </div>
+                </div>
+                <br/><br/>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="page_select news_selected">
+                            <div class="button active">DİĞER KÖŞE YAZILARI</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    @foreach($others as $other)
+                    <div class="col-md-6 home_boxes">
+                        <a class="box square" style="background-image: url({{asset('http://www.ekranella.com/')}}{{$other->user->pp}});" href="{{action('FrontArticleController@getArticle', ['permalink' => $other->permalink])}}">
+                            <div class="txt">
+                                <div class="box_title news_title">KÖŞE YAZILARI</div>
+                                <div class="desc">{{$other->title}}</div>
+                                <div class="alt_desc">
+                                {{$other->date}} <br/>
+                                @if($other->is_author){{$other->user->name}}@else{{$other->guest_author}}@endif
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+
+            <!--sidebar-->
+                @include('front.includes.sidebar')
+            <!--sidebar-->
+
+        </div>
+    </section>
+</div>
 @endsection
