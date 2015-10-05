@@ -1435,9 +1435,11 @@ section {
 }
 
 .home_ratings .button a {
-  margin-top: 20px;
+  margin-top: 30px;
   float: right;
-  padding: 8px 60px;
+  padding: 10px 0;
+  text-align: center;
+  width: 250px;
   color: #fff;
   background: #663399;
   font-size: 20px;
@@ -1945,6 +1947,7 @@ section {
 
 .ratings_page .dates {
   margin-top: 80px;
+  margin-bottom: 80px;
 }
 
 .ratings_page .dates .main_title {

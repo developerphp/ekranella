@@ -31,7 +31,10 @@
     ?>
     <div class="news_page">    
     <section class="main_banner" style="background-image:url('{{asset('http://www.ekranella.com/'.$serial->cover)}}')">
-        <div class="container txt">            
+        <div class="container txt">
+            @if($episode->enum == $enums['trailer'])
+            <div class="box_title trailers_title">FRAGMANLAR</div> 
+            @endif  
             <div class="desc">{{$episode->title}}</div>
             <div class="small_desc" style="color:#fff;">{{$serial->title}}</div>
         </div>

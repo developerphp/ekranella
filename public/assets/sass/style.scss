@@ -1144,13 +1144,15 @@ section{
 	}
 	.button{
 		a{
-			margin-top: 20px;
-			float: right;
-			padding: 8px 60px;
-			color: #fff;
-			background: $c_ratings;
-			font-size: 20px;
-			font-weight: bold;
+			margin-top: 30px;
+		    float: right;
+		    padding: 10px 0;
+		    text-align: center;
+		    width: 250px;
+		    color: #fff;
+		    background: #663399;
+		    font-size: 20px;
+		    font-weight: bold;
 		}
 	}	
 }
@@ -1647,6 +1649,7 @@ section{
 	}
 	.dates{
 		margin-top: 80px;
+		margin-bottom: 80px;
 		.main_title{
 			font-size: 20px;
 			width: 100%;
