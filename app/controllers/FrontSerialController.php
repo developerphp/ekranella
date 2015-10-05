@@ -219,6 +219,7 @@ class FrontSerialController extends FrontController
             'permalink' => $serial_permalink,
             'as' => $aliases[$enum],
             'list' => $episodes,
+            'social' => ConfigController::getSocial(),
         ];
         if (isset($serial))
             $data['serial'] = $serial;
