@@ -123,18 +123,26 @@
                                 case 1:
                                     $url = 'subEnum';
                                     $subfolder = 'bolum';
+                                    $class_name="series_title";
+                                    $bolum_title= "DİZİLER";
                                     break;
                                 case 2:
                                     $url = action('front.interviews.interviewDetail', ['permalink' => $like['permalink']]);
                                     $subfolder = 'roportaj';
+                                    $class_name="interview_title";
+                                    $bolum_title= "RÖPORTAJLAR";
                                     break;
                                 case 3:
                                     $url = action('front.news.newsDetail', ['permalink' => $like['permalink']]);
                                     $subfolder = 'haber';
+                                    $class_name="news_title";
+                                    $bolum_title="HABERLER";
                                     break;
                                 case 4:
                                     $url = action('front.article.articleDetail', ['permalink' => $like['permalink']]);
                                     $subfolder = 'kose';
+                                    $class_name="interview_title";
+                                    $bolum_title= "KÖŞE YAZILARI";
                                     break;
                                 default;
                             }
@@ -163,7 +171,7 @@
                                 <a class="box <?php echo $subclass ?>" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$like['img'].'_'.$imageclass.'.jpg')}});"
                                     href="{{ $url }}">
                                     <div class="txt">
-                                        <div class="box_title likes_title">BEĞENİLENLER</div>
+                                        <div class="box_title <?php echo $class_name ?>"><?php echo $bolum_title ?></div>
                                         <div class="desc">{{$like['title']}}</div>
                                         <div class="alt_desc">{{$created_at}}</div>
                                     </div>

@@ -48,13 +48,13 @@
                         </div>
                     </div>
                     <?php 
-                    $latestinterviews=admin\Interviews::limit(1)->where('published', 1)->orderBy('created_at', 'desc');
+                    $latestinterviews=admin\Interviews::limit(1)->where('published', 1)->orderBy('created_at', 'desc')->get();
                     ?>
 
                     @foreach($latestinterviews as $linterview)
                     <div class="row">
                         <div class="col-md-12 home_boxes">
-                            <a class="box rectangle" style="background-image: url({{asset('uploads/'.$linterview->img.'_thumb.jpg')}}" alt="{{$linterview->title}}" href="{{action('front.interviews.interviewDetail',['permalink'=>$linterview->permalink])}}">
+                            <a class="box rectangle" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$linterview->img.'_thumb.jpg')}}" alt="{{$linterview->title}}" href="{{action('front.interviews.interviewDetail',['permalink'=>$linterview->permalink])}}">
                                 <div class="txt">
                                     <div class="box_title news_title">RÖPORTAJ</div>
                                     <div class="desc">{{$linterview->title}}</div>

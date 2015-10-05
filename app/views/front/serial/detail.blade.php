@@ -103,7 +103,6 @@
                                 <div class="txt">
                                     <div class="box_title exclusive_title">ÖZEL</div>
                                     <div class="alt_desc">
-
                                                 Sezon: {{$special['season']}},
                                                 Bölüm: {{$special['number']}}</strong> @if($special['airing_date'])
                                                 | {{$special['airing_date']}}@endif
@@ -117,7 +116,7 @@
 
                         @foreach($specialNews as $new)
                         <div class="col-md-6 home_boxes">
-                            <a class="box square" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$new['img'].'_square.jpg')}});" href="{{action('front.serial.specialDetail', ['permalink' => $new['permalink']])}}">
+                            <a class="box square" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$new['img'].'_square.jpg')}});" href="{{action('front.news.specialNewsDetail', ['permalink' => $new['permalink']])}}">
                                 <div class="txt">
                                     <div class="box_title exclusive_title">ÖZEL</div>
                                     <div class="desc">{{$new['title']}}</div>

@@ -70,13 +70,13 @@ class FrontInterviewsController extends \FrontController
         $pages = explode('<!-- pagebreak -->', $content);
         $pageCount = count ($pages);
 
-        if($page !== 'all') {
-            $content = $pages[$page - 1];
-            if($page > 1) {
-                $c = '<div><div><p>';
-                $content = $c.$content;
-            }
-        }
+        // if($page !== 'all') {
+        //     $content = $pages[$page - 1];
+        //     if($page > 1) {
+        //         $c = '<div><div><p>';
+        //         $content = $c.$content;
+        //     }
+        // }
 
 
 

@@ -54,10 +54,10 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'localhost',
-			'database'  => 'ekranella',
-			'username'  => 'root',
-			'password'  => '',
+			'host'      => '178.18.196.234',
+			'database'  => 'ekranell_db',
+			'username'  => 'ekranell_user',
+			'password'  => 'Ekranella6512',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',

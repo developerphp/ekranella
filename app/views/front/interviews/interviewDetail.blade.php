@@ -27,7 +27,7 @@
                         <div class="main_title">{{$related['title']}}</div>
                         @endif
                         <div class="txt">
-                                {{ $content }}
+                            {{ $content }}
                         </div>             
                         @if($contentTotalPage > 1)           
                         <div class="row">
@@ -90,6 +90,7 @@
            @include('front.includes.sidebar')
 
         </div>
+
 
     </section>
 </div>
