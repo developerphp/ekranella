@@ -18,7 +18,7 @@
     <section id="show_detail" class="container">
         <div class="row">
             <div class="col-md-9">
-                <div class="row share_box">
+                <!--<div class="row share_box">
                     <div class="col-md-4">
                         {{$created_at}}
                         @if($article->is_author) / <a href="{{action('front.authors.detail', ['id' => $article->user->id])}}" style="text-decoration: none"><strong class="pink">{{$article->user->name}}</strong></a>@else<strong class="pink">{{$article->guest_author}}</strong>@endif
@@ -32,7 +32,8 @@
                         <a href=""><img src="{{asset('assets/img/share/share_box/tumblr.png')}}" alt="share"></a>
                         <a href=""><img src="{{asset('assets/img/share/share_box/twitter.png')}}" alt="share"></a>
                     </div>
-                </div>
+                </div>-->
+                @include('front.includes.share')
                 <div class="row">
                     <div class="col-md-10 col-md-offset-1 news_box">
 
