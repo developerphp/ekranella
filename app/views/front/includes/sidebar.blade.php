@@ -35,7 +35,9 @@
                             <div class="page_select ekranella_selected">
                                 <div class="button active">EKRANELLA</div>
                             </div>
-                            <img src="{{ asset('assets/img/ekranella_kitap.jpg') }}" alt="kitap" width="100%">
+                            <a href="http://www.idefix.com/kitap/ekranella-kolektif/tanim.asp?sid=ACNNGKEGG6CYBZ4CNYP2#sthash.HZjGcV0j.dpuf" target="_blank">
+                                <img src="{{ asset('assets/img/ekranella_kitap.jpg') }}" alt="kitap" width="100%">
+                            </a>
                         </div>
                     </div>
                     <div class="row sidebar_title">

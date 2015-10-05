@@ -63,8 +63,7 @@ $(document).ready(function(){
             $(".search_box").slideUp( 200 );
             $(".pic").removeClass( "pic_close", 200 );
             $menu_open = 0;
-        }
-        
+        }  
     });
 
 });
