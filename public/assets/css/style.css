@@ -942,7 +942,7 @@ header .top nav a {
 header .top .line {
   float: right;
   margin: 0 10px 0 30px;
-  color: #fff;
+  color: #de7da0;
 }
 
 header .top .social {
@@ -1025,7 +1025,7 @@ footer .top .logo {
 
 footer .top nav {
   margin-top: 30px;
-  border-right: 1px solid #fff;
+  border-right: 1px solid #de7da0;
   padding-left: 30px;
   padding-right: 0px;
 }
@@ -1132,6 +1132,15 @@ section {
   right: 15px;
 }
 
+.container .indicators .ind_title {
+  left: -110px;
+  top: 3px;
+  background: none !important;
+  font-size: 14px;
+  font-weight: bold;
+  position: absolute;
+}
+
 .container .indicators ul li {
   border-radius: 50%;
   height: 20px;
@@ -1171,7 +1180,7 @@ section {
   background-position: center;
   position: relative;
   font-weight: bold;
-  transition: all ease 0.7s;
+  transition: all ease 0.3s;
 }
 
 .container .home_boxes .box .txt, .container .home_boxes .box #home_banner1 .banner .txt2, #home_banner1 .banner .container .home_boxes .box .txt2, .container .home_boxes .box #home_banner2 .banner .txt2, #home_banner2 .banner .container .home_boxes .box .txt2 {
@@ -1180,7 +1189,7 @@ section {
   left: 30px;
   right: 30px;
   z-index: 2;
-  transition: all ease 0.7s;
+  transition: all ease 0.3s;
 }
 
 .container .home_boxes .box .txt .desc, .container .home_boxes .box #home_banner1 .banner .txt2 .desc, #home_banner1 .banner .container .home_boxes .box .txt2 .desc, .container .home_boxes .box #home_banner2 .banner .txt2 .desc, #home_banner2 .banner .container .home_boxes .box .txt2 .desc {
@@ -1196,13 +1205,13 @@ section {
 }
 
 .container .home_boxes .box:hover {
-  transition: all ease 0.7s;
-  background-size: auto 107%;
+  transition: all ease 0.3s;
+  background-size: auto 103%;
 }
 
 .container .home_boxes .box:hover .txt, .container .home_boxes .box:hover #home_banner1 .banner .txt2, #home_banner1 .banner .container .home_boxes .box:hover .txt2, .container .home_boxes .box:hover #home_banner2 .banner .txt2, #home_banner2 .banner .container .home_boxes .box:hover .txt2 {
-  transition: all ease-out 0.7s;
-  bottom: 40px;
+  transition: all ease-out 0.3s;
+  bottom: 35px;
 }
 
 .container .home_boxes .box:after {
@@ -1682,7 +1691,7 @@ section {
 }
 
 .sidebar .home_boxes .box:hover .txt, .sidebar .home_boxes .box:hover #home_banner1 .banner .txt2, #home_banner1 .banner .sidebar .home_boxes .box:hover .txt2, .sidebar .home_boxes .box:hover #home_banner2 .banner .txt2, #home_banner2 .banner .sidebar .home_boxes .box:hover .txt2 {
-  bottom: 30px;
+  bottom: 25px;
 }
 
 .sidebar .page_select {
@@ -1797,6 +1806,16 @@ section {
   margin: 30px 0;
 }
 
+.news_page .news_box .txt .author, .news_page .news_box #home_banner1 .banner .txt2 .author, #home_banner1 .banner .news_page .news_box .txt2 .author, .news_page .news_box #home_banner2 .banner .txt2 .author, #home_banner2 .banner .news_page .news_box .txt2 .author {
+  margin: 20px 0;
+  color: #d25380;
+}
+
+.news_page .news_box .txt .author .date, .news_page .news_box #home_banner1 .banner .txt2 .author .date, #home_banner1 .banner .news_page .news_box .txt2 .author .date, .news_page .news_box #home_banner2 .banner .txt2 .author .date, #home_banner2 .banner .news_page .news_box .txt2 .author .date {
+  font-size: 12px;
+  color: #000;
+}
+
 .news_page .news_box img {
   width: 100%;
 }
@@ -1807,7 +1826,7 @@ section {
   text-align: center;
   position: relative;
   color: #fff;
-  margin: 30px 10px 30px 0;
+  margin: 10px 10px 0px 0;
   display: inline-block;
   background: #000;
 }
@@ -1829,7 +1848,7 @@ section {
 
 .news_page .news_box .tags {
   font-size: 14px;
-  margin-bottom: 50px;
+  margin: 30px 0;
 }
 
 .news_page .news_box .tags .title {

@@ -123,7 +123,6 @@
             <div class="col-md-8 share">
                 <div class="main_title">PAYLAŞ</div>
                 <a target="_blank" href="http://www.facebook.com/share.php?u={{Request::url()}}"><img src="{{asset('assets/img/share/ratings/facebook.png')}}" alt="share"></a>
-                <a target="_blank" href="https://www.blogger.com/blog-this.g?u={{Request::url()}}"><img src="{{asset('assets/img/share/ratings/blogger.png')}}" alt="share"></a>
                 <a target="_blank" href="https://plus.google.com/share?url={{Request::url()}}"><img src="{{asset('assets/img/share/ratings/google.png')}}" alt="share"></a>
                 <a target="_blank" href="http://pinterest.com/pin/create/button/?url={{Request::url()}}"><img src="{{asset('assets/img/share/ratings/pinterest.png')}}" alt="share"></a>
                 <a target="_blank" href="http://www.tumblr.com/share/link?url={{Request::url()}}"><img src="{{asset('assets/img/share/ratings/tumblr.png')}}" alt="share"></a>

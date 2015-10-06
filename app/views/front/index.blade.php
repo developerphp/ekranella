@@ -188,16 +188,18 @@
         </div>
     </section>
     <section id="home_banner1" class="container-fluid">
-        <div class="row">
-            <div class="banner" style="background-image: url(assets/img/homepage/banner1.jpg);">
-                <div class="txt">
-                    <div class="icon"><img src="assets/img/homepage/interview.png" alt="icon"></div>
-                    <div class="title">THE WALKING DEAD</div>
-                    <div class="desc">TWD’den Andrew Lincoln ve Greg Nicotero’yla konuştuk!</div>
-                    <a href="" class="button">RÖPORTAJLAR</a>
+        <a href="http://www.ekranella.com/roportaj/cok-ozel-twd-den-andrew-lincoln-ve-greg-nicotero-yla-konustuk">
+            <div class="row">
+                <div class="banner" style="background-image: url(assets/img/homepage/banner1.jpg);">
+                    <div class="txt">
+                        <div class="icon"><img src="assets/img/homepage/interview.png" alt="icon"></div>
+                        <div class="title">THE WALKING DEAD</div>
+                        <div class="desc">TWD’den Andrew Lincoln ve Greg Nicotero’yla konuştuk!</div>
+                        <a href="" class="button">RÖPORTAJLAR</a>
+                    </div>
                 </div>
-            </div>
-        </div>
+            </div>   
+        </a>
     </section>
     <section id="home_gallery" class="home_sections container gallery_h_selected">
         <div class="row">
@@ -300,14 +302,16 @@
         </div>
     </section>
     <section id="home_banner2" class="container-fluid">
-        <div class="row">
-            <div class="banner" style="background-image: url(assets/img/homepage/banner2.jpg);">
-                <div class="txt2">
-                    <img src="assets/img/homepage/best_250.png" alt="banner_img">
-                    <a href="" class="button">İNCELE</a>
+        <a href="http://www.ekranella.com/kose/imdb-nin-top-250-televizyon-listesi/all">
+            <div class="row">
+                <div class="banner" style="background-image: url(assets/img/homepage/banner2.jpg);">
+                    <div class="txt2">
+                        <img src="assets/img/homepage/best_250.png" alt="banner_img">
+                        <a href="" class="button">İNCELE</a>
+                    </div>
                 </div>
             </div>
-        </div>
+        </a>
     </section>
     <section id="local_series" class="container home_sections series_h_selected">
         <div class="row">
@@ -322,6 +326,7 @@
         <div class="row">
             <div id="localCarousel" class="carousel slide">
                 <div class="indicators">
+                        <div class="ind_title series_title">ÖZETLİYORUM</div>
                         <ul>
                             <li data-target="#localCarousel" data-slide-to="0" class="active"><span>1</span></li>
                             <li data-target="#localCarousel" data-slide-to="1" ><span>2</span></li>
@@ -375,6 +380,7 @@
         <div class="row">
             <div id="foreignCarousel" class="carousel slide">
                 <div class="indicators">
+                        <div class="ind_title series2_title">ÖZETLİYORUM</div>
                         <ul>
                             <li data-target="#foreignCarousel" data-slide-to="0" class="active"><span>1</span></li>
                             <li data-target="#foreignCarousel" data-slide-to="1" ><span>2</span></li>
@@ -428,6 +434,7 @@
         <div class="row">
             <div id="programsCarousel" class="carousel slide">
                 <div class="indicators">
+                        <div class="ind_title shows_title">ÖZETLİYORUM</div>
                         <ul>
                             <li data-target="#programsCarousel" data-slide-to="0" class="active"><span>1</span></li>
                             <li data-target="#programsCarousel" data-slide-to="1" ><span>2</span></li>

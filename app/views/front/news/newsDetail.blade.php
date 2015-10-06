@@ -42,7 +42,6 @@
                                 {{$content}}
                                 <div class="author">
                                 <span class="date">{{$created_at}}</span>
-                                @if($article->is_author) / <a href="{{action('front.authors.detail', ['id' => $article->user->id])}}" style="text-decoration: none"><strong class="pink">{{$article->user->name}}</strong></a>@else<strong class="pink">{{$article->guest_author}}</strong>@endif
                             </div>
                         </div>
                             @if($contentTotalPage > 1)
