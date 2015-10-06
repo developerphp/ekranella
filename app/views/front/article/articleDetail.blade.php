@@ -20,6 +20,7 @@
             <div class="col-md-9">
                 <div class="row share_box">
                     <div class="col-md-4">
+                    
                     </div>
                     @include('front.includes.share')
                 </div>

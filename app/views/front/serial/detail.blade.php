@@ -2,9 +2,14 @@
 
 @section('content')
     <?php $enums = \Config::get('enums.episode') ?>
+    <?php 
+    if($serial->type==2) { $class="series"; $top_title='YERLİ DİZİLER'; }
+    elseif($serial->type==1) { $class="series2"; $top_title='YABANCI DİZİLER'; }
+    else { $class="shows"; $top_title='PROGRAMLAR'; }
+    ?>
     <section class="main_banner" style="background-image: url({{{asset('http://www.ekranella.com/'.$serial->cover)}}});">
         <div class="container txt">
-            <div class="box_title series2_title">YABANCI DİZİ</div>
+            <div class="box_title {{$class}}_title">{{$top_title}}</div>
             <div class="desc">{{{$serial->title}}}</div>
         </div>
     </section>
@@ -13,7 +18,7 @@
             <div class="col-md-9">
                 <div class="row share_box">
                     <div class="col-md-4">
-                        hebele
+                        GENEL BİLGİ
                     </div>
                     @include('front.includes.share')
                 </div>
@@ -306,108 +311,7 @@
                 </div>
             </div>
 
-            <!--sidebar-->
-                <div class="col-md-3 sidebar">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="page_select">
-                                <div class="button">SON YAZILAR</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12 home_boxes">
-                            <a class="box rectangle" style="background-image: url(assets/img/box_img.jpg);">
-                                <div class="txt">
-                                    <div class="box_title news_title">HABERLER</div>
-                                    <div class="desc">Festival Ajanı: Festival Ahalisi Teknede</div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-12 home_boxes">
-                            <a class="box rectangle" style="background-image: url(assets/img/box_img2.jpg);">
-                                <div class="txt">
-                                    <div class="box_title news_title">HABERLER</div>
-                                    <div class="desc">Festival Ajanı: Festival Ahalisi Teknede</div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-12 home_boxes">
-                            <a class="box rectangle" style="background-image: url(assets/img/box_img3.jpg);">
-                                <div class="txt">
-                                    <div class="box_title news_title">HABERLER</div>
-                                    <div class="desc">Festival Ajanı: Festival Ahalisi Teknede</div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-12 home_boxes">
-                            <a class="box rectangle" style="background-image: url(assets/img/box_img4.jpg);">
-                                <div class="txt">
-                                    <div class="box_title news_title">HABERLER</div>
-                                    <div class="desc">Festival Ajanı: Festival Ahalisi Teknede</div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-12 home_boxes">
-                            <a class="box rectangle" style="background-image: url(assets/img/box_img2.jpg);">
-                                <div class="txt">
-                                    <div class="box_title news_title">HABERLER</div>
-                                    <div class="desc">Festival Ajanı: Festival Ahalisi Teknede</div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="row sidebar_title">
-                        <div class="col-md-12">
-                            <div class="page_select">
-                                <div class="button">TAKİP ET</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row sidebar_title">
-                        <div class="col-md-12">
-                            <div class="page_select ekranella_selected">
-                                <div class="button active">EKRANELLA</div>
-                            </div>
-                            <img src="assets/img/ekranella_kitap.jpg" alt="kitap" width="100%">
-                        </div>
-                    </div>
-                    <div class="row sidebar_title">
-                        <div class="col-md-12">
-                            <div class="page_select interview_selected">
-                                <div class="button active">RÖPORTAJ</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12 home_boxes">
-                            <a class="box rectangle" style="background-image: url(assets/img/box_img2.jpg);">
-                                <div class="txt">
-                                    <div class="box_title news_title">RÖPORTAJ</div>
-                                    <div class="desc">Festival Ajanı: Festival Ahalisi Teknede</div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="row sidebar_title">
-                        <div class="col-md-12">
-                            <div class="page_select ekranella_selected">
-                                <div class="button active">KÖŞE YAZILARI</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12 home_boxes">
-                            <a class="box rectangle" style="background-image: url(assets/img/box_img3.jpg);">
-                                <div class="txt">
-                                    <div class="box_title news_title">KÖSE YAZILARI</div>
-                                    <div class="desc">Festival Ajanı: Festival Ahalisi Teknede</div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            <!--sidebar-->
+            @include('front.includes.sidebar')
 
         </div>
     </section>

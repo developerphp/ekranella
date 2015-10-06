@@ -35,8 +35,10 @@
             @if($episode->enum == $enums['trailer'])
             <div class="box_title trailers_title">FRAGMANLAR</div> 
             @endif  
-            <div class="desc">{{$episode->title}}xx</div>
-            <div class="small_desc" style="color:#fff;">{{$serial->title}}</div>
+            <div class="desc">{{$episode->title}}</div>
+            <div class="small_desc" style="color:#fff;">
+                @if($episode->number != 0)Sezon: {{$season->number}} Bölüm: {{$episode->number}} @endif
+            </div>
         </div>
     </section>
     <section id="show_detail" class="container">
@@ -44,7 +46,7 @@
             <div class="col-md-9">
                 <div class="row share_box">
                     <div class="col-md-4">
-                        hebele
+                        {{$serial->title}}
                     </div>
                     @include('front.includes.share')
                 </div>
@@ -53,7 +55,6 @@
                     @if($episode->enum != $enums['trailer'])
                         <div class="txt">
                                 {{$content}}
-<<<<<<< HEAD
 
                                 @if($gallery != null && $episode->enum != $enums['trailer'])
                                 <script>
@@ -88,11 +89,10 @@
                                 </div>
                                 @endif
 
-=======
                                 <div class="author">
-                                <span class="date">{{$created_at}}</span>
-                            </div>
->>>>>>> origin/master
+                                    <span class="date">{{$created_at}}</span>
+                                    @if($episode->is_author)<a href="{{action('front.authors.detail', ['id' => $episode->user->id])}}">{{$episode->user->name}}</a> @else {{$episode->guest_author}} @endif 
+                                </div>
                         </div>
                         @if($contentTotalPage > 1)
                         <div class="row">
@@ -118,6 +118,11 @@
                     @else
                         <div class="txt">
                             {{htmlspecialchars_decode($episode->content)}}
+
+                            <div class="author">
+                                <span class="date">{{$created_at}}</span>
+                                @if($episode->is_author)<a href="{{action('front.authors.detail', ['id' => $episode->user->id])}}">{{$episode->user->name}}</a> @else {{$episode->guest_author}} @endif 
+                            </div>
                         </div>
                         @if(count($episode->tags) > 0)
                         <div class="tags">

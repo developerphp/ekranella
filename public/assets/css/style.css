@@ -939,7 +939,6 @@ header .top nav a {
   font-size: 12px;
   position: relative;
 }
-
 header .top nav a:after {
   content: "";
   position: absolute;
@@ -951,11 +950,9 @@ header .top nav a:after {
   opacity: 0;
   transition: all ease 0.3s;
 }
-
 header .top nav a:hover {
   color: #fff;
 }
-
 header .top nav a:hover:after {
   opacity: 1;
   bottom: -3px;
@@ -997,7 +994,6 @@ header .bottom nav a {
   position: relative;
   transition: all ease 0.3s;
 }
-
 header .bottom nav a:after {
   content: "";
   position: absolute;
@@ -1009,12 +1005,10 @@ header .bottom nav a:after {
   opacity: 0;
   transition: all ease 0.3s;
 }
-
 header .bottom nav a:hover {
   color: #d25380;
   transition: all ease 0.3s;
 }
-
 header .bottom nav a:hover:after {
   opacity: 1;
   bottom: -10px;
@@ -1179,7 +1173,10 @@ section {
   top: -70px;
   right: 15px;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
 .container .indicators .ind_title {
   left: -110px;
   top: 3px;
@@ -1188,7 +1185,10 @@ section {
   font-weight: bold;
   position: absolute;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
 .container .indicators ul li {
   border-radius: 50%;
   height: 20px;
@@ -1255,7 +1255,10 @@ section {
   transition: all ease 0.3s;
   background-size: auto 103%;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
 .container .home_boxes .box:after {
   content: "";
   width: 100%;
@@ -1388,11 +1391,17 @@ section {
   background-position: center;
   position: relative;
 }
+<<<<<<< HEAD
 
 #home_banner1 .banner a:hover, #home_banner2 .banner a:hover {
   color: #fff;
 }
 
+=======
+#home_banner1 .banner a:hover, #home_banner2 .banner a:hover {
+  color: #fff;
+}
+>>>>>>> origin/master
 #home_banner1 .banner:after, #home_banner2 .banner:after {
   content: "";
   width: 100%;
@@ -1735,7 +1744,10 @@ section {
 .sidebar .home_boxes .box .txt .desc, .sidebar .home_boxes .box #home_banner1 .banner .txt2 .desc, #home_banner1 .banner .sidebar .home_boxes .box .txt2 .desc, .sidebar .home_boxes .box #home_banner2 .banner .txt2 .desc, #home_banner2 .banner .sidebar .home_boxes .box .txt2 .desc {
   font-size: 14px;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
 .sidebar .page_select {
   margin-bottom: 10px;
 }
@@ -1847,17 +1859,26 @@ section {
   width: 100%;
   margin: 30px 0;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
 .news_page .news_box .txt .author, .news_page .news_box #home_banner1 .banner .txt2 .author, #home_banner1 .banner .news_page .news_box .txt2 .author, .news_page .news_box #home_banner2 .banner .txt2 .author, #home_banner2 .banner .news_page .news_box .txt2 .author {
   margin: 20px 0;
   color: #d25380;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
 .news_page .news_box .txt .author .date, .news_page .news_box #home_banner1 .banner .txt2 .author .date, #home_banner1 .banner .news_page .news_box .txt2 .author .date, .news_page .news_box #home_banner2 .banner .txt2 .author .date, #home_banner2 .banner .news_page .news_box .txt2 .author .date {
   font-size: 12px;
   color: #000;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
 .news_page .news_box img {
   width: 100%;
 }

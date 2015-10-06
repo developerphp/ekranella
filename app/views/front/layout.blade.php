@@ -85,7 +85,7 @@
                     <a href="{{action('front.interviews.index')}}">RÖPORTAJ</a>
                     <a href="{{action('front.rating.index')}}">REYTİNG</a>
                     <a href="{{action('front.authors.index')}}">YAZARLAR</a>
-                    <a href="{{action('front.authors.index')}}">DOSYALAR</a>
+                    <a href="{{action('front.featured.archive')}}">DOSYALAR</a>
                     <a href="{{action('front.authors.index')}}">BÖLÜM</a>
                 </nav>
             </div>
