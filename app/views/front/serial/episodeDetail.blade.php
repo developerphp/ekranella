@@ -53,6 +53,7 @@
                     @if($episode->enum != $enums['trailer'])
                         <div class="txt">
                                 {{$content}}
+<<<<<<< HEAD
 
                                 @if($gallery != null && $episode->enum != $enums['trailer'])
                                 <script>
@@ -87,6 +88,11 @@
                                 </div>
                                 @endif
 
+=======
+                                <div class="author">
+                                <span class="date">{{$created_at}}</span>
+                            </div>
+>>>>>>> origin/master
                         </div>
                         @if($contentTotalPage > 1)
                         <div class="row">

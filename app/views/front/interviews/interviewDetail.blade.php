@@ -33,6 +33,9 @@
                         @endif
                         <div class="txt">
                             {{ $content }}
+                            <!--<div class="author">
+                                <span class="date">{{$created_at}}</span>
+                            </div>-->
                         </div>             
                         @if($contentTotalPage > 1)           
                         <div class="row">

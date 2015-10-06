@@ -690,7 +690,7 @@ header{
 		.line{
 			float: right;
 		    margin: 0 10px 0 30px;
-		    color: #fff;
+		    color: #de7da0;
 		}
 		.social{
 			float: right;
@@ -759,7 +759,7 @@ footer{
 		}
 		nav{
 			margin-top: 30px;
-			border-right: 1px solid #fff;
+			border-right: 1px solid #de7da0;
 			padding-left: 30px;
 			padding-right: 0px;
 			a{
@@ -852,6 +852,14 @@ section{
 			position: absolute;
 			top: -70px;
     		right: 15px;
+    		.ind_title{
+				left: -110px;
+			    top: 3px;
+			    background: none !important;
+			    font-size: 14px;
+			    font-weight: bold;
+			    position: absolute;
+				}
 			ul{
 				li{
 					border-radius: 50%;
@@ -891,37 +899,31 @@ section{
 			background-position: center;
 			position: relative;
 			font-weight: bold;
-			transition: all ease 0.5s;
+			transition: all ease 0.3s;
 			.txt{
 				position: absolute;
 				bottom: 30px;
 				left: 30px;
 				right: 30px;
 				z-index: 2;
-				transition: all ease 0.5s;
+				transition: all ease 0.3s;
 				.desc{
 					font-size: 22px;
 					color: #fff;
 				}
 				.alt_desc{
+					margin-top: 5px;
 					font-size: 10px;
 					color: #fff;
 					font-weight: 400;
-					opacity: 0;
-					max-height: 1px;
-					transition: all ease 0.5s;
 				}
 			}
 			&:hover{
-				transition: all ease 0.5s;
-				background-size: auto 105%;
+				transition: all ease 0.3s;
+				background-size: auto 103%;
 				.txt{
-					transition: all ease-out 0.5s;
-					.alt_desc{
-						transition: all ease-out 0.5s;
-						opacity: 1;
-						max-height: 500px;
-					}
+					transition: all ease-out 0.3s;
+					bottom: 35px;
 				}	
 			}
 			&:after{
@@ -1390,6 +1392,11 @@ section{
 					font-size: 14px;
 				}
 			}
+			&:hover{
+				.txt{
+					bottom: 25px;
+				}
+			}
 		}
 	}
 	.page_select{
@@ -1503,6 +1510,14 @@ section{
 				width: 100%;
 				margin: 30px 0;
 			}
+			.author{
+				margin: 20px 0;
+				color: $c_ekranella;
+				.date{
+					font-size: 12px;
+					color: #000;
+				}
+			}
 		}
 		img{
 			width: 100%;
@@ -1513,7 +1528,7 @@ section{
 			text-align: center;
 			position: relative;
 			color: #fff;
-			margin: 30px 10px 30px 0;
+			margin: 10px 10px 0px 0;
 			display: inline-block;
 			background: #000;
 			span{
@@ -1532,7 +1547,7 @@ section{
 		}
 		.tags{
 			font-size: 14px;
-			margin-bottom: 50px;
+			margin: 30px 0;
 			.title{
 				color: $c_news;
 				font-weight: bold;
