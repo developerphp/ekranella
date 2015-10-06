@@ -28,6 +28,17 @@
                             <div class="page_select">
                                 <div class="button">TAKİP ET</div>
                             </div>
+                            <div class="shareit">
+                                <a href="https://www.facebook.com/ekranella" target="_blank">
+                                    <img src="{{ asset('assets/img/sidebar/facebook.png') }}" alt="share">
+                                </a>
+                                <a href="https://twitter.com/ekranella" target="_blank">
+                                    <img src="{{ asset('assets/img/sidebar/twitter.png') }}" alt="share">
+                                </a>
+                                <a href="https://instagram.com/ekranella" target="_blank">
+                                    <img src="{{ asset('assets/img/sidebar/instagram.png') }}" alt="share">
+                                </a>
+                            </div>
                         </div>
                     </div>
                     <div class="row sidebar_title">

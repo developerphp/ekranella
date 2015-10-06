@@ -111,7 +111,7 @@
             <div class="col-md-8">
                 <div class="main_title">GEÇMİŞ REYTİNGLER</div>
                 <?php 
-                if($count>10) $count = 11;
+                if($count>9) $count = 10;
                 for($i=$count-1;0<$i;--$i){
                 ?>
                 <div class="date_box @if($skip ==  $i) active @endif"><a href="{{action('front.rating.index',['type'=>'total','skip'=>$i])}}">{{date('d/m/Y', time() - 60 * 60 * 24*(1+$i))}}</a></div>

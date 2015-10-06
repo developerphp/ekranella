@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @media (max-width: 767px) {
   .hidden-xs,
   tr.hidden-xs,
@@ -1166,10 +1167,11 @@ section {
 .container .home_boxes .box {
   display: block;
   margin-bottom: 30px;
-  background-size: cover;
+  background-size: auto 100%;
   background-position: center;
   position: relative;
   font-weight: bold;
+  transition: all ease 0.5s;
 }
 
 .container .home_boxes .box .txt, .container .home_boxes .box #home_banner1 .banner .txt2, #home_banner1 .banner .container .home_boxes .box .txt2, .container .home_boxes .box #home_banner2 .banner .txt2, #home_banner2 .banner .container .home_boxes .box .txt2 {
@@ -1178,6 +1180,7 @@ section {
   left: 30px;
   right: 30px;
   z-index: 2;
+  transition: all ease 0.5s;
 }
 
 .container .home_boxes .box .txt .desc, .container .home_boxes .box #home_banner1 .banner .txt2 .desc, #home_banner1 .banner .container .home_boxes .box .txt2 .desc, .container .home_boxes .box #home_banner2 .banner .txt2 .desc, #home_banner2 .banner .container .home_boxes .box .txt2 .desc {
@@ -1189,6 +1192,24 @@ section {
   font-size: 10px;
   color: #fff;
   font-weight: 400;
+  opacity: 0;
+  max-height: 1px;
+  transition: all ease 0.5s;
+}
+
+.container .home_boxes .box:hover {
+  transition: all ease 0.5s;
+  background-size: auto 105%;
+}
+
+.container .home_boxes .box:hover .txt, .container .home_boxes .box:hover #home_banner1 .banner .txt2, #home_banner1 .banner .container .home_boxes .box:hover .txt2, .container .home_boxes .box:hover #home_banner2 .banner .txt2, #home_banner2 .banner .container .home_boxes .box:hover .txt2 {
+  transition: all ease-out 0.5s;
+}
+
+.container .home_boxes .box:hover .txt .alt_desc, .container .home_boxes .box:hover #home_banner1 .banner .txt2 .alt_desc, #home_banner1 .banner .container .home_boxes .box:hover .txt2 .alt_desc, .container .home_boxes .box:hover #home_banner2 .banner .txt2 .alt_desc, #home_banner2 .banner .container .home_boxes .box:hover .txt2 .alt_desc {
+  transition: all ease-out 0.5s;
+  opacity: 1;
+  max-height: 500px;
 }
 
 .container .home_boxes .box:after {
@@ -1601,7 +1622,7 @@ section {
 }
 
 .main_banner .txt .box_title, .main_banner #home_banner1 .banner .txt2 .box_title, #home_banner1 .banner .main_banner .txt2 .box_title, .main_banner #home_banner2 .banner .txt2 .box_title, #home_banner2 .banner .main_banner .txt2 .box_title {
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .main_banner .txt .desc, .main_banner #home_banner1 .banner .txt2 .desc, #home_banner1 .banner .main_banner .txt2 .desc, .main_banner #home_banner2 .banner .txt2 .desc, #home_banner2 .banner .main_banner .txt2 .desc {
@@ -1681,6 +1702,15 @@ section {
 
 .sidebar .sidebar_title {
   margin-top: 30px;
+}
+
+.sidebar .shareit {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.sidebar .shareit a {
+  margin: 0 5px;
 }
 
 .more_button {
@@ -1801,7 +1831,7 @@ section {
 }
 
 .news_page .news_box .tags {
-  font-size: 12px;
+  font-size: 14px;
   margin-bottom: 50px;
 }
 
@@ -1929,7 +1959,7 @@ section {
 
 .ratings_page .page_select .title {
   float: left;
-  width: 280px;
+  width: 320px;
 }
 
 .ratings_page .page_select .title span {
@@ -2012,30 +2042,64 @@ section {
 }
 
 #datepicker td a:hover {
-  border-bottom: 1px solid;
+  color: #000;
 }
 
 #datepicker .ui-datepicker-unselectable {
-  color: #ddd;
+  color: #ccc;
 }
 
-#datepicker .ui-datepicker-next, #datepicker #datepicker .ui-datepicker-prev {
+#datepicker .ui-datepicker-header {
+  position: relative;
+}
+
+#datepicker .ui-datepicker-next {
+  position: absolute;
+  right: 45px;
+  top: -2px;
+}
+
+#datepicker .ui-datepicker-next span {
   display: none;
 }
 
+#datepicker .ui-datepicker-next:after {
+  content: "∨";
+  font-size: 22px;
+  color: #fff;
+}
+
+#datepicker .ui-datepicker-prev {
+  position: absolute;
+  right: 80px;
+  top: -2px;
+}
+
+#datepicker .ui-datepicker-prev span {
+  display: none;
+}
+
+#datepicker .ui-datepicker-prev:after {
+  content: "∧";
+  font-size: 22px;
+  color: #fff;
+}
+
 #datepicker .ui-datepicker-title {
+  float: left;
   margin-bottom: 20px;
   padding-left: 8px;
   text-transform: uppercase;
   font-size: 22px;
 }
 
-#datepicker .ui-datepicker-current-day a {
-  border-bottom: 1px solid;
+#datepicker .ui-datepicker-current-day {
+  color: #000;
 }
 
 #datepicker .ui-datepicker-current-day a:hover {
-  color: #fff;
+  color: #000;
+  border: 0px;
 }
 
 /*ratings_page*/
