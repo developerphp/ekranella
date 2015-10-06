@@ -354,11 +354,11 @@ a {
 
 /*titles*/
 .ekranella_title {
-  color: #d25380;
+  color: #ea158c;
 }
 
 .ekranella_title:after {
-  background: #d25380;
+  background: #ea158c;
 }
 
 .news_title {
@@ -548,19 +548,19 @@ a {
 }
 
 .ekranella_h_selected .page_select {
-  border-bottom: 3px solid #d25380 !important;
+  border-bottom: 3px solid #ea158c !important;
 }
 
 .ekranella_h_selected .page_select .button:after {
-  border-color: transparent transparent #d25380 transparent !important;
+  border-color: transparent transparent #ea158c transparent !important;
 }
 
 .ekranella_h_selected .page_select .active {
-  background: #d25380 !important;
+  background: #ea158c !important;
 }
 
 .ekranella_h_selected .indicators ul li {
-  background: #d25380 !important;
+  background: #ea158c !important;
 }
 
 .interview_h_selected .page_select {
@@ -774,19 +774,19 @@ a {
 }
 
 .ekranella_selected {
-  border-bottom: 3px solid #d25380 !important;
+  border-bottom: 3px solid #ea158c !important;
 }
 
 .ekranella_selected .button:after {
-  border-color: transparent transparent #d25380 transparent !important;
+  border-color: transparent transparent #ea158c transparent !important;
 }
 
 .ekranella_selected .active {
-  background: #d25380 !important;
+  background: #ea158c !important;
 }
 
 .ekranella_selected .indicators ul li {
-  background: #d25380 !important;
+  background: #ea158c !important;
 }
 
 .interview_selected {
@@ -924,9 +924,15 @@ header {
 }
 
 header .top {
-  background: #d25380;
+  background: #ea158c;
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+@media only screen and (max-width: 767px) {
+  header .top {
+    display: none;
+  }
 }
 
 header .top nav {
@@ -939,6 +945,7 @@ header .top nav a {
   font-size: 12px;
   position: relative;
 }
+
 header .top nav a:after {
   content: "";
   position: absolute;
@@ -950,9 +957,11 @@ header .top nav a:after {
   opacity: 0;
   transition: all ease 0.3s;
 }
+
 header .top nav a:hover {
   color: #fff;
 }
+
 header .top nav a:hover:after {
   opacity: 1;
   bottom: -3px;
@@ -986,6 +995,12 @@ header .bottom nav {
   text-align: right;
 }
 
+@media only screen and (max-width: 767px) {
+  header .bottom nav {
+    display: none;
+  }
+}
+
 header .bottom nav a {
   margin-top: 17px;
   margin-left: 15px;
@@ -994,21 +1009,24 @@ header .bottom nav a {
   position: relative;
   transition: all ease 0.3s;
 }
+
 header .bottom nav a:after {
   content: "";
   position: absolute;
   left: 0;
   bottom: -15px;
   height: 3px;
-  background: #d25380;
+  background: #ea158c;
   width: 100%;
   opacity: 0;
   transition: all ease 0.3s;
 }
+
 header .bottom nav a:hover {
-  color: #d25380;
+  color: #ea158c;
   transition: all ease 0.3s;
 }
+
 header .bottom nav a:hover:after {
   opacity: 1;
   bottom: -10px;
@@ -1016,8 +1034,8 @@ header .bottom nav a:hover:after {
 }
 
 header .bottom nav .special {
-  border-left: 2px solid #d25380;
-  border-right: 2px solid #d25380;
+  border-left: 2px solid #ea158c;
+  border-right: 2px solid #ea158c;
   padding: 0 10px;
 }
 
@@ -1025,6 +1043,12 @@ header .bottom .search {
   cursor: pointer;
   float: right;
   margin-left: 20px;
+}
+
+@media only screen and (max-width: 767px) {
+  header .bottom .search {
+    display: none;
+  }
 }
 
 header .bottom .search .icon {
@@ -1056,7 +1080,7 @@ footer {
 }
 
 footer .top {
-  background: #d25380;
+  background: #ea158c;
   padding-top: 60px;
   padding-bottom: 60px;
 }
@@ -1173,10 +1197,7 @@ section {
   top: -70px;
   right: 15px;
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/master
 .container .indicators .ind_title {
   left: -110px;
   top: 3px;
@@ -1185,10 +1206,7 @@ section {
   font-weight: bold;
   position: absolute;
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/master
 .container .indicators ul li {
   border-radius: 50%;
   height: 20px;
@@ -1255,10 +1273,7 @@ section {
   transition: all ease 0.3s;
   background-size: auto 103%;
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/master
 .container .home_boxes .box:after {
   content: "";
   width: 100%;
@@ -1287,7 +1302,7 @@ section {
 }
 
 #home_slider .slider .carousel-indicators .active {
-  background: #d25380;
+  background: #ea158c;
 }
 
 #home_slider .slider .item {
@@ -1391,17 +1406,11 @@ section {
   background-position: center;
   position: relative;
 }
-<<<<<<< HEAD
 
 #home_banner1 .banner a:hover, #home_banner2 .banner a:hover {
   color: #fff;
 }
 
-=======
-#home_banner1 .banner a:hover, #home_banner2 .banner a:hover {
-  color: #fff;
-}
->>>>>>> origin/master
 #home_banner1 .banner:after, #home_banner2 .banner:after {
   content: "";
   width: 100%;
@@ -1655,7 +1664,7 @@ section {
   display: inline-block;
   color: #fff;
   padding: 10px 30px;
-  background: #d25380;
+  background: #ea158c;
 }
 
 /*404*/
@@ -1744,10 +1753,7 @@ section {
 .sidebar .home_boxes .box .txt .desc, .sidebar .home_boxes .box #home_banner1 .banner .txt2 .desc, #home_banner1 .banner .sidebar .home_boxes .box .txt2 .desc, .sidebar .home_boxes .box #home_banner2 .banner .txt2 .desc, #home_banner2 .banner .sidebar .home_boxes .box .txt2 .desc {
   font-size: 14px;
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/master
 .sidebar .page_select {
   margin-bottom: 10px;
 }
@@ -1859,26 +1865,17 @@ section {
   width: 100%;
   margin: 30px 0;
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/master
 .news_page .news_box .txt .author, .news_page .news_box #home_banner1 .banner .txt2 .author, #home_banner1 .banner .news_page .news_box .txt2 .author, .news_page .news_box #home_banner2 .banner .txt2 .author, #home_banner2 .banner .news_page .news_box .txt2 .author {
   margin: 20px 0;
-  color: #d25380;
+  color: #ea158c;
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/master
 .news_page .news_box .txt .author .date, .news_page .news_box #home_banner1 .banner .txt2 .author .date, #home_banner1 .banner .news_page .news_box .txt2 .author .date, .news_page .news_box #home_banner2 .banner .txt2 .author .date, #home_banner2 .banner .news_page .news_box .txt2 .author .date {
   font-size: 12px;
   color: #000;
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/master
 .news_page .news_box img {
   width: 100%;
 }
@@ -1988,7 +1985,7 @@ section {
   position: absolute;
   top: 128px;
   left: 0;
-  background: #d25380;
+  background: #ea158c;
   width: 100%;
   z-index: 99;
 }
@@ -2072,7 +2069,7 @@ section {
   width: calc(20% - 20px);
   padding: 8px 0;
   margin: 0 10px 10px 10px;
-  background: #d25380;
+  background: #ea158c;
   color: #fff;
   font-size: 14px;
   float: left;
