@@ -9,7 +9,8 @@
                     </div>
                     <div class="row">
                         <?php 
-                        $latestsnews = admin\News::limit(5)->where('published', 1)->orderBy('id','desc')->with('user')->get();
+                        use Carbon\Carbon;
+                        $latestsnews = admin\News::limit(5)->where('published', 1)->where('created_at', '>=', Carbon::now()->subDays(7))->orderBy(DB::raw('RAND()'))->with('user')->get();
                         ?>
 
                         @foreach($latestsnews as $latest)
