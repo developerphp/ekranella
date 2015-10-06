@@ -35,7 +35,7 @@
             @if($episode->enum == $enums['trailer'])
             <div class="box_title trailers_title">FRAGMANLAR</div> 
             @endif  
-            <div class="desc">{{$episode->title}}</div>
+            <div class="desc">{{$episode->title}}xx</div>
             <div class="small_desc" style="color:#fff;">{{$serial->title}}</div>
         </div>
     </section>
@@ -53,9 +53,46 @@
                     @if($episode->enum != $enums['trailer'])
                         <div class="txt">
                                 {{$content}}
+<<<<<<< HEAD
+
+                                @if($gallery != null && $episode->enum != $enums['trailer'])
+                                <script>
+                                    $('.authorLink').remove();
+                                </script>
+                                <div id="galleryContent">
+                                    <a name="galeri"></a>
+
+                                    <div style="height: 20px"></div>
+                                    @foreach($gallery as $image)
+                                        <div class="galleryContainer">                               
+                                            <img src="{{asset('http://www.ekranella.com/'.$image['img'])}}" alt="" id="galleryImage">
+                                        </div>
+                                        @if($image['text'] != "")<p>{{$image['text']}}</p>@endif
+                                    @endforeach
+
+                                    @if($galleryTotal > 1)
+                                        <div class="row">
+                                        <div class="col-md-12">
+                                                @if($galleryPage != 1 && $galleryPage != 'all')                                        
+                                                    <a href="{{action($action, ['permalink' => $episode->permalink, 'galleryPage' => $galleryPage - 1])}}#galeri" class="page_select"><span><</span></a>
+                                                @endif
+                                                @for($i = 1; $i <= $galleryTotal; $i++)
+                                                    <a class="page_select  @if($galleryPage == $i) active @endif" href="{{action($action, ['permalink' => $episode->permalink, 'galleryPage' => $i])}}#galeri"><span>{{$i}}</span></a>
+                                                @endfor
+                                                @if($galleryPage != $galleryTotal  && $galleryPage != 'all')                                        
+                                                    <a class="page_select" href="{{action($action, ['permalink' => $episode->permalink, 'galleryPage' => $galleryPage + 1])}}#galeri"><span>></span></a>
+                                                @endif
+                                            </div>
+                                        </div>
+                                    @endif
+                                </div>
+                                @endif
+
+=======
                                 <div class="author">
                                 <span class="date">{{$created_at}}</span>
                             </div>
+>>>>>>> origin/master
                         </div>
                         @if($contentTotalPage > 1)
                         <div class="row">
@@ -82,41 +119,19 @@
                         <div class="txt">
                             {{htmlspecialchars_decode($episode->content)}}
                         </div>
+                        @if(count($episode->tags) > 0)
+                        <div class="tags">
+                            <span class="title fotohaber_title">ETİKETLER :</span> 
+                            <?php $t=1; ?>
+                            @foreach($episode->tags as $tag)
+                            <a href="{{action('front.search.index').'?q='.$tag->title}}">{{$tag->title}}</a>
+                            @if($t<>count($episode->tags)) , @endif
+                            <?php $t++; ?>
+                            @endforeach
+                        </div>
+                        @endif
                     @endif
 
-                    
-                    @if($gallery != null && $episode->enum != $enums['trailer'])
-                    <script>
-                        $('.authorLink').remove();
-                    </script>
-                    <div id="galleryContent">
-                        <a name="galeri"></a>
-
-                        <div style="height: 20px"></div>
-                        @foreach($gallery as $image)
-                            <div class="galleryContainer">                               
-                                <img src="{{asset('http://www.ekranella.com/'.$image['img'])}}" alt="" id="galleryImage">
-                            </div>
-                            @if($image['text'] != "")<p>{{$image['text']}}</p>@endif
-                        @endforeach
-
-                        @if($galleryTotal > 1)
-                            <div class="row">
-                            <div class="col-md-12">
-                                    @if($galleryPage != 1 && $galleryPage != 'all')                                        
-                                        <a href="{{action($action, ['permalink' => $episode->permalink, 'galleryPage' => $galleryPage - 1])}}#galeri" class="page_select"><span><</span></a>
-                                    @endif
-                                    @for($i = 1; $i <= $galleryTotal; $i++)
-                                        <a class="page_select  @if($galleryPage == $i) active @endif" href="{{action($action, ['permalink' => $episode->permalink, 'galleryPage' => $i])}}#galeri"><span>{{$i}}</span></a>
-                                    @endfor
-                                    @if($galleryPage != $galleryTotal  && $galleryPage != 'all')                                        
-                                        <a class="page_select" href="{{action($action, ['permalink' => $episode->permalink, 'galleryPage' => $galleryPage + 1])}}#galeri"><span>></span></a>
-                                    @endif
-                                </div>
-                            </div>
-                        @endif
-                    </div>
-                @endif
                     </div>
                 </div>
                 <div class="row">

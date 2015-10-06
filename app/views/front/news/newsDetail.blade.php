@@ -55,6 +55,41 @@
                             @endif
                         @endif
 
+                        @if($gallery != null)
+                        <div class="txt">
+                            <div id="galleryContent">
+
+                            <a name="galeri"></a>
+                            <div style="height: 60px"></div>
+                            @foreach($gallery as $image)
+                                <div class="galleryContainer">                                    
+                                    <a href="{{asset($image['img'])}}" @if($image['text'] != "") data-title="{{{$image['text']}}}"
+                                       @endif data-lightbox="gallery">
+                                        <figure><img src="{{asset('http://www.ekranella.com/'.$image['img'])}}" alt="" id="galleryImage"></figure>
+                                    </a>                                    
+                                </div>
+                                @if($image['text'] != "")<p>{{$image['text']}}</p>@endif
+                            @endforeach
+                            @if($galleryTotal > 1)
+                                <div class="row">
+                                    <div class="col-md-12">
+                                    
+                                        @if($galleryPage != 1 && $galleryPage != 'all')
+                                            <a href="{{action('FrontNewsController@getNews', ['permalink' => $news->permalink, 'galleryPage' => $galleryPage - 1])}}#galeri" class="page_select "><span><</span></a>
+                                        @endif
+                                        @for($i = 1; $i <= $galleryTotal; $i++)
+                                            <a href="{{action('FrontNewsController@getNews', ['permalink' => $news->permalink, 'galleryPage' => $i])}}#galeri" class="page_select  @if($galleryPage == $i) active @endif"><span>{{$i}}</span></a>
+                                        @endfor
+                                        @if($galleryPage != $galleryTotal  && $galleryPage != 'all')
+                                            <a href="{{action('FrontNewsController@getNews', ['permalink' => $news->permalink, 'galleryPage' => $galleryPage + 1])}}#galeri" class="page_select"><span>></span></a>
+                                        @endif
+                                    </div>
+                                </div>
+                            @endif
+                                </div>
+                        </div>
+                        @endif
+
                         @if(count($news->tags) > 0)
                         <div class="tags">
                             <span class="title fotohaber_title">ETİKETLER :</span> 
