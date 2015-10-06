@@ -5,11 +5,11 @@
     <?php 
     $sharedesc =  $article->title . ', Ekranella Köşe Yazısı'; 
     $as = 'KÖŞE YAZISI';
-    $class = 'news_title';
+    $class = 'ekranella_title';
     $time = strtotime($article->created_at);
     $created_at = date('d/m/Y H:i', $time);
     ?>
-    <section class="main_banner">
+    <section class="main_banner" style="background-image: url({{{asset('http://www.ekranella.com/uploads/'.$article->img.'_main.jpg')}}});">
         <div class="container txt">
             <div class="box_title {{$class}}">{{$as}}</div>
             <div class="desc">{{$article->title}}</div>

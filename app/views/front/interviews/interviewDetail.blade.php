@@ -11,7 +11,7 @@
         $url = action('front.serial.detail', ['permalink' => $related['permalink']]);
     }
     ?>
-    <section class="main_banner" style="background-image: url({{asset('assets/img/roportaj.jpg')}});">
+    <section class="main_banner" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$interview->img.'_main.jpg')}});">
         <div class="container txt">
             <div class="box_title interview_title">RÖPORTAJ</div>
             <div class="desc">{{$interview->title}}</div>
