@@ -77,6 +77,8 @@
                     @if($social['facebook'] != '')<a href="{{$social['facebook']}}" target="_blank"><img src="{{ asset('assets/img/header/facebook.png') }}" alt="logo"></a>@endif
                     @if($social['twitter'] != '')<a href="{{$social['twitter']}}" target="_blank"><img src="{{ asset('assets/img/header/twitter.png') }}" alt="logo"></a>@endif
                     @if($social['instagram'] != '')<a href="{{$social['instagram']}}" target="_blank"><img src="{{ asset('assets/img/header/instagram.png') }}" alt="logo"></a>@endif
+                    @if($social['tumblr'] != '')<a href="{{$social['tumblr']}}" target="_blank"><img src="{{ asset('assets/img/header/tumblr.png') }}" alt="logo"></a>@endif
+                    @if($social['youtube'] != '')<a href="{{$social['youtube']}}" target="_blank"><img src="{{ asset('assets/img/header/youtube.png') }}" alt="logo"></a>@endif
                 </div>
                 <div class="line">|</div>
                 <nav>
@@ -162,6 +164,8 @@
                         @if($social['facebook'] != '')<a href="{{$social['facebook']}}" target="_blank"><img src="{{ asset('assets/img/header/facebook.png') }}" alt="logo"></a>@endif
                         @if($social['twitter'] != '')<a href="{{$social['twitter']}}" target="_blank"><img src="{{ asset('assets/img/header/twitter.png') }}" alt="logo"></a>@endif
                         @if($social['instagram'] != '')<a href="{{$social['instagram']}}" target="_blank"><img src="{{ asset('assets/img/header/instagram.png') }}" alt="logo"></a>@endif
+                        @if($social['tumblr'] != '')<a href="{{$social['tumblr']}}" target="_blank"><img src="{{ asset('assets/img/header/tumblr.png') }}" alt="logo"></a>@endif
+                        @if($social['youtube'] != '')<a href="{{$social['youtube']}}" target="_blank"><img src="{{ asset('assets/img/header/youtube.png') }}" alt="logo"></a>@endif
                     </div>
                     <div class="col-md-6">
                         <a class="logo" href="http://www.busyistanbul.com" target="_blank">
