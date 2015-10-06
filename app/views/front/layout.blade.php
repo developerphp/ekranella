@@ -93,7 +93,7 @@
         <div class="container bottom">
             <div class="row">
                 <div class="col-md-4">
-                    <a href="{{url()}}"><img style="width: 300px; margin-top: 8px;" src="{{asset('assets/img/logo.gif')}}" alt="logo"></a>
+                    <a href="{{url()}}"><img class="logo" src="{{asset('assets/img/logo.gif')}}" alt="logo"></a>
                 </div>
                 <nav class="col-md-8">
                     <a href="{{action('FrontSerialController@getLocalSerial')}}">YERLİ DİZİLER</a>
