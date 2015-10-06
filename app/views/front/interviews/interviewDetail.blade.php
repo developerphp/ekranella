@@ -22,20 +22,22 @@
             <div class="col-md-9">
                 <div class="row share_box">
                     <div class="col-md-4">
-                        hebele
+                    @if($interview->serial_id != 0)
+                        <a href="{{$url}}">{{$related['title']}}</a>                        
+                    @endif
+
                     </div>
                     @include('front.includes.share')
                 </div>
                 <div class="row">
                     <div class="col-md-10 col-md-offset-1 news_box">
-                        @if($interview->serial_id != 0)
-                        <div class="main_title">{{$related['title']}}</div>
-                        @endif
                         <div class="txt">
-                            {{ $content }}
-                            <!--<div class="author">
-                                <span class="date">{{$created_at}}</span>
-                            </div>-->
+                            {{ $content }}      
+
+                            <!-- <div class="author">
+                                @if($interview->subject !="") {{$interview->subject}} Röportajı @endif 
+                            </div> -->
+
                         </div>             
                         @if($contentTotalPage > 1)           
                         <div class="row">

@@ -30,7 +30,9 @@
             <div class="col-md-9">
                 <div class="row share_box">
                     <div class="col-md-4">
-                        hebele
+                        @if($news->serial_id != 0)
+                            {{$related['title']}}
+                        @endif
                     </div>
                     @include('front.includes.share')
                 </div>
@@ -41,8 +43,11 @@
                         <div class="txt">
                                 {{$content}}
                                 <div class="author">
-                                <span class="date">{{$created_at}}</span>
-                            </div>
+                                    <span class="date">{{$created_at}}</span>
+                                    @if($news->is_author)
+                                    <a href="{{action('front.authors.detail', ['id' => $news->user->id])}}">{{$news->user->name}}</a>
+                                    @else {{$news->guest_author}} @endif
+                                </div>
                         </div>
                             @if($contentTotalPage > 1)
                             <div class="row">
