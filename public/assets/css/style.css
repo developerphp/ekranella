@@ -937,12 +937,35 @@ header .top nav {
 header .top nav a {
   margin-left: 12px;
   font-size: 12px;
+  position: relative;
+}
+
+header .top nav a:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  height: 2px;
+  background: #fff;
+  width: 100%;
+  opacity: 0;
+  transition: all ease 0.3s;
+}
+
+header .top nav a:hover {
+  color: #fff;
+}
+
+header .top nav a:hover:after {
+  opacity: 1;
+  bottom: -3px;
+  transition: all ease 0.3s;
 }
 
 header .top .line {
   float: right;
   margin: 0 10px 0 30px;
-  color: #de7da0;
+  color: #e494b1;
 }
 
 header .top .social {
@@ -950,11 +973,11 @@ header .top .social {
 }
 
 header .top .social a {
-  margin-left: 20px;
+  margin-left: 12px;
 }
 
 header .top .social a img {
-  height: 15px;
+  height: 12px;
 }
 
 header .bottom {
@@ -971,6 +994,31 @@ header .bottom nav a {
   margin-left: 15px;
   display: inline-block;
   font-weight: bold;
+  position: relative;
+  transition: all ease 0.3s;
+}
+
+header .bottom nav a:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -15px;
+  height: 3px;
+  background: #d25380;
+  width: 100%;
+  opacity: 0;
+  transition: all ease 0.3s;
+}
+
+header .bottom nav a:hover {
+  color: #d25380;
+  transition: all ease 0.3s;
+}
+
+header .bottom nav a:hover:after {
+  opacity: 1;
+  bottom: -10px;
+  transition: all ease 0.3s;
 }
 
 header .bottom nav .special {
@@ -1189,7 +1237,6 @@ section {
   left: 30px;
   right: 30px;
   z-index: 2;
-  transition: all ease 0.3s;
 }
 
 .container .home_boxes .box .txt .desc, .container .home_boxes .box #home_banner1 .banner .txt2 .desc, #home_banner1 .banner .container .home_boxes .box .txt2 .desc, .container .home_boxes .box #home_banner2 .banner .txt2 .desc, #home_banner2 .banner .container .home_boxes .box .txt2 .desc {
@@ -1207,11 +1254,6 @@ section {
 .container .home_boxes .box:hover {
   transition: all ease 0.3s;
   background-size: auto 103%;
-}
-
-.container .home_boxes .box:hover .txt, .container .home_boxes .box:hover #home_banner1 .banner .txt2, #home_banner1 .banner .container .home_boxes .box:hover .txt2, .container .home_boxes .box:hover #home_banner2 .banner .txt2, #home_banner2 .banner .container .home_boxes .box:hover .txt2 {
-  transition: all ease-out 0.3s;
-  bottom: 35px;
 }
 
 .container .home_boxes .box:after {
@@ -1345,6 +1387,10 @@ section {
   background-size: cover;
   background-position: center;
   position: relative;
+}
+
+#home_banner1 .banner a:hover, #home_banner2 .banner a:hover {
+  color: #fff;
 }
 
 #home_banner1 .banner:after, #home_banner2 .banner:after {
@@ -1688,10 +1734,6 @@ section {
 
 .sidebar .home_boxes .box .txt .desc, .sidebar .home_boxes .box #home_banner1 .banner .txt2 .desc, #home_banner1 .banner .sidebar .home_boxes .box .txt2 .desc, .sidebar .home_boxes .box #home_banner2 .banner .txt2 .desc, #home_banner2 .banner .sidebar .home_boxes .box .txt2 .desc {
   font-size: 14px;
-}
-
-.sidebar .home_boxes .box:hover .txt, .sidebar .home_boxes .box:hover #home_banner1 .banner .txt2, #home_banner1 .banner .sidebar .home_boxes .box:hover .txt2, .sidebar .home_boxes .box:hover #home_banner2 .banner .txt2, #home_banner2 .banner .sidebar .home_boxes .box:hover .txt2 {
-  bottom: 25px;
 }
 
 .sidebar .page_select {

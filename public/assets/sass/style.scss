@@ -685,19 +685,39 @@ header{
 			a{
 				margin-left: 12px;
    				font-size: 12px;
+   				position: relative;
+   				&:after{
+   					content:"";
+   					position: absolute;
+   					left: 0;
+   					bottom: -8px;
+   					height: 2px;
+   					background: #fff;
+   					width: 100%;
+   					opacity: 0;
+   					transition: all ease 0.3s;
+   				}
+   				&:hover{
+   					color: #fff;
+   					&:after{
+   						opacity: 1;
+	   					bottom: -3px;
+	   					transition: all ease 0.3s;
+   					}
+   				}
 			}
 		}
 		.line{
 			float: right;
 		    margin: 0 10px 0 30px;
-		    color: #de7da0;
+		    color: #e494b1;
 		}
 		.social{
 			float: right;
 			a{
-				margin-left: 20px;
+				margin-left: 12px;
 				img{
-					height: 15px;
+					height: 12px;
 				}
 			}
 		}
@@ -712,6 +732,28 @@ header{
 			    margin-left: 15px;
 			    display: inline-block;
 			    font-weight: bold;
+			    position: relative;
+			    transition: all ease 0.3s;
+			    &:after{
+   					content:"";
+   					position: absolute;
+   					left: 0;
+   					bottom: -15px;
+   					height: 3px;
+   					background: $c_ekranella;
+   					width: 100%;
+   					opacity: 0;
+   					transition: all ease 0.3s;
+   				}
+			    &:hover{
+   					color: $c_ekranella;
+   					transition: all ease 0.3s;
+   					&:after{
+   						opacity: 1;
+	   					bottom: -10px;
+	   					transition: all ease 0.3s;
+   					}
+   				}
 			}
 			.special{
 				border-left: 2px solid $c_ekranella;
@@ -906,7 +948,6 @@ section{
 				left: 30px;
 				right: 30px;
 				z-index: 2;
-				transition: all ease 0.3s;
 				.desc{
 					font-size: 22px;
 					color: #fff;
@@ -920,11 +961,7 @@ section{
 			}
 			&:hover{
 				transition: all ease 0.3s;
-				background-size: auto 103%;
-				.txt{
-					transition: all ease-out 0.3s;
-					bottom: 35px;
-				}	
+				background-size: auto 103%;	
 			}
 			&:after{
 				content: "";
@@ -1054,6 +1091,11 @@ section{
 		background-size: cover;
 		background-position: center;
 		position: relative;
+		a{
+			&:hover{
+				color: #fff;
+			}
+		}
 		&:after{
 			content: "";
 			width: 100%;
@@ -1390,11 +1432,6 @@ section{
 				right: 20px;
 				.desc{
 					font-size: 14px;
-				}
-			}
-			&:hover{
-				.txt{
-					bottom: 25px;
 				}
 			}
 		}
