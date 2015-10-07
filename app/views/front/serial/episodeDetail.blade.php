@@ -34,7 +34,13 @@
         <div class="container txt">
             @if($episode->enum == $enums['trailer'])
             <div class="box_title trailers_title">FRAGMANLAR</div> 
+            @elseif($episode->enum==1) <div class="box_title exclusive_title">ÖZEL</div> 
+            @elseif($episode->enum==2) <div class="box_title ekranella_title">ÖZETLİYORUM</div> 
+            @elseif($episode->enum==4) <div class="box_title gallery_title">GALERİ</div> 
             @endif  
+
+
+
             <div class="desc">{{$episode->title}}</div>
             <div class="small_desc" style="color:#fff;">
                 @if($episode->number != 0)Sezon: {{$season->number}} Bölüm: {{$episode->number}} @endif
@@ -160,15 +166,14 @@
                     <div class="col-md-6 home_boxes">
                         <a class="box square" style="background-image: url({{asset('http://www.ekranella.com/uploads')}}/{{$other->img}}_thumb.jpg);" href="{{action($other['action'], ['permalink' => $other->permalink])}}">
                             <div class="txt">
-<!--                                 <div class="box_title news_title">KÖŞE YAZILARI</div> -->
+                                <div class="box_title news_title">{{$other['alias']}}</div>
                                 <div class="desc">{{$other->title}}</div>
                                 <div class="alt_desc">
                                 {{\BaseController::shorten($other->summary, 100)}} <br/>
                                 Sezon: {{$other->season->number}},
                                 Bölüm: {{$other->number}}</strong> @if(isset($others->airing_date))
                                 | {{$others->airing_date}}@endif<br/>
-                                @if($other->is_author) {{$other->user->name}} @else {{$other->guest_author}} @endif<br/>
-                                {{$other['alias']}}
+                                @if($other->is_author) {{$other->user->name}} @else {{$other->guest_author}} @endif<br/>                                
                                 </div>
                             </div>
                         </a>

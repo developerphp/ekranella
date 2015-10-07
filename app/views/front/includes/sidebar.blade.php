@@ -91,7 +91,7 @@
                     @foreach($articles as $article)
                     <div class="row">
                         <div class="col-md-12 home_boxes">
-                            <a class="box rectangle" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$article->img.'_thumb.jpg')}});">
+                            <a href="{{action('front.article.articleDetail', ['permalink' => $article->permalink])}}" class="box rectangle" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$article->img.'_thumb.jpg')}});">
                                 <div class="txt">
                                     <div class="box_title news_title">KÖSE YAZILARI</div>
                                     <div class="desc">{{ $article->title }}</div>

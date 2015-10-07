@@ -31,7 +31,7 @@
                 <div class="row share_box">
                     <div class="col-md-4">
                         @if($news->serial_id != 0)
-                            {{$related['title']}}
+                            <a href="{{$url}}">{{$related['title']}}</a>
                         @endif
                     </div>
                     @include('front.includes.share')

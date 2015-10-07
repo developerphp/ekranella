@@ -200,7 +200,7 @@
                     <div class="row">
                         <div class="col-md-12 more_button">
                             <div class="more_button">
-                                <a class="more">DEVAMI</a>
+                                <a href="{{action('front.news.photoNews', ['permalink' => $serial->permalink])}}" class="more">DEVAMI</a>
                                 <div class="line"></div>
                             </div>
                         </div>
@@ -230,7 +230,7 @@
                     <div class="row">
                         <div class="col-md-12 more_button">
                             <div class="more_button">
-                                <a class="more">DEVAMI</a>
+                                <a href="{{action('front.serial.enumIndex', ['permalink' => $serial->permalink, 'enum' => $enums['sgallery']])}}" class="more">DEVAMI</a>
                                 <div class="line"></div>
                             </div>
                         </div>
@@ -404,7 +404,7 @@
                     @foreach($articles as $article)
                     <div class="row">
                         <div class="col-md-12 home_boxes">
-                            <a class="box rectangle" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$article->img.'_thumb.jpg')}});">
+                            <a href="{{action('front.article.articleDetail', ['permalink' => $article->permalink])}}" class="box rectangle" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$article->img.'_thumb.jpg')}});">
                                 <div class="txt">
                                     <div class="box_title news_title">KÖSE YAZILARI</div>
                                     <div class="desc">{{ $article->title }}</div>
