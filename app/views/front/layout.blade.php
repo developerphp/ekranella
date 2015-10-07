@@ -86,7 +86,6 @@
                     <a href="{{action('front.rating.index')}}">REYTİNG</a>
                     <a href="{{action('front.authors.index')}}">YAZARLAR</a>
                     <a href="{{action('front.featured.archive')}}">DOSYALAR</a>
-                    <a href="{{action('front.authors.index')}}">BÖLÜM</a>
                 </nav>
             </div>
         </div>
@@ -94,6 +93,7 @@
             <div class="row">
                 <div class="col-md-4">
                     <a href="{{url()}}"><img class="logo" src="{{asset('assets/img/logo.gif')}}" alt="logo"></a>
+                    <div class="mobile_menu"></div>
                 </div>
                 <nav class="col-md-8">
                     <a href="{{action('FrontSerialController@getLocalSerial')}}">YERLİ DİZİLER</a>
@@ -150,7 +150,7 @@
                             <nav class="col-md-4 last">
                                 <a href="{{action('FrontSerialController@getProgram')}}">PROGRAMLAR</a>
                                 <a href="{{action('front.news.photoNews')}}">FOTOHABER</a>
-                                <a href="">İLETİŞİM</a>
+                                <a href="{{action('front.featured.archive')}}">DOSYALAR</a>
                             </nav>
                         </div>
                     </div>

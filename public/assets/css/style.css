@@ -348,6 +348,10 @@ body {
   line-height: normal;
 }
 
+strong {
+  font-weight: bold;
+}
+
 a {
   text-decoration: none;
 }
@@ -1097,6 +1101,28 @@ header .bottom .search .icon .pic_close {
   transition: all ease 0.1s;
 }
 
+header .bottom .mobile_menu {
+  display: none;
+  float: right;
+  margin-top: 13px;
+  width: 29px;
+  height: 24px;
+  background: url(../img/header/mobile_menu.png) no-repeat center;
+}
+
+@media only screen and (max-width: 767px) {
+  header .bottom .mobile_menu {
+    display: block;
+    margin-top: 6px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  header .bottom .mobile_menu {
+    display: block;
+  }
+}
+
 footer {
   font-size: 14px;
   color: #fff;
@@ -1271,7 +1297,7 @@ section {
 .container .home_boxes .box {
   display: block;
   margin-bottom: 30px;
-  background-size: auto 100%;
+  background-size: auto 105%;
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
@@ -1315,7 +1341,7 @@ section {
 
 .container .home_boxes .box:hover {
   transition: all ease 0.3s;
-  background-size: auto 103%;
+  background-size: auto 108%;
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -1350,6 +1376,12 @@ section {
   left: 5%;
   margin-left: 0;
   text-align: left;
+}
+
+@media only screen and (max-width: 767px) {
+  #home_slider .slider .carousel-indicators {
+    display: none;
+  }
 }
 
 #home_slider .slider .carousel-indicators li {
@@ -1580,6 +1612,11 @@ section {
   margin: 0 15px;
 }
 
+.home_ratings .ratings_row .channel_box .channel {
+  width: 110px;
+  float: left;
+}
+
 .home_ratings .ratings_row .perc_box .percentage {
   font-weight: bold;
   color: #663399;
@@ -1647,6 +1684,10 @@ section {
 /*editors*/
 #editors .home_boxes .square {
   height: 262.5px;
+}
+
+#editors .home_boxes .box {
+  background-size: cover;
 }
 
 #editors .home_boxes .box .txt .desc, #editors .home_boxes .box #home_banner1 .banner .txt2 .desc, #home_banner1 .banner #editors .home_boxes .box .txt2 .desc, #editors .home_boxes .box #home_banner2 .banner .txt2 .desc, #home_banner2 .banner #editors .home_boxes .box .txt2 .desc {
@@ -1810,6 +1851,11 @@ section {
 
 .sidebar .home_boxes .box {
   margin-bottom: 5px;
+  background-size: auto 103%;
+}
+
+.sidebar .home_boxes .box:hover {
+  background-size: auto 108%;
 }
 
 .sidebar .home_boxes .box .txt, .sidebar .home_boxes .box #home_banner1 .banner .txt2, #home_banner1 .banner .sidebar .home_boxes .box .txt2, .sidebar .home_boxes .box #home_banner2 .banner .txt2, #home_banner2 .banner .sidebar .home_boxes .box .txt2 {
@@ -1957,6 +2003,7 @@ section {
   margin: 10px 10px 0px 0;
   display: inline-block;
   background: #000;
+  line-height: normal;
 }
 
 .news_page .news_box .page_select span {
@@ -2046,6 +2093,11 @@ section {
 
 .interview_page .news_box .txt .interview strong, .interview_page .news_box #home_banner1 .banner .txt2 .interview strong, #home_banner1 .banner .interview_page .news_box .txt2 .interview strong, .interview_page .news_box #home_banner2 .banner .txt2 .interview strong, #home_banner2 .banner .interview_page .news_box .txt2 .interview strong {
   font-weight: bold;
+}
+
+.interview_list .home_boxes .box .txt .desc, .interview_list .home_boxes .box #home_banner1 .banner .txt2 .desc, #home_banner1 .banner .interview_list .home_boxes .box .txt2 .desc, .interview_list .home_boxes .box #home_banner2 .banner .txt2 .desc, #home_banner2 .banner .interview_list .home_boxes .box .txt2 .desc {
+  font-size: 24px !important;
+  line-height: 26px !important;
 }
 
 .search_box {

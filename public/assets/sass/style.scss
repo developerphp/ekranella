@@ -31,6 +31,10 @@ body{
 	line-height: normal;
 }
 
+strong{
+	font-weight: bold;
+}
+
 a{
 	text-decoration: none;
 }
@@ -808,6 +812,21 @@ header{
 				}
 			}
 		}
+		.mobile_menu{
+			display: none;
+			float: right;
+			margin-top: 13px;
+			width: 29px;
+			height: 24px;
+			background: url(../img/header/mobile_menu.png) no-repeat center;
+			@include xs{
+				display: block;
+				margin-top: 6px;
+			}
+			@include sm{
+				display: block;
+			}
+		}
 	}
 }
 
@@ -962,7 +981,7 @@ section{
 		.box{
 			display: block;
 			margin-bottom: 30px;
-			background-size: auto 100%;
+			background-size: auto 105%;
 			background-position: center;
 			background-repeat: no-repeat;
 			position: relative;
@@ -995,7 +1014,7 @@ section{
 			}
 			&:hover{
 				transition: all ease 0.3s;
-				background-size: auto 103%;
+				background-size: auto 108%;
 				@include sm{
 					background-size: cover;
 				}
@@ -1029,6 +1048,9 @@ section{
 			left: 5%;
 			margin-left: 0;
     		text-align: left;
+    		@include xs{
+    			display: none;
+    		}
     		li{
     			border:0;
     			background: #fff;
@@ -1238,6 +1260,10 @@ section{
 			.line{
 				margin: 0 15px;
 			}
+			.channel{
+				width: 110px;
+    			float: left;
+			}
 		}
 		.perc_box{
 			.percentage{
@@ -1322,6 +1348,7 @@ section{
 			height: 262.5px;
 		}
 		.box{
+			background-size: cover;
 			.txt{
 				.desc{
 					font-size: 24px;
@@ -1472,6 +1499,10 @@ section{
 		}
 		.box{
 			margin-bottom: 5px;
+			background-size: auto 103%;
+			&:hover{
+				background-size: auto 108%;
+			}
 			.txt{
 				left: 20px;
 				bottom: 20px;
@@ -1614,6 +1645,7 @@ section{
 			margin: 10px 10px 0px 0;
 			display: inline-block;
 			background: #000;
+			line-height: normal;
 			span{
 				width: 100%;
 				position: absolute;
@@ -1702,6 +1734,19 @@ section{
 				}				
 			}
 		}		
+	}
+}
+
+.interview_list{
+	.home_boxes{
+		.box{
+			.txt{
+				.desc{
+					font-size: 24px !important;
+    				line-height: 26px !important;
+				}
+			}
+		}
 	}
 }
 

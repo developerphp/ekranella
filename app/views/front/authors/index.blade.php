@@ -12,7 +12,7 @@
         <div class="row">
             @foreach($authors as $author)
                 @if($author->username != 'lupos')
-                    <div class="col-md-3 home_boxes">
+                    <div class="col-md-3 home_boxes authors_box">
                         <a class="box square" style="background-image: url({{asset('http://www.ekranella.com/'.$author->pp)}});" href="{{action('front.authors.detail',['permalink' => $author->id])}}">
                             <div class="txt">
                                 <div class="box_title editors_title">YAZAR</div>
