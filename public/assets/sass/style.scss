@@ -812,7 +812,7 @@ header{
 				}
 			}
 		}
-		.mobile_menu{
+		.m_menu_button{
 			display: none;
 			float: right;
 			margin-top: 13px;
@@ -826,6 +826,82 @@ header{
 			@include sm{
 				display: block;
 			}
+		}
+	}
+}
+
+.mobile_menu{
+	display: none;
+	top: 0;
+	left: 0;
+	position: fixed;
+	background: #242424;
+	width: 100%;
+	height: 100%;
+	z-index: 999;
+	padding: 0 20px;
+	overflow-y: auto;
+	@include lg{
+		display: none !important;
+	}
+	@include md{
+		display: none !important;
+	}
+	.logo{
+		border-bottom: 1px solid #303030;
+		padding: 30px 0;
+		display: table;
+		width: 100%;
+		img{
+			height: 24px;
+			float: left;
+		}
+		.m_search{
+			float: right;
+			width: 18px;
+			height: 18px;
+			background: url(../img/header/search_wh.png) center no-repeat;
+			cursor: pointer;
+			margin-right: 20px;
+		}
+		.m_menu_close{
+			float: right;
+			width: 20px;
+			height: 18px;
+			background: url(../img/header/close_wh.png) center no-repeat;
+			background-size: 19px 19px;
+			cursor: pointer;
+		}
+	}
+	nav{
+		border-bottom: 1px solid #303030;
+		padding: 10px 0;
+		a{
+			font-size: 24px;
+			display: block;
+			color: #fff;
+			margin-bottom: 5px;
+			font-weight: bold;
+		}
+	}
+	.bottom{
+		a{
+			color: #707070;
+		}
+	}
+	.social{
+		margin-top: 25px;
+		a{
+			display: inline-block;
+			margin-right: 20px;
+			img{
+				height: 15px;
+			}
+		}
+		.txt{
+			font-size: 11px;
+			color: #707070;
+			margin-top: 20px;
 		}
 	}
 }
@@ -845,6 +921,10 @@ footer{
 			border-right: 1px solid #de7da0;
 			padding-left: 30px;
 			padding-right: 0px;
+			@include xs{
+				border: 0;
+				padding-left: 15px;
+			}
 			a{
 				font-weight: bold;	
 				display: block;
@@ -866,6 +946,13 @@ footer{
 		.social{
 			margin-top: 10px;
 			float: left;
+			@include xs{
+				float: none;
+				text-align: center;
+				padding-bottom: 20px;
+				margin-bottom: 20px;
+				border-bottom: 1px solid #de7da0;
+			}
 			a{
 				margin-right: 20px;
 			}
@@ -873,6 +960,10 @@ footer{
 		.logo{
 			float: right;
 			display: block;
+			@include xs{
+				float: none;
+				text-align: center;
+			}
 		}
 	}
 }
@@ -899,6 +990,9 @@ section{
 	.page_select{
 		margin-bottom: 30px;
 		border-bottom: 3px solid;
+		@include xs{
+			margin-bottom: 60px;
+		}
 		.button{
 			display: inline-block;
 			padding: 10px 0;
@@ -922,6 +1016,9 @@ section{
 				border-style: solid;
 				border-width: 0 7px 7px 7px;
 				border-color: transparent transparent #000 transparent;
+				@include xs{
+    				display: none;
+    			}
 			}
 		}
 		.active{
@@ -938,6 +1035,9 @@ section{
 			position: absolute;
 			top: -70px;
     		right: 15px;
+    		@include xs{
+    			top: -48px;
+    		}
     		.ind_title{
 				left: -110px;
 			    top: 3px;
@@ -945,7 +1045,10 @@ section{
 			    font-size: 14px;
 			    font-weight: bold;
 			    position: absolute;
-				}
+			    @include xs{
+    				display: none;
+    			}
+			}
 			ul{
 				li{
 					border-radius: 50%;
@@ -960,13 +1063,32 @@ section{
 				    margin-left: 8px;
 					span{
 						display: none;
+						@include xs{
+    						display: block;
+						    color: #fff;
+						    position: absolute;
+						    top: 9px;
+						    text-align: center;
+						    width: 100%;
+    					}
 					}
+					@include xs{
+    					border-radius: 0;
+    					margin-left: 12px;
+    					width: 35px;
+    					height: 35px;
+    					margin-top: 0;
+    				}
 				}
 			}
 			.active{
 				width: 25px;
 			    height: 25px;
 			    margin-top: 0px;
+			    @include xs{
+    				width: 50px;
+    				height: 35px;
+    			}
 				span{
 					display: block;
 				    color: #fff;
@@ -974,6 +1096,9 @@ section{
 				    top: 4px;
 				    text-align: center;
 				    width: 100%;
+				    @include xs{
+	    				top: 9px;
+    				}
 				}
 			}
 		}
@@ -1038,12 +1163,21 @@ section{
 
 .page_margin{
 	margin-top: 80px;
+	@include xs{
+		margin-top: 50px;
+	}
 }
 
 /*home*/
 
 #home_slider{
 	.slider{
+		@include xs{
+    		padding: 0;
+    	}
+    	@include sm{
+    		padding: 0;
+    	}
 		.carousel-indicators{
 			left: 5%;
 			margin-left: 0;
@@ -1064,6 +1198,7 @@ section{
 			overflow: hidden;
 			img{
 				height: 100%;
+				max-width: none;
 			}
 			&:after{
 				content: "";
@@ -1087,10 +1222,16 @@ section{
 				font-size: 36px;
 				color: #fff;
 				margin-bottom: 10px;
+				@include xs{
+    				font-size: 26px;
+    			}
 			}
 			.desc{
 				font-size: 18px;
 				color: #fff;
+				@include xs{
+    				font-size: 13px;
+    			}
 			}
 		}
 	}
@@ -1107,6 +1248,7 @@ section{
 			}
 			@include xs{
 				margin: 15px 0;
+				height: 300px;
 			}
 			.txt{
 				position: absolute;
@@ -1138,12 +1280,21 @@ section{
 	.home_boxes{
 		.square{
 			height: 650px;
+			@include xs{
+				height: 300px;
+			}
 		}
 		.small_square{
 			height: 360px;
+			@include xs{
+				height: 300px;
+			}
 		}
 		.rectangle{
 			height: 310px;
+			@include xs{
+				height: 300px;
+			}
 		}
 	}
 	&.hide {
@@ -1159,6 +1310,9 @@ section{
 		background-size: cover;
 		background-position: center;
 		position: relative;
+		@include xs{
+			padding: 100px 0;
+		}
 		a{
 			&:hover{
 				color: #fff;
@@ -1181,6 +1335,9 @@ section{
 			margin: 0 auto;
 			position: relative;
 			font-weight: bold;
+			@include xs{
+				width: 80%;
+			}
 			div{
 				margin-bottom: 10px;
 			}
@@ -1191,6 +1348,9 @@ section{
 				font-size: 40px;
 				width: 80%;
 				margin: 10px auto;
+				@include xs{
+					font-size: 30px;
+				}
 			}
 			.button{
 				margin-top: 30px;
@@ -1211,6 +1371,9 @@ section{
 				left:0;
 				top:0;
 				background: url(../img/homepage/int_left.png) no-repeat;
+				@include xs{
+					display: none;
+				}
 			}
 			&:after{
 				content: "";
@@ -1220,6 +1383,9 @@ section{
 				right:0;
 				top:0;
 				background: url(../img/homepage/int_right.png) no-repeat;
+				@include xs{
+					display: none;
+				}
 			}
 		}
 		.txt2{
@@ -1233,10 +1399,16 @@ section{
 			img{
 				display: block;
 				margin: 0 auto;
+				@include xs{
+					width: 100%;
+				}
 			}
 			.button{
 				margin-top: 70px;
 				background: $c_exclusive;
+				@include xs{
+					width: 100%;
+				}
 			}
 		}
 	}	
@@ -1252,6 +1424,9 @@ section{
     	width: 100%;
     	border-bottom: 1px solid $c_grey;
 		.title_box{
+			@include xs{
+				margin-bottom: 15px;
+			}
 			.number{
 				margin-right: 20px;
 			}
@@ -1263,6 +1438,9 @@ section{
 			.channel{
 				width: 110px;
     			float: left;
+    			@include xs{
+					width: auto;
+				}
 			}
 		}
 		.perc_box{
@@ -1286,6 +1464,12 @@ section{
 		    background: #663399;
 		    font-size: 20px;
 		    font-weight: bold;
+		    @include xs{
+		    	float: none;
+		    	margin: 0 auto;
+		    	margin-top: 40px;
+		    	display: table;
+		    }
 		}
 	}	
 }
@@ -1475,8 +1659,15 @@ section{
 	color: #fff;
 	font-size: 14px;
 	font-weight: bold;
+	@include xs{
+		text-align: center;
+	}
 	.share{
 		text-align: right;
+		@include xs{
+			text-align: center;
+			margin-top: 20px;
+		}
 		a{	
 		margin-left: 20px;
 		margin-top: 2px;
@@ -1488,6 +1679,9 @@ section{
 		span{
 			font-weight: 400;
 			display: inline-block;
+			@include xs{
+				display: none;
+			}
 		}
 	}
 }
@@ -1588,6 +1782,9 @@ section{
 	.home_boxes{
 		.square{
 			height: 408.75px;
+			@include xs{
+				height: 300px;
+			}
 		}
 		.box{
 			.txt{
@@ -1608,6 +1805,9 @@ section{
 			.desc{
 				line-height: normal;
 				font-size: 45px;
+				@include xs{
+					font-size: 40px;
+				}
 			}
 		}
 	}
@@ -1793,12 +1993,19 @@ section{
 
 .ratings_page{
 	padding-top: 80px;
+	@include xs{
+		padding-top: 40px;
+	}
 	.page_select{
 		float: left;
 		width: 100%;
 		.title{
 			float: left;
 			width: 320px;
+			@include xs{
+				width: auto;
+				margin-bottom: 10px;
+			}
 			span{
 				font-size: 14px;
 				font-weight: 300;
@@ -1835,10 +2042,16 @@ section{
 			float: left;
 			text-align: center;
 			font-weight: 300;
+			@include xs{
+				width: calc(50% - 20px);
+			}
 		}
 	}
 	.share{
 		margin-top: 80px;
+		@include xs{
+			clear: both;
+		}
 		.main_title{
 			font-size: 20px;
 			width: 100%;
@@ -1863,6 +2076,10 @@ section{
 	background: #19b5fe;
 	color: #fff;
 	padding: 40px 0 30px 40px;
+	@include xs{
+		margin-top: 40px;
+		padding: 5px 0 5px 0px;
+	}
 	th{
 		padding: 10px;
 		text-align: center;

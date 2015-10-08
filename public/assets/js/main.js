@@ -65,5 +65,11 @@ $(document).ready(function(){
             $menu_open = 0;
         }  
     });
+    $(".m_menu_button").click(function() {
+        $(".mobile_menu").fadeIn();
+    });
+    $(".m_menu_close").click(function() {
+        $(".mobile_menu").fadeOut();
+    });
 
 });

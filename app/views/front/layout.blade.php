@@ -1,11 +1,12 @@
 <!doctype html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
     <title>@if(isset($headers['title'])) {{{$headers['title']}}} @endif {{$home_title}}</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+
     <meta name="description" content="@if(isset($headers['description'])) {{$headers['description']}} @endif">
     <meta name="keywords" content="@if(isset($headers['tags'])) {{$headers['tags']}} @endif">
-    <meta name="viewport" content="minimum-scale=0.3,target-densitydpi=device-dpi,user-scalable=yes, minimal-ui"/>
     <meta name="HandheldFriendly" content="true"/>
     <meta name="author" content="ekranella">
     @if(isset($headers['description']) && isset($headers['title']))
@@ -38,6 +39,7 @@
 
     <script src="{{ asset('assets/js/jquery.js') }}"></script>
     <script src="{{ asset('assets/js/jquery-ui.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.mobile.js') }}"></script>
     <script src="{{ asset('assets/js/bootstrap.js') }}"></script>
     <script src="{{ asset('assets/js/main.js') }}"></script>
 
@@ -64,6 +66,17 @@
         })();
         window._fbq = window._fbq || [];
         window._fbq.push(['track', 'PixelInitialized', {}]);
+    </script>
+    <!--slider touch-->
+    <script type="text/javascript">
+        $(document).ready(function() {  
+           $("#myCarousel").swiperight(function() {  
+              $("#myCarousel").carousel('prev');  
+            });  
+           $("#myCarousel").swipeleft(function() {  
+              $("#myCarousel").carousel('next');  
+           });  
+        }); 
     </script>
     <noscript><img height="1" width="1" alt="" style="display:none"
                    src="https://www.facebook.com/tr?id=625256654268369&amp;ev=PixelInitialized"/></noscript>
@@ -93,7 +106,7 @@
             <div class="row">
                 <div class="col-md-4">
                     <a href="{{url()}}"><img class="logo" src="{{asset('assets/img/logo.gif')}}" alt="logo"></a>
-                    <div class="mobile_menu"></div>
+                    <div class="m_menu_button"></div>
                 </div>
                 <nav class="col-md-8">
                     <a href="{{action('FrontSerialController@getLocalSerial')}}">YERLİ DİZİLER</a>
@@ -118,6 +131,36 @@
                     <input type="submit" class="icon" value="">
                 </form>
                 
+            </div>
+        </div>
+    </div>
+    <div class="mobile_menu">
+        <div class="logo">
+            <img src="{{asset('assets/img/logo_wh.png')}}" alt="logo">
+            <div class="m_menu_close"></div>
+            <div class="m_search"></div>
+        </div>
+        <nav>
+            <a href="{{action('FrontSerialController@getLocalSerial')}}">YERLİ DİZİLER</a>
+            <a href="{{action('FrontSerialController@getForeignSerial')}}">YABANCI DİZİLER</a>
+            <a href="{{action('FrontSerialController@getProgram')}}">PROGRAMLAR</a>
+            <a href="{{action('front.news.photoNews')}}">FOTOHABER</a>
+            <a class="special" href="{{action('front.news.specialNews')}}">ÖZEL</a>
+        </nav>
+        <nav class="bottom">
+            <a href="{{action('front.interviews.index')}}">RÖPORTAJ</a>
+            <a href="{{action('front.rating.index')}}">REYTİNG</a>
+            <a href="{{action('front.authors.index')}}">YAZARLAR</a>
+            <a href="{{action('front.featured.archive')}}">DOSYALAR</a>
+        </nav>
+        <div class="social">
+            @if($social['facebook'] != '')<a href="{{$social['facebook']}}" target="_blank"><img src="{{ asset('assets/img/header/facebook.png') }}" alt="logo"></a>@endif
+            @if($social['twitter'] != '')<a href="{{$social['twitter']}}" target="_blank"><img src="{{ asset('assets/img/header/twitter.png') }}" alt="logo"></a>@endif
+            @if($social['instagram'] != '')<a href="{{$social['instagram']}}" target="_blank"><img src="{{ asset('assets/img/header/instagram.png') }}" alt="logo"></a>@endif
+            @if($social['tumblr'] != '')<a href="{{$social['tumblr']}}" target="_blank"><img src="{{ asset('assets/img/header/tumblr.png') }}" alt="logo"></a>@endif
+            @if($social['youtube'] != '')<a href="{{$social['youtube']}}" target="_blank"><img src="{{ asset('assets/img/header/youtube.png') }}" alt="logo"></a>@endif
+            <div class="txt">
+                Bu sitede yer alan yazılardan yazarların kendisi sorumludur.<br>Referans vermeden kullanmayınız.
             </div>
         </div>
     </div>
