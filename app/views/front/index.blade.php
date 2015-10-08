@@ -11,7 +11,8 @@
             <div class="col-md-12">
                 <div class="page_select">
                     <div class="button active" data-href="#home_news">HABERLER</div>
-                    <div class="button" data-href="#home_liked">BEĞENİLENLER</div>                                      
+                    <div class="button" data-href="#home_liked">BEĞENİLENLER</div>
+                    <div class="button" data-href="#home_latest">SON YAZILAR</div>
                 </div>
             </div>
         </div>
@@ -82,7 +83,8 @@
             <div class="col-md-12">
                 <div class="page_select">
                     <div class="button" data-href="#home_news">HABERLER</div>
-                    <div class="button active" data-href="#home_liked">BEĞENİLENLER</div>                    
+                    <div class="button active" data-href="#home_liked">BEĞENİLENLER</div>        
+                    <div class="button" data-href="#home_latest">SON YAZILAR</div>            
                 </div>
             </div>
         </div>
@@ -187,6 +189,119 @@
             </div>
         </div>
     </section>
+
+    <section id="home_latest" class="home_sections container hide ekranella_h_selected">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="page_select">
+                    <div class="button" data-href="#home_news">HABERLER</div>
+                    <div class="button" data-href="#home_liked">BEĞENİLENLER</div>        
+                    <div class="button active" data-href="#home_latest">SON YAZILAR</div>            
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div id="latestCarousel" class="carousel slide">
+                <div class="indicators">
+                        <ul>
+                            <li data-target="#latestCarousel" data-slide-to="0" class="active"><span>1</span></li>
+                            <li data-target="#latestCarousel" data-slide-to="1" ><span>2</span></li>
+                            <li data-target="#latestCarousel" data-slide-to="2" ><span>3</span></li>
+                        </ul>
+                </div>
+                <div class="carousel-inner">
+                    <?php 
+                    $latestArr = array_chunk($latests, 6, true);
+                    $j=1;
+                    ?>
+                    @foreach($latestArr as $key => $latest)
+                        <div class="item @if($j==1) active @endif">
+                            <?php $i=1; ?>
+                            @foreach($latest as $late)
+
+                            <?php
+                            $time = strtotime($late['created_at']);
+                            $created_at = date('d/m/Y H:i', $time);
+                            ?>
+
+                            <?php 
+                            if ($i==1) { $class="7"; $subclass="square"; $imageclass="square"; }
+                            elseif (($i>1) && ($i<=3) ) { $class="5"; $subclass="rectangle"; $imageclass="thumbl"; }
+                            elseif ($i>3) { $class="4"; $subclass="small_square"; $imageclass="square"; }
+                            ?>
+
+                            <?php
+                            $url = null;
+                            $subfolder = null;
+                            switch (getEnum($late)) {
+                                case 1:
+                                    $url = 'subEnum';
+                                    $subfolder = 'bolum';
+                                    $class_name="series_title";
+                                    $bolum_title= "DİZİLER";
+                                    break;
+                                case 2:
+                                    $url = action('front.interviews.interviewDetail', ['permalink' => $late['permalink']]);
+                                    $subfolder = 'roportaj';
+                                    $class_name="interview_title";
+                                    $bolum_title= "RÖPORTAJLAR";
+                                    break;
+                                case 3:
+                                    $url = action('front.news.newsDetail', ['permalink' => $late['permalink']]);
+                                    $subfolder = 'haber';
+                                    $class_name="news_title";
+                                    $bolum_title="HABERLER";
+                                    break;
+                                case 4:
+                                    $url = action('front.article.articleDetail', ['permalink' => $late['permalink']]);
+                                    $subfolder = 'kose';
+                                    $class_name="interview_title";
+                                    $bolum_title= "KÖŞE YAZILARI";
+                                    break;
+                                default;
+                            }
+
+                            //TODO enter specials, trailer, sgallery
+                            if ($url == 'subEnum') {
+                                switch ($late['enum']) {
+                                    case 1:
+                                        $url = action('front.serial.specialDetail', ['permalink' => $late['permalink']]);
+                                        break;
+                                    case 2:
+                                        $url = action('front.serial.episodeDetail', ['permalink' => $late['permalink']]);
+                                        break;
+                                    case 3:
+                                        $url = action('front.serial.trailerDetail', ['permalink' => $late['permalink']]);
+                                        break;
+                                    case 4:
+                                        $url = action('front.serial.sgalleryDetail', ['permalink' => $late['permalink']]);
+                                        break;
+                                    default;
+                                }
+                            }
+                            ?>
+
+                            <div class="col-md-<?php echo $class ?> home_boxes @if($i==1)  pull-right @endif">
+                                <a class="box <?php echo $subclass ?>" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$late['img'].'_'.$imageclass.'.jpg')}});"
+                                    href="{{ $url }}">
+                                    <div class="txt">
+                                        <div class="box_title <?php echo $class_name ?>"><?php echo $bolum_title ?></div>
+                                        <div class="desc">{{$late['title']}}</div>
+                                        <div class="alt_desc">{{$created_at}}</div>
+                                    </div>
+                                </a>
+                            </div>
+                            <?php $i++; ?>
+                            @endforeach
+                        </div>
+                        <?php $j++; ?>
+                    @endforeach
+                   
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="home_banner1" class="container-fluid">
         <a href="http://www.ekranella.com/roportaj/cok-ozel-twd-den-andrew-lincoln-ve-greg-nicotero-yla-konustuk">
             <div class="row">
@@ -221,7 +336,7 @@
                 </div>
                 <div class="carousel-inner">
                     <?php 
-                    $galleryArr = array_chunk($galleries, 5, true);   $likeCount = 0;
+                    $galleryArr = array_chunk($galleries, 6, true);   $likeCount = 0;
                     $j=1;
                     ?>
                     @foreach($galleryArr as $key => $gallerys)
@@ -229,12 +344,12 @@
                             <?php $i=1; ?>
                             @foreach($gallerys as $gallery)
                             <?php 
-                            if ($i==1) { $class="square";$imageclass="square"; }
-                            elseif(($i>1) && ($i<=3)) { $class="rectangle";$imageclass="thumbl"; }
-                            else { $class="square"; $imageclass="square"; }
+                            if ($i==1) { $class="7"; $subclass="square"; $imageclass="square"; }
+                            elseif (($i>1) && ($i<=3) ) { $class="5"; $subclass="rectangle"; $imageclass="thumbl"; }
+                            elseif ($i>3) { $class="4"; $subclass="small_square"; $imageclass="square"; }
                             ?>
-                            <div class="col-md-6 home_boxes">
-                                <a class="box {{$class}}" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$gallery['img'].'_'.$imageclass.'.jpg')}});" href="{{action('front.serial.sgalleryDetail', ['permalink'=>$gallery['permalink']])}}">
+                            <div class="col-md-<?php echo $class ?> home_boxes @if($i==1)  pull-right @endif">
+                                <a class="box <?php echo $subclass ?>" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$gallery['img'].'_'.$imageclass.'.jpg')}});" href="{{action('front.serial.sgalleryDetail', ['permalink'=>$gallery['permalink']])}}">
                                     <div class="txt">
                                         <div class="box_title gallery_title">GALERİLER</div>
                                         <div class="desc">{{$gallery['title']}}</div>
@@ -271,7 +386,7 @@
                 </div>
                 <div class="carousel-inner">
                     <?php 
-                    $trailerArr = array_chunk($trailers, 5, true);   $likeCount = 0;
+                    $trailerArr = array_chunk($trailers, 6, true);   $likeCount = 0;
                     $j=1;
                     ?>
                     @foreach($trailerArr as $key => $trailerss)
@@ -279,12 +394,12 @@
                             <?php $i=1; ?>
                             @foreach($trailerss as $trailer)
                             <?php 
-                            if ($i==1) { $class="square";$imageclass="square"; }
-                            elseif(($i>1) && ($i<=3)) { $class="rectangle";$imageclass="thumbl"; }
-                            else { $class="square"; $imageclass="square"; }
+                            if ($i==1) { $class="7"; $subclass="square"; $imageclass="square"; }
+                            elseif (($i>1) && ($i<=3) ) { $class="5"; $subclass="rectangle"; $imageclass="thumbl"; }
+                            elseif ($i>3) { $class="4"; $subclass="small_square"; $imageclass="square"; }
                             ?>
-                            <div class="col-md-6 home_boxes">
-                                <a class="box {{$class}}" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$trailer['img'].'_'.$imageclass.'.jpg')}});" href="{{action('front.serial.trailerDetail', ['permalink'=>$trailer['permalink']])}}">
+                            <div class="col-md-<?php echo $class ?> home_boxes @if($i==1)  pull-right @endif">
+                                <a class="box <?php echo $subclass ?>" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$trailer['img'].'_'.$imageclass.'.jpg')}});" href="{{action('front.serial.trailerDetail', ['permalink'=>$trailer['permalink']])}}">
                                     <div class="txt">
                                         <div class="box_title trailers_title">FRAGMANLAR</div>
                                         <div class="desc">{{$trailer['title']}}</div>

@@ -31,7 +31,7 @@ class HomeController extends FrontController
         }
 
         $galleryTemp = [];
-        foreach (admin\Episodes::where('enum', Config::get('enums.episode')['sgallery'])->where('published', 1)->orderBy('created_at','DESC')->limit(15)->get() as $gallery) {
+        foreach (admin\Episodes::where('enum', Config::get('enums.episode')['sgallery'])->where('published', 1)->orderBy('created_at','DESC')->limit(18)->get() as $gallery) {
             $gTemp = $gallery->toArray();
             $gTemp['season'] = $gallery->season->number;
             $gTemp['user'] = $gallery->user->name;
@@ -100,6 +100,16 @@ class HomeController extends FrontController
             $liked =  Cache::get('likedItems');
         }
 
+        // if (!Cache::has('latestItems')) {
+        //     $latest = Cache::remember('latestItems', 4, function() {
+        //         return  $this->getLatestItems();
+        //     });
+        // } else {
+        //     $latest =  Cache::get('latestItems');
+        // }
+
+        $latest=$this->getLatestItems();
+
 
         $news = admin\News::where('published', 1)->where('type', 1)->orderBy('created_at','DESC')->limit(18)->get()->toArray();
         $home_config = admin\Config::select(['home_description','home_tags'])->first();
@@ -113,12 +123,13 @@ class HomeController extends FrontController
             'cRating' => $checkRating,
             'ratingDate' => $ratingDate,
             'galleries' => $galleryTemp,
-            'trailers' => admin\Episodes::where('enum', Config::get('enums.episode')['trailer'])->where('published', 1)->orderBy('created_by','DESC')->limit(15)->get()->toArray(),
+            'trailers' => admin\Episodes::where('enum', Config::get('enums.episode')['trailer'])->where('published', 1)->orderBy('created_by','DESC')->limit(18)->get()->toArray(),
             'social' => $social,
             'featured' => $featured,
             'featuredItems' => $featuredItems,
             'news' => $news,
             'liked' => $liked,
+            'latests' => $latest,
             'headers' => ['title'=> '', 'description' => $home_config->home_description, 'tags' => $home_config->home_tags]
             //title is pulled directly from database so please leave empty.
         ];
@@ -150,6 +161,32 @@ class HomeController extends FrontController
 
         usort($collection, function($a, $b) {
             return $b['views'] - $a['views'];
+        });
+        $collection = array_slice($collection, 0, 24);
+
+        return $collection;
+
+    }
+
+    public function getLatestItems()
+    {
+        /*$controller = new LikedController();
+        $liked = $controller->getItems();
+        return $liked['items'];*/
+        $controller = new FrontAuthorsController();
+        $episodes = admin\Episodes::where('published', 1)->where('created_at', '>=', Carbon\Carbon::now()->subMonth())->orderBy('created_at', 'desc')->limit(10)->get();
+        $news = admin\News::where('published', 1)->where('created_at', '>=', Carbon\Carbon::now()->subMonth())->orderBy('created_at', 'desc')->limit(10)->get();
+        $interviews = admin\Interviews::where('published', 1)->where('created_at', '>=', Carbon\Carbon::now()->subMonth())->orderBy('created_at', 'desc')->limit(10)->get();
+        $articles = admin\Article::where('published', 1)->where('created_at', '>=', Carbon\Carbon::now()->subMonth())->orderBy('created_at', 'desc')->limit(10)->get();
+
+        $collection = [];
+        $collection = $controller->getOrderedArray($collection, $news, \Config::get('enums.news'));
+        $collection = $controller->getOrderedArray($collection, $episodes, \Config::get('enums.episodes'));
+        $collection = $controller->getOrderedArray($collection, $interviews, \Config::get('enums.interviews'));
+        $collection = $controller->getOrderedArray($collection, $articles, \Config::get('enums.articles'));
+
+        usort($collection, function($a, $b) {
+            return $b['id'] - $a['id'];
         });
         $collection = array_slice($collection, 0, 24);
 
