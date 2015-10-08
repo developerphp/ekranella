@@ -124,6 +124,7 @@
         </div>
     </header>
     <div class="search_box">
+        <div class="search_close"></div>
         <div class="container">
             <div class="row">
                 <form method="get" action="{{action('front.search.index')}}" class="col-md-12">
