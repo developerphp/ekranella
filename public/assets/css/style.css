@@ -2294,6 +2294,7 @@ section {
 
 .news_page .news_box .txt img, .news_page .news_box #home_banner1 .banner .txt2 img, #home_banner1 .banner .news_page .news_box .txt2 img, .news_page .news_box #home_banner2 .banner .txt2 img, #home_banner2 .banner .news_page .news_box .txt2 img {
   width: 100%;
+  height: auto !important;
   margin: 30px 0;
 }
 
