@@ -1952,6 +1952,32 @@ section{
 			}
 		}
 	}
+	.tabser{
+		position: relative;
+		.tabs-head{
+			position: absolute;
+		    top: -79px;
+		    right: 15px;
+		    width: 100%;
+		    text-align: right;
+		    li{
+		    	display: inline-block;
+			    width: 120px;
+			    text-align: center;
+			    padding: 12px 0;
+			    a{
+		    		color: #000;
+		    	}
+		    }
+		    .active{
+		    	background: $c_series2;
+		    	color: #fff;
+		    	a{
+		    		color: #fff;
+		    	}
+		    }
+		}
+	}
 }
 /*show_detail*/
 

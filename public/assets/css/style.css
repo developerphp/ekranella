@@ -2518,6 +2518,38 @@ section {
   margin: 5px 0;
 }
 
+#show_detail .tabser {
+  position: relative;
+}
+
+#show_detail .tabser .tabs-head {
+  position: absolute;
+  top: -79px;
+  right: 15px;
+  width: 100%;
+  text-align: right;
+}
+
+#show_detail .tabser .tabs-head li {
+  display: inline-block;
+  width: 120px;
+  text-align: center;
+  padding: 12px 0;
+}
+
+#show_detail .tabser .tabs-head li a {
+  color: #000;
+}
+
+#show_detail .tabser .tabs-head .active {
+  background: #2ecc71;
+  color: #fff;
+}
+
+#show_detail .tabser .tabs-head .active a {
+  color: #fff;
+}
+
 /*show_detail*/
 /*news_page*/
 .news_page .main_banner .txt .desc, .news_page .main_banner #home_banner1 .banner .txt2 .desc, #home_banner1 .banner .news_page .main_banner .txt2 .desc, .news_page .main_banner #home_banner2 .banner .txt2 .desc, #home_banner2 .banner .news_page .main_banner .txt2 .desc {
