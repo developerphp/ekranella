@@ -601,6 +601,11 @@
                 </div>
             </div>
         </div>
+        <div class="row" style="position:relative;">
+            <div class="indicators">
+                <div class="ind_title ratings_title">REYTİNGLER</div>
+            </div>
+        </div>
         <div class="row">
             <div class="col-md-12">
                 @foreach($rating['total'] as $total)
@@ -635,6 +640,11 @@
                 </div>
             </div>
         </div>
+        <div class="row" style="position:relative;">
+            <div class="indicators">
+                <div class="ind_title ratings_title">REYTİNGLER</div>
+            </div>
+        </div>
         <div class="row">
             <div class="col-md-12">
                 @foreach($rating['ab'] as $ab)
@@ -667,6 +677,11 @@
                     <div class="button" data-href="#ab_ratings">AB</div>
                     <div class="button active" data-href="#somera_ratings">SOMERA</div>                    
                 </div>
+            </div>
+        </div>
+        <div class="row" style="position:relative;">
+            <div class="indicators">
+                <div class="ind_title ratings_title">REYTİNGLER</div>
             </div>
         </div>
         <div class="row">

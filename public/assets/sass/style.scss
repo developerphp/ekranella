@@ -1497,6 +1497,12 @@ section{
 
 
 .home_ratings{
+	.indicators{
+		.ind_title{
+			right: 0;
+			left: auto;
+		}
+	}
 	.ratings_row{
 		padding: 20px 0;
 		background: $c_lightGrey;
@@ -2252,6 +2258,9 @@ section{
 	background: #19b5fe;
 	color: #fff;
 	padding: 20px 0 30px 20px;
+	@include sm{
+		margin-top: 110px;
+	}
 	@include xs{
 		margin-top: 40px;
 		padding: 5px 0 5px 0px;
@@ -2307,6 +2316,9 @@ section{
 		padding-left: 8px;
 		text-transform: uppercase;
 		font-size: 22px;
+		@include xs{
+			width: 100%;
+		}
 	}
 	.ui-datepicker-current-day{
 		color: #000;

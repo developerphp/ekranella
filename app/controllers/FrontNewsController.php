@@ -179,7 +179,7 @@ class FrontNewsController extends \FrontController
             $news->toArray();
             $news['action'] = 'front.news.specialNewsDetail';
             $news['username'] = $username;
-            $news['alias'] = 'Özel';
+            $news['alias'] = 'ÖZEL';
             array_push($itemList, $news);
         }
         

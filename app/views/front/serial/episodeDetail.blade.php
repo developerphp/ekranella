@@ -171,7 +171,7 @@
                     <div class="col-md-6 home_boxes">
                         <a class="box square" style="background-image: url({{asset('http://www.ekranella.com/uploads')}}/{{$other->img}}_thumb.jpg);" href="{{action($other['action'], ['permalink' => $other->permalink])}}">
                             <div class="txt">
-                                <div class="box_title news_title">{{$other['alias']}}x</div>
+                                <div class="box_title news_title">{{$other['alias']}}</div>
                                 <div class="desc">{{$other->title}}</div>
                                 <div class="alt_desc">
                                 {{\BaseController::shorten($other->summary, 100)}} <br/>

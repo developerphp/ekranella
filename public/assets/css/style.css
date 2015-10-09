@@ -2000,6 +2000,11 @@ section {
   }
 }
 
+.home_ratings .indicators .ind_title {
+  right: 0;
+  left: auto;
+}
+
 .home_ratings .ratings_row {
   padding: 20px 0;
   background: #fbfafa;
@@ -2851,6 +2856,12 @@ section {
   padding: 20px 0 30px 20px;
 }
 
+@media (min-width: 768px) and (max-width: 991px) {
+  #datepicker {
+    margin-top: 110px;
+  }
+}
+
 @media only screen and (max-width: 767px) {
   #datepicker {
     margin-top: 40px;
@@ -2918,6 +2929,12 @@ section {
   padding-left: 8px;
   text-transform: uppercase;
   font-size: 22px;
+}
+
+@media only screen and (max-width: 767px) {
+  #datepicker .ui-datepicker-title {
+    width: 100%;
+  }
 }
 
 #datepicker .ui-datepicker-current-day {

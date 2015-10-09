@@ -128,7 +128,7 @@
                 <a target="_blank" href="http://www.tumblr.com/share/link?url={{Request::url()}}"><img src="{{asset('assets/img/share/ratings/tumblr.png')}}" alt="share"></a>
                 <a target="_blank" href="http://www.twitter.com/share?url={{Request::url()}}"><img src="{{asset('assets/img/share/ratings/twitter.png')}}" alt="share"></a>                
             </div>
-            <div class="col-lg-3 col-md-4 calendar">
+            <div class="col-lg-3 col-md-4 col-sm-5 calendar">
                 <div id="datepicker"></div>
             </div>
         </div>

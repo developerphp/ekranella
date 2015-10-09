@@ -65,7 +65,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">                    
+                <div class="row">                  
                     <?php $i=1; ?>
                     @foreach($episodes as $key => $value)                    
                         @foreach($value as $episode)
