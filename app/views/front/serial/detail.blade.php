@@ -72,8 +72,8 @@
                             <div class="col-md-6 home_boxes">
                                 <a class="box square" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$episode['img'].'_square.jpg')}});" href="{{action('front.serial.episodeDetail', ['permalink' => $episode['permalink']])}}">
                                     <div class="txt">
+                                        <div class="box_title series2_title">ÖZETLİYORUM</div>
                                         <div class="alt_desc">
-
                                             Sezon: {{$episode['season']}},
                                             Bölüm: {{$episode['number']}}</strong> @if($episode['airing_date'])
                                             | {{$episode['airing_date']}}@endif

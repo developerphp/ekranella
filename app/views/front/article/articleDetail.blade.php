@@ -75,7 +75,7 @@
                 <div class="row">
                     @foreach($others as $other)
                     <div class="col-md-6 home_boxes">
-                        <a class="box square" style="background-image: url({{asset('http://www.ekranella.com/')}}{{$other->user->pp}});" href="{{action('FrontArticleController@getArticle', ['permalink' => $other->permalink])}}">
+                        <a class="box square" style="background-image: url({{asset('http://www.ekranella.com/uploads/')}}{{$other->img}}_thumb.jpg);" href="{{action('FrontArticleController@getArticle', ['permalink' => $other->permalink])}}">
                             <div class="txt">
                                 <div class="box_title news_title">KÖŞE YAZILARI</div>
                                 <div class="desc">{{$other->title}}</div>
