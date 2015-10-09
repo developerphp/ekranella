@@ -91,11 +91,8 @@
             </div>
             <div class="col-md-3">
                 <div class="row">
-                    <div class="col-md-12 slider_boxes">
-                        <a href="{{url('guncel/anketler')}}" class="box" style="background-image: url({{asset('http://www.ekranella.com/assets/img/anket.png')}});">
-                            <div class="txt">
-                                <div class="box_title ekranella_title">ANKETLER</div>
-                            </div>
+                    <div class="col-md-12 col-sm-6 slider_boxes">
+                        <a href="{{url('guncel/anketler')}}" class="box" style="background-image: url({{asset('http://www.ekranella.com/assets/img/anket.png')}}); background-position: left top;">
                         </a>
                     </div>
                 </div>
