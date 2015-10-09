@@ -5,7 +5,7 @@
 
                     <ol class="carousel-indicators">
                         <?php $i=0; ?>
-                        @for($i==0;$i<=count($sliders)-3;$i++)
+                        @for($i==0;$i<=count($sliders)-1;$i++)
                         <li data-target="#myCarousel" data-slide-to="{{ $i }}" @if($i==0)class="active"@endif></li>
                         @endfor
                     </ol>
@@ -74,8 +74,7 @@
                                 </div>
                                 <img src="{{asset('http://www.ekranella.com/uploads/'.$slide['img'].'_slideThumb.jpg')}}" alt="{{$slide['title']}}">
                             </a> 
-                        <?php 
-                        if ($i==count($sliders)-3) { break; }
+                        <?php                         
                         $i++;                        
                         ?>
                         @endforeach                    
@@ -92,76 +91,13 @@
             </div>
             <div class="col-md-3">
                 <div class="row">
-                    <?php $i=0; ?>
-                    @foreach($sliders as $slide)
-                        @if ($i>count($sliders)-3)
-
-                            <?php
-                            $url = null;
-                            $subfolder = null;
-                            $class="series_title";
-                            switch ($slide['item']['enumNumber']) {
-                                case 1:
-                                    $url = 'subEnum';
-                                    $subfolder = 'bolum';
-                                    $categorie_title= 'BÖLÜM';
-                                    break;
-                                case 2:
-                                    $url = action('front.interviews.interviewDetail', ['permalink' => $slide['item']['permalink']]);
-                                    $subfolder = 'roportaj';
-                                    $categorie_title= 'RÖPORTAJ';
-                                    break;
-                                case 3:
-                                    $url = action('front.news.newsDetail', ['permalink' => $slide['item']['permalink']]);
-                                    $subfolder = 'haber';
-                                    $categorie_title= 'HABERLER';
-                                    $class="news_title";
-                                    break;
-                                case 4:
-                                    $url = action('front.article.articleDetail', ['permalink' => $slide['item']['permalink']]);
-                                    $subfolder = 'kose';
-                                    $categorie_title= 'KÖŞE YAZISI';
-                                    break;
-                                default;
-                            }
-
-                            //TODO enter specials, trailer, sgallery
-                            if ($url == 'subEnum') {
-                                switch ($slide['item']['enum']) {
-                                    case 1:
-                                        $url = action('front.serial.specialDetail', ['permalink' => $slide['item']['permalink']]);
-                                        break;
-                                    case 2:
-                                        $url = action('front.serial.episodeDetail', ['permalink' => $slide['item']['permalink']]);
-                                        break;
-                                    case 3:
-                                        $url = action('front.serial.trailerDetail', ['permalink' => $slide['item']['permalink']]);
-                                        break;
-                                    case 4:
-                                        $url = action('front.serial.sgalleryDetail', ['permalink' => $slide['item']['permalink']]);
-                                        break;
-                                    default;
-                                }
-                            }
-                            //Hotfix
-                            if ($subfolder == 'haber') {
-                                if ($slide['item']['type'] == 2) {
-                                    $url = action('front.news.specialNewsDetail', ['permalink' => $slide['item']['permalink']]);
-                                }
-                            }
-                            ?>
-
-                            <div class="col-md-12 slider_boxes">
-                                <a href="{{ $url }}" class="box" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$slide['img'].'_slideThumb.jpg')}});">
-                                    <div class="txt">
-                                        <div class="box_title {{ $class }}"><?php echo $categorie_title ?></div>
-                                        <div class="desc">{{$slide['title']}}</div>
-                                    </div>
-                                </a>
+                    <div class="col-md-12 slider_boxes">
+                        <a href="{{url('guncel/anketler')}}" class="box" style="background-image: url({{asset('http://www.ekranella.com/assets/img/anket.png')}});">
+                            <div class="txt">
+                                <div class="box_title ekranella_title">ANKETLER</div>
                             </div>
-                        @endif
-                    <?php $i++; ?>
-                    @endforeach                    
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
