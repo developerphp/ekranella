@@ -1608,6 +1608,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 	.home_boxes{
 		.square{
 			height: 360px;
+			@include md{
+				height: 293px;
+			}
+			@include sm{
+				height: 345px;
+			}
 			@include xs{
 				height: 300px;
 			}
@@ -1662,6 +1668,18 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 	.home_boxes{
 		.square{
 			height: 262.5px;
+		}
+		.square{
+			height: 262.5px;
+			@include md{
+				width: 212.5px;
+			}
+			@include sm{
+				width: 345px;
+			}
+			@include xs{
+				width: 315px;
+			}
 		}
 		.box{
 			background-size: cover;
