@@ -19,6 +19,7 @@
         <div class="row">
             <div id="newsCarousel" class="carousel slide">
                 <div class="indicators">
+                    <a class="ind_title news_title">TÜM HABERLER</a>
                     <ul>
                         <li data-target="#newsCarousel" data-slide-to="0" class="active"><span>1</span></li>
                         <li data-target="#newsCarousel" data-slide-to="1" ><span>2</span></li>

@@ -171,7 +171,7 @@
                                 <div class="alt_desc">
                                 {{\BaseController::shorten($other->summary, 100)}} <br/>
                                 Sezon: {{$other->season->number}},
-                                Bölüm: {{$other->number}}</strong> @if(isset($others->airing_date))
+                                Bölüm: {{$other->number}} @if(isset($others->airing_date))
                                 | {{$others->airing_date}}@endif<br/>
                                 @if($other->is_author) {{$other->user->name}} @else {{$other->guest_author}} @endif<br/>                                
                                 </div>

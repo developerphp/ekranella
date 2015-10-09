@@ -1457,6 +1457,15 @@ section {
   }
 }
 
+.container .indicators .all_news {
+  display: block;
+}
+
+.container .indicators .all_news:hover {
+  color: #913d88;
+  text-decoration: underline;
+}
+
 .container .indicators ul li {
   border-radius: 50%;
   height: 20px;

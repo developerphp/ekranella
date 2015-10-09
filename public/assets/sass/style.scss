@@ -1078,6 +1078,13 @@ section{
     				display: none;
     			}
 			}
+			.all_news{
+				display: block;
+				&:hover{
+			    	color: $c_news;
+			    	text-decoration: underline;
+			    }
+			}
 			ul{
 				li{
 					border-radius: 50%;
