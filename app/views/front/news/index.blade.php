@@ -18,7 +18,7 @@
                 </div>
             </div>
         </div>        
-        <div class="row endlessEpisode interview_list" id="searchList">
+        <div class="row endlessEpisode list_s_txt" id="searchList">
             @foreach($newsList as $news)
                 <div class="col-md-4 home_boxes">
                     <a href="{{action('front.news.newsDetail',['permalink'=>$news->permalink])}}" class="box square" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$news->img.'_thumb.jpg')}})">

@@ -735,6 +735,9 @@ header{
 	.bottom{
 		padding-top: 20px;
 		padding-bottom: 20px;
+		@include sm{
+			width: 100%;
+		}
 		.logo{
 			width: 300px;
 			margin-top: 8px;
@@ -847,6 +850,9 @@ header{
 	@include md{
 		display: none !important;
 	}
+	@include sm{
+		padding: 0 40px;
+	}
 	.logo{
 		border-bottom: 1px solid #303030;
 		padding: 30px 0;
@@ -863,6 +869,9 @@ header{
 			background: url(../img/header/search_wh.png) center no-repeat;
 			cursor: pointer;
 			margin-right: 20px;
+			@include sm{
+				margin-right: 40px;
+			}
 		}
 		.m_menu_close{
 			float: right;
@@ -876,12 +885,19 @@ header{
 	nav{
 		border-bottom: 1px solid #303030;
 		padding: 10px 0;
+		@include sm{
+			padding: 20px 0;
+		}
 		a{
 			font-size: 24px;
 			display: block;
 			color: #fff;
 			margin-bottom: 5px;
 			font-weight: bold;
+			@include sm{
+				font-size: 40px;
+			    margin-bottom: 10px;
+			}
 		}
 	}
 	.bottom{
@@ -902,6 +918,9 @@ header{
 			font-size: 11px;
 			color: #707070;
 			margin-top: 20px;
+			@include sm{
+				font-size: 14px;
+			}
 		}
 	}
 }
@@ -921,6 +940,10 @@ footer{
 			border-right: 1px solid #de7da0;
 			padding-left: 30px;
 			padding-right: 0px;
+			@include sm{
+				border: 0;
+				padding-left: 15px;
+			}
 			@include xs{
 				border: 0;
 				padding-left: 15px;
@@ -1003,6 +1026,9 @@ section{
 			font-size: 20px;
 			cursor: pointer;
 			font-weight: bold;
+			@include sm{
+				width: 200px;
+			}
 			@include xs{
 				width: 100%;
 			}
@@ -1045,6 +1071,9 @@ section{
 			    font-size: 14px;
 			    font-weight: bold;
 			    position: absolute;
+			    @include sm{
+    				display: none;
+    			}
 			    @include xs{
     				display: none;
     			}
@@ -1163,6 +1192,9 @@ section{
 
 .page_margin{
 	margin-top: 80px;
+	@include sm{
+		margin-top: 30px;
+	}
 	@include xs{
 		margin-top: 50px;
 	}
@@ -1171,6 +1203,9 @@ section{
 /*home*/
 
 #home_slider{
+	@include sm{
+    	width: 100%;
+    }
 	.slider{
 		@include xs{
     		padding: 0;
@@ -1236,6 +1271,10 @@ section{
 		}
 	}
 	.slider_boxes{
+		@include sm{
+			width: 750px;
+   			margin: 0 auto;
+		}
 		.box{
 			display: block;
 			height: 235px;
@@ -1245,6 +1284,7 @@ section{
 			position: relative;
 			@include sm{
 				margin: 15px 0;
+				height: 300px;
 			}
 			@include xs{
 				margin: 15px 0;
@@ -1280,18 +1320,27 @@ section{
 	.home_boxes{
 		.square{
 			height: 650px;
+			@include md{
+				height: 535px;
+			}
 			@include xs{
 				height: 300px;
 			}
 		}
 		.small_square{
 			height: 360px;
+			@include md{
+				height: 293px;
+			}
 			@include xs{
 				height: 300px;
 			}
 		}
 		.rectangle{
 			height: 310px;
+			@include md{
+				height: 252px;
+			}
 			@include xs{
 				height: 300px;
 			}
@@ -1482,6 +1531,9 @@ section{
 	.home_boxes{
 		.square{
 			height: 360px;
+			@include xs{
+				height: 300px;
+			}
 		}
 		.box{
 			.txt{
@@ -1498,6 +1550,9 @@ section{
 			margin-top: 14px;
 			font-size: 13px;
 			font-weight: bold;
+			@include xs{
+				margin-top: 24px;
+			}
 			span{
 				display: inline-block;
 			}
@@ -1659,6 +1714,21 @@ section{
 	color: #fff;
 	font-size: 14px;
 	font-weight: bold;
+	div:first-child { 
+		a{
+			&:hover{
+				color: #fff;
+			}
+		}
+    	@include xs{
+			border-bottom: 1px solid;
+		    width: 80%;
+		    padding: 30px 0;
+		    margin: 0 auto;
+		    font-size: 20px;
+		    text-transform: uppercase;
+		}
+	}
 	@include xs{
 		text-align: center;
 	}
@@ -1666,7 +1736,7 @@ section{
 		text-align: right;
 		@include xs{
 			text-align: center;
-			margin-top: 20px;
+			margin: 20px 0 10px 0;
 		}
 		a{	
 		margin-left: 20px;
@@ -1687,6 +1757,12 @@ section{
 }
 
 .sidebar{
+	@include sm{
+		margin-top: 30px;
+	}
+	@include xs{
+		margin-top: 30px;
+	}
 	.home_boxes{
 		.rectangle{
 			height: 180px;
@@ -1696,6 +1772,20 @@ section{
 			background-size: auto 103%;
 			&:hover{
 				background-size: auto 108%;
+				@include sm{
+					background-size: cover;
+					margin-bottom: 30px;
+				}
+				@include xs{
+					background-size: cover;
+					margin-bottom: 30px;
+				}
+			}
+			@include sm{
+				background-size: cover;
+			}
+			@include xs{
+				background-size: cover;
 			}
 			.txt{
 				left: 20px;
@@ -1763,6 +1853,9 @@ section{
 			display: block;
 			font-size: 16px;
 			margin-left: 40px;
+			@include xs{
+				margin-left: 0;
+			}
 		}
 		.main_title{
 			font-size: 16px;
@@ -1806,7 +1899,7 @@ section{
 				line-height: normal;
 				font-size: 45px;
 				@include xs{
-					font-size: 40px;
+					font-size: 30px;
 				}
 			}
 		}
@@ -1938,7 +2031,7 @@ section{
 	}
 }
 
-.interview_list{
+.list_s_txt{
 	.home_boxes{
 		.box{
 			.txt{
@@ -1972,6 +2065,7 @@ section{
 			display: none;
 			@include sm{
 				display: block;
+				right: 40px;
 			}
 			@include xs{
 				display: block;

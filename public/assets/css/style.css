@@ -1001,6 +1001,12 @@ header .bottom {
   padding-bottom: 20px;
 }
 
+@media (min-width: 768px) and (max-width: 991px) {
+  header .bottom {
+    width: 100%;
+  }
+}
+
 header .bottom .logo {
   width: 300px;
   margin-top: 8px;
@@ -1148,6 +1154,12 @@ header .bottom .m_menu_button {
   }
 }
 
+@media (min-width: 768px) and (max-width: 991px) {
+  .mobile_menu {
+    padding: 0 40px;
+  }
+}
+
 .mobile_menu .logo {
   border-bottom: 1px solid #303030;
   padding: 30px 0;
@@ -1169,6 +1181,12 @@ header .bottom .m_menu_button {
   margin-right: 20px;
 }
 
+@media (min-width: 768px) and (max-width: 991px) {
+  .mobile_menu .logo .m_search {
+    margin-right: 40px;
+  }
+}
+
 .mobile_menu .logo .m_menu_close {
   float: right;
   width: 20px;
@@ -1183,12 +1201,25 @@ header .bottom .m_menu_button {
   padding: 10px 0;
 }
 
+@media (min-width: 768px) and (max-width: 991px) {
+  .mobile_menu nav {
+    padding: 20px 0;
+  }
+}
+
 .mobile_menu nav a {
   font-size: 24px;
   display: block;
   color: #fff;
   margin-bottom: 5px;
   font-weight: bold;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .mobile_menu nav a {
+    font-size: 40px;
+    margin-bottom: 10px;
+  }
 }
 
 .mobile_menu .bottom a {
@@ -1214,6 +1245,12 @@ header .bottom .m_menu_button {
   margin-top: 20px;
 }
 
+@media (min-width: 768px) and (max-width: 991px) {
+  .mobile_menu .social .txt, .mobile_menu .social #home_banner1 .banner .txt2, #home_banner1 .banner .mobile_menu .social .txt2, .mobile_menu .social #home_banner2 .banner .txt2, #home_banner2 .banner .mobile_menu .social .txt2 {
+    font-size: 14px;
+  }
+}
+
 footer {
   font-size: 14px;
   color: #fff;
@@ -1234,6 +1271,13 @@ footer .top nav {
   border-right: 1px solid #de7da0;
   padding-left: 30px;
   padding-right: 0px;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  footer .top nav {
+    border: 0;
+    padding-left: 15px;
+  }
 }
 
 @media only screen and (max-width: 767px) {
@@ -1338,6 +1382,12 @@ section {
   font-weight: bold;
 }
 
+@media (min-width: 768px) and (max-width: 991px) {
+  .container .page_select .button {
+    width: 200px;
+  }
+}
+
 @media only screen and (max-width: 767px) {
   .container .page_select .button {
     width: 100%;
@@ -1393,6 +1443,12 @@ section {
   font-size: 14px;
   font-weight: bold;
   position: absolute;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .container .indicators .ind_title {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 767px) {
@@ -1544,6 +1600,12 @@ section {
   margin-top: 80px;
 }
 
+@media (min-width: 768px) and (max-width: 991px) {
+  .page_margin {
+    margin-top: 30px;
+  }
+}
+
 @media only screen and (max-width: 767px) {
   .page_margin {
     margin-top: 50px;
@@ -1551,6 +1613,12 @@ section {
 }
 
 /*home*/
+@media (min-width: 768px) and (max-width: 991px) {
+  #home_slider {
+    width: 100%;
+  }
+}
+
 @media only screen and (max-width: 767px) {
   #home_slider .slider {
     padding: 0;
@@ -1637,6 +1705,13 @@ section {
   }
 }
 
+@media (min-width: 768px) and (max-width: 991px) {
+  #home_slider .slider_boxes {
+    width: 750px;
+    margin: 0 auto;
+  }
+}
+
 #home_slider .slider_boxes .box {
   display: block;
   height: 235px;
@@ -1649,6 +1724,7 @@ section {
 @media (min-width: 768px) and (max-width: 991px) {
   #home_slider .slider_boxes .box {
     margin: 15px 0;
+    height: 300px;
   }
 }
 
@@ -1688,6 +1764,12 @@ section {
   height: 650px;
 }
 
+@media (min-width: 992px) and (max-width: 1199px) {
+  .home_sections .home_boxes .square, #home_series .home_boxes .square {
+    height: 535px;
+  }
+}
+
 @media only screen and (max-width: 767px) {
   .home_sections .home_boxes .square, #home_series .home_boxes .square {
     height: 300px;
@@ -1698,6 +1780,12 @@ section {
   height: 360px;
 }
 
+@media (min-width: 992px) and (max-width: 1199px) {
+  .home_sections .home_boxes .small_square, #home_series .home_boxes .small_square {
+    height: 293px;
+  }
+}
+
 @media only screen and (max-width: 767px) {
   .home_sections .home_boxes .small_square, #home_series .home_boxes .small_square {
     height: 300px;
@@ -1706,6 +1794,12 @@ section {
 
 .home_sections .home_boxes .rectangle, #home_series .home_boxes .rectangle {
   height: 310px;
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .home_sections .home_boxes .rectangle, #home_series .home_boxes .rectangle {
+    height: 252px;
+  }
 }
 
 @media only screen and (max-width: 767px) {
@@ -1930,6 +2024,12 @@ section {
   height: 360px;
 }
 
+@media only screen and (max-width: 767px) {
+  #shows_list .home_boxes .square {
+    height: 300px;
+  }
+}
+
 #shows_list .home_boxes .box .txt .desc, #shows_list .home_boxes .box #home_banner1 .banner .txt2 .desc, #home_banner1 .banner #shows_list .home_boxes .box .txt2 .desc, #shows_list .home_boxes .box #home_banner2 .banner .txt2 .desc, #home_banner2 .banner #shows_list .home_boxes .box .txt2 .desc {
   font-size: 30px;
 }
@@ -1940,6 +2040,12 @@ section {
   margin-top: 14px;
   font-size: 13px;
   font-weight: bold;
+}
+
+@media only screen and (max-width: 767px) {
+  #shows_list .page_select .search {
+    margin-top: 24px;
+  }
 }
 
 #shows_list .page_select .search span {
@@ -2112,6 +2218,21 @@ section {
   font-weight: bold;
 }
 
+.share_box div:first-child a:hover {
+  color: #fff;
+}
+
+@media only screen and (max-width: 767px) {
+  .share_box div:first-child {
+    border-bottom: 1px solid;
+    width: 80%;
+    padding: 30px 0;
+    margin: 0 auto;
+    font-size: 20px;
+    text-transform: uppercase;
+  }
+}
+
 @media only screen and (max-width: 767px) {
   .share_box {
     text-align: center;
@@ -2125,7 +2246,7 @@ section {
 @media only screen and (max-width: 767px) {
   .share_box .share {
     text-align: center;
-    margin-top: 20px;
+    margin: 20px 0 10px 0;
   }
 }
 
@@ -2150,6 +2271,18 @@ section {
   }
 }
 
+@media (min-width: 768px) and (max-width: 991px) {
+  .sidebar {
+    margin-top: 30px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .sidebar {
+    margin-top: 30px;
+  }
+}
+
 .sidebar .home_boxes .rectangle {
   height: 180px;
 }
@@ -2161,6 +2294,32 @@ section {
 
 .sidebar .home_boxes .box:hover {
   background-size: auto 108%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .sidebar .home_boxes .box:hover {
+    background-size: cover;
+    margin-bottom: 30px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .sidebar .home_boxes .box:hover {
+    background-size: cover;
+    margin-bottom: 30px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .sidebar .home_boxes .box {
+    background-size: cover;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .sidebar .home_boxes .box {
+    background-size: cover;
+  }
 }
 
 .sidebar .home_boxes .box .txt, .sidebar .home_boxes .box #home_banner1 .banner .txt2, #home_banner1 .banner .sidebar .home_boxes .box .txt2, .sidebar .home_boxes .box #home_banner2 .banner .txt2, #home_banner2 .banner .sidebar .home_boxes .box .txt2 {
@@ -2237,6 +2396,12 @@ section {
   margin-left: 40px;
 }
 
+@media only screen and (max-width: 767px) {
+  #show_detail .show_desc span {
+    margin-left: 0;
+  }
+}
+
 #show_detail .show_desc .main_title {
   font-size: 16px;
   margin-bottom: 20px;
@@ -2277,7 +2442,7 @@ section {
 
 @media only screen and (max-width: 767px) {
   .news_page .main_banner .txt .desc, .news_page .main_banner #home_banner1 .banner .txt2 .desc, #home_banner1 .banner .news_page .main_banner .txt2 .desc, .news_page .main_banner #home_banner2 .banner .txt2 .desc, #home_banner2 .banner .news_page .main_banner .txt2 .desc {
-    font-size: 40px;
+    font-size: 30px;
   }
 }
 
@@ -2413,7 +2578,7 @@ section {
   font-weight: bold;
 }
 
-.interview_list .home_boxes .box .txt .desc, .interview_list .home_boxes .box #home_banner1 .banner .txt2 .desc, #home_banner1 .banner .interview_list .home_boxes .box .txt2 .desc, .interview_list .home_boxes .box #home_banner2 .banner .txt2 .desc, #home_banner2 .banner .interview_list .home_boxes .box .txt2 .desc {
+.list_s_txt .home_boxes .box .txt .desc, .list_s_txt .home_boxes .box #home_banner1 .banner .txt2 .desc, #home_banner1 .banner .list_s_txt .home_boxes .box .txt2 .desc, .list_s_txt .home_boxes .box #home_banner2 .banner .txt2 .desc, #home_banner2 .banner .list_s_txt .home_boxes .box .txt2 .desc {
   font-size: 24px !important;
   line-height: 26px !important;
 }
@@ -2443,6 +2608,7 @@ section {
 @media (min-width: 768px) and (max-width: 991px) {
   .search_box .search_close {
     display: block;
+    right: 40px;
   }
 }
 

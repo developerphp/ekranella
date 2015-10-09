@@ -27,7 +27,7 @@
         <div class="row">
             <div class="col-md-9">
                 <div class="row share_box">
-                    <div class="col-md-4">
+                    <div class="col-md-4 col-sm-4">
                         {{ $created_at }}
                     </div>
                     @include('front.includes.share')

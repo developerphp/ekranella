@@ -136,7 +136,7 @@
         </div>
     </div>
     <div class="mobile_menu">
-        <div class="logo">
+        <a href="{{url()}}"><div class="logo"></a>
             <img src="{{asset('assets/img/logo_wh.png')}}" alt="logo">
             <div class="m_menu_close"></div>
             <div class="m_search"></div>
