@@ -18,7 +18,7 @@
         </div>        
         <div class="row endlessEpisode list_s_txt" id="searchList">
             @foreach($interviews as $interview)
-                <div class="col-md-4 home_boxes">
+                <div class="col-md-4 col-sm-6 home_boxes">
                     <a href="{{action('front.interviews.interviewDetail',['permalink'=>$interview->permalink])}}" class="box square" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$interview->img.'_thumb.jpg')}})">
                         <div class="txt">
                             <div class="box_title interview_title">RÖPORTAJLAR</div>

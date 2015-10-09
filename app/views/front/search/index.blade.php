@@ -87,7 +87,7 @@
             }
             ?>
 
-            <div class="col-md-4 home_boxes">
+            <div class="col-md-4 col-sm-6 home_boxes">
                 <a class="box small_square" style="background-image: url(@if(getEnum($item) != 6){{asset('http://www.ekranella.com/uploads/'.$item['img'].'_thumb.jpg')}}@else{{asset('http://www.ekranella.com/'.$item['img'])}}@endif);" href="{{$url}}">
                     <div class="txt">
                         <div class="box_title news_title">{{$item['title']}}</div>

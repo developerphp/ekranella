@@ -22,7 +22,7 @@
         </div>        
         <div class="row endlessEpisode" id="searchList">
             @foreach($allSerials as $serial)
-                <div class="col-md-4 home_boxes">
+                <div class="col-md-4 col-sm-6 home_boxes">
                     <a href="{{action('front.serial.detail',['permalink' => $serial->permalink])}}" class="box square" style="background-image: url({{asset('http://www.ekranella.com/'.$serial->img)}});">
                         <div class="txt">
                             <div class="box_title {{$class}}_title">{{$as}}</div>

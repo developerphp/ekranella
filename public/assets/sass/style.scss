@@ -1346,6 +1346,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 		}
 	}
 	.slider_boxes{
+		@include sm{
+			display: none;
+		}
+		@include xs{
+			display: none;
+		}
 		.box{
 			display: block;
 			height: 235px;
