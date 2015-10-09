@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="page_select ekranella_selected">
-                    <div class="button active">{{$as}} @if(isset($serial)) - {{$serial->title}}@endif</div>
+                    <div class="button active">@if(isset($serial)){{$serial->title}} @else {{$as}} @endif</div>
                     <div class="search">
                         <div class="icon">
                             <input class="text" type="text" placeholder="ARA" name="search" id="liveInput">
@@ -21,7 +21,7 @@
                 <div class="col-md-4 home_boxes">
                     <a href="{{action($item['action'],['permalink' => $item['permalink']])}}" class="box square" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$item['img'].'_thumb.jpg')}});">
                         <div class="txt">
-                            <div class="box_title ekranella_title">@if(isset($item['serial'])) {{$item['serial']->title}} @endif</div>
+                            <div class="box_title ekranella_title">{{$as}}</div>
                             <div class="desc">{{$item['title']}}</div>
                             <div class="alt_desc">
                             <p>@if(isset($item['summary'])){{\BaseController::shorten($item['summary'], 150)}}@endif</p>

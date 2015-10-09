@@ -114,6 +114,7 @@ class FrontNewsController extends \FrontController
             'as' => $alias,
             'permalink' => $serial_permalink,
             'list' => $news,
+            'social' => ConfigController::getSocial(),
         ];
         if (isset($serial))
             $data['serial'] = $serial;
