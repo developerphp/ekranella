@@ -51,8 +51,12 @@
         <div class="row">
             <div class="col-md-9">
                 <div class="row share_box">
+<<<<<<< HEAD
                     <div class="col-md-4">
                     <a href="{{action('front.serial.detail',['permalink' => $serial->permalink])}}">
+=======
+                    <div class="col-md-4 col-sm-4">
+>>>>>>> origin/master
                         {{$serial->title}}
                     </a>
                     </div>

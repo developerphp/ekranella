@@ -14,7 +14,7 @@
                         ?>
 
                         @foreach($latestsnews as $latest)
-                        <div class="col-md-12 home_boxes">
+                        <div class="col-md-12 col-sm-6 home_boxes">
                             <a class="box rectangle" style="background-image: url({{asset('http://www.ekranella.com/uploads/'. $latest->img . '_thumb.jpg')}});" href="{{action('FrontNewsController@getNews', ['permalink' => $latest->permalink])}}">
                                 <div class="txt">
                                     <div class="box_title news_title">HABERLER</div>
@@ -66,7 +66,7 @@
 
                     @foreach($latestinterviews as $linterview)
                     <div class="row">
-                        <div class="col-md-12 home_boxes">
+                        <div class="col-md-12 col-sm-6 home_boxes">
                             <a class="box rectangle" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$linterview->img.'_thumb.jpg')}}" alt="{{$linterview->title}}" href="{{action('front.interviews.interviewDetail',['permalink'=>$linterview->permalink])}}">
                                 <div class="txt">
                                     <div class="box_title news_title">RÖPORTAJ</div>
@@ -90,7 +90,7 @@
                     ?>
                     @foreach($articles as $article)
                     <div class="row">
-                        <div class="col-md-12 home_boxes">
+                        <div class="col-md-12 col-sm-6 home_boxes">
                             <a href="{{action('front.article.articleDetail', ['permalink' => $article->permalink])}}" class="box rectangle" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$article->img.'_thumb.jpg')}});">
                                 <div class="txt">
                                     <div class="box_title news_title">KÖSE YAZILARI</div>

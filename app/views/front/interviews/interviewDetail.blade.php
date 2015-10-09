@@ -21,7 +21,7 @@
         <div class="row">
             <div class="col-md-9">
                 <div class="row share_box">
-                    <div class="col-md-4">
+                    <div class="col-md-4 col-sm-4">
                     @if($interview->serial_id != 0)
                         <a href="{{$url}}">{{$related['title']}}</a>                        
                     @endif
