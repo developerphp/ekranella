@@ -65,9 +65,17 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">                  
+                <div class="row tabser">   
+                    <ul class="tabs-head">
+                        <?php $i = true; ?>
+                        @foreach($episodes as $key => $value)
+                            <li @if($i) class="active" @endif ><a onclick="$('.tab').hide();$('#tab{{$key}}').show(0)">SEZON {{$key}}</a>
+                            </li> <?php $i = false; ?>
+                        @endforeach
+                    </ul>
                     <?php $i=1; ?>
-                    @foreach($episodes as $key => $value)                    
+                    @foreach($episodes as $key => $value)   
+                        <div class="tab @if($i) active @endif " id="tab{{$key}}" <?php if ($i>1) { echo 'style="display:none"'; } ?>>                 
                         @foreach($value as $episode)
                             <div class="col-md-6 home_boxes">
                                 <a class="box square" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$episode['img'].'_square.jpg')}});" href="{{action('front.serial.episodeDetail', ['permalink' => $episode['permalink']])}}">
@@ -83,11 +91,9 @@
                                     </div>
                                 </a>
                             </div>                            
-                        @endforeach                        
-                        <?php
-                        $i++;
-                        if ($i==2) { break; }                         
-                        ?>
+                        @endforeach                                                
+                        </div>
+                        <?php $i++; ?>
                     @endforeach
                 </div>
                 <div class="row">

@@ -1232,6 +1232,7 @@ section{
     	width: 100%;
     }
 	.slider{
+		transition: all ease 0.5s;
 		@include xs{
     		padding: 0;
     	}
@@ -1294,12 +1295,39 @@ section{
     			}
 			}
 		}
-		/*.glyphicon-chevron-right{
+		.carousel-control{
+			.left{
+				background-image: none;
+			}
+			.right{
+				background-image: none;
+			}
+		}
+		.glyphicon-chevron-right{
+			opacity: 0;
+			background: url(../img/slider/slider_right.png) center no-repeat;
+			&:before{
+				content:"";	
+			}
+		}
+		.glyphicon-chevron-left{
+			opacity: 0;
+			background: url(../img/slider/slider_left.png) center no-repeat;
 			&:before{
 				content:"";
-				background: url(../img/);
 			}
-		}*/
+		}
+		&:hover{
+			transition: all ease 0.5s;
+			.glyphicon-chevron-right{
+				opacity: 1;
+				transition: all ease 0.5s;
+			}
+			.glyphicon-chevron-left{
+				opacity: 1;
+				transition: all ease 0.5s;
+			}
+		}
 	}
 	.slider_boxes{
 		@include sm{
