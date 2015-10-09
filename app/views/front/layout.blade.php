@@ -95,8 +95,8 @@
                 </div>
                 <div class="line">|</div>
                 <nav>
-                    <a href="{{action('front.interviews.index')}}">RÖPORTAJ</a>
-                    <a href="{{action('front.rating.index')}}">REYTİNG</a>
+                    <a class="special" href="{{action('front.news.specialNews')}}">ÖZEL</a>
+                    <a href="{{action('front.rating.index')}}">REYTİNGLER</a>
                     <a href="{{action('front.authors.index')}}">YAZARLAR</a>
                     <a href="{{action('front.featured.archive')}}">DOSYALAR</a>
                 </nav>
@@ -113,7 +113,7 @@
                     <a href="{{action('FrontSerialController@getForeignSerial')}}">YABANCI DİZİLER</a>
                     <a href="{{action('FrontSerialController@getProgram')}}">PROGRAMLAR</a>
                     <a href="{{action('front.news.photoNews')}}">FOTOHABER</a>
-                    <a class="special" href="{{action('front.news.specialNews')}}">ÖZEL</a>
+                    <a href="{{action('front.interviews.index')}}">RÖPORTAJLAR</a>
                     <div id="searchit" class="search">
                         <div class="icon">ARA
                             <div class="pic"></div>

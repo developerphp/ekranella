@@ -978,6 +978,12 @@ header .top nav a:hover:after {
   transition: all ease 0.3s;
 }
 
+header .top nav .special {
+  border-left: 2px solid #fff;
+  border-right: 2px solid #fff;
+  padding: 0 10px;
+}
+
 header .top .line {
   float: right;
   margin: 0 10px 0 30px;
@@ -1064,12 +1070,6 @@ header .bottom nav a:hover:after {
   opacity: 1;
   bottom: -10px;
   transition: all ease 0.3s;
-}
-
-header .bottom nav .special {
-  border-left: 2px solid #d25380;
-  border-right: 2px solid #d25380;
-  padding: 0 10px;
 }
 
 header .bottom .search {
@@ -1382,6 +1382,12 @@ section {
   font-weight: bold;
 }
 
+@media (min-width: 992px) and (max-width: 1199px) {
+  .container .page_select .button {
+    width: 200px;
+  }
+}
+
 @media (min-width: 768px) and (max-width: 991px) {
   .container .page_select .button {
     width: 200px;
@@ -1437,12 +1443,15 @@ section {
 }
 
 .container .indicators .ind_title {
-  left: -110px;
-  top: 3px;
+  left: -200px;
+  top: 0;
   background: none !important;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: bold;
   position: absolute;
+  border-left: 3px solid;
+  border-right: 3px solid;
+  padding: 0 15px;
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -1459,11 +1468,29 @@ section {
 
 .container .indicators .all_news {
   display: block;
+  left: -110px;
+  top: 3px;
+  background: none !important;
+  font-size: 14px;
+  font-weight: bold;
+  position: absolute;
 }
 
 .container .indicators .all_news:hover {
   color: #913d88;
   text-decoration: underline;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .container .indicators .all_news {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .container .indicators .all_news {
+    display: none;
+  }
 }
 
 .container .indicators ul li {
@@ -1626,6 +1653,15 @@ section {
   #home_slider {
     width: 100%;
   }
+}
+
+#home_slider .slider {
+  /*.glyphicon-chevron-right{
+			&:before{
+				content:"";
+				background: url(../img/);
+			}
+		}*/
 }
 
 @media only screen and (max-width: 767px) {
@@ -2184,7 +2220,7 @@ section {
   position: relative;
   height: 550px;
   background-size: cover;
-  background-position: center;
+  background-position: center top;
 }
 
 .main_banner .txt, .main_banner #home_banner1 .banner .txt2, #home_banner1 .banner .main_banner .txt2, .main_banner #home_banner2 .banner .txt2, #home_banner2 .banner .main_banner .txt2 {
@@ -2453,6 +2489,10 @@ section {
   .news_page .main_banner .txt .desc, .news_page .main_banner #home_banner1 .banner .txt2 .desc, #home_banner1 .banner .news_page .main_banner .txt2 .desc, .news_page .main_banner #home_banner2 .banner .txt2 .desc, #home_banner2 .banner .news_page .main_banner .txt2 .desc {
     font-size: 30px;
   }
+}
+
+.news_page .news_box {
+  padding-bottom: 50px;
 }
 
 .news_page .news_box .txt, .news_page .news_box #home_banner1 .banner .txt2, #home_banner1 .banner .news_page .news_box .txt2, .news_page .news_box #home_banner2 .banner .txt2, #home_banner2 .banner .news_page .news_box .txt2 {
@@ -2808,7 +2848,7 @@ section {
   margin-top: -112px;
   background: #19b5fe;
   color: #fff;
-  padding: 40px 0 30px 40px;
+  padding: 20px 0 30px 20px;
 }
 
 @media only screen and (max-width: 767px) {
@@ -2819,12 +2859,12 @@ section {
 }
 
 #datepicker th {
-  padding: 10px;
+  padding: 6px;
   text-align: center;
 }
 
 #datepicker td {
-  padding: 10px;
+  padding: 6px 0;
   text-align: center;
 }
 
@@ -2842,7 +2882,7 @@ section {
 
 #datepicker .ui-datepicker-next {
   position: absolute;
-  right: 45px;
+  right: 28px;
   top: -2px;
 }
 
@@ -2858,7 +2898,7 @@ section {
 
 #datepicker .ui-datepicker-prev {
   position: absolute;
-  right: 80px;
+  right: 65px;
   top: -2px;
 }
 

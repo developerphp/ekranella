@@ -716,6 +716,11 @@ header{
    					}
    				}
 			}
+			.special{
+				border-left: 2px solid #fff;
+			    border-right: 2px solid #fff;
+			    padding: 0 10px;
+			}
 		}
 		.line{
 			float: right;
@@ -780,11 +785,6 @@ header{
 	   					transition: all ease 0.3s;
    					}
    				}
-			}
-			.special{
-				border-left: 2px solid $c_ekranella;
-			    border-right: 2px solid $c_ekranella;
-			    padding: 0 10px;
 			}
 		}
 		.search{
@@ -1026,6 +1026,9 @@ section{
 			font-size: 20px;
 			cursor: pointer;
 			font-weight: bold;
+			@include md{
+				width: 200px;
+			}
 			@include sm{
 				width: 200px;
 			}
@@ -1065,12 +1068,15 @@ section{
     			top: -48px;
     		}
     		.ind_title{
-				left: -110px;
-			    top: 3px;
+				left: -200px;
+			    top: 0;
 			    background: none !important;
-			    font-size: 14px;
+			    font-size: 20px;
 			    font-weight: bold;
 			    position: absolute;
+			    border-left: 3px solid;
+			    border-right: 3px solid;
+			    padding: 0 15px;
 			    @include sm{
     				display: none;
     			}
@@ -1080,10 +1086,22 @@ section{
 			}
 			.all_news{
 				display: block;
+				left: -110px;
+			    top: 3px;
+			    background: none !important;
+			    font-size: 14px;
+			    font-weight: bold;
+			    position: absolute;
 				&:hover{
 			    	color: $c_news;
 			    	text-decoration: underline;
 			    }
+			    @include sm{
+    				display: none;
+    			}
+			    @include xs{
+    				display: none;
+    			}
 			}
 			ul{
 				li{
@@ -1276,6 +1294,12 @@ section{
     			}
 			}
 		}
+		/*.glyphicon-chevron-right{
+			&:before{
+				content:"";
+				background: url(../img/);
+			}
+		}*/
 	}
 	.slider_boxes{
 		@include sm{
@@ -1684,7 +1708,7 @@ section{
 	position: relative;
 	height: 550px;
 	background-size: cover;
-	background-position: center;
+	background-position: center top;
 	.txt{
 		padding: 0 30px;
 		font-weight: bold;
@@ -1912,6 +1936,7 @@ section{
 		}
 	}
 	.news_box{
+		padding-bottom: 50px;
 		.txt{
 			margin: 50px 0;
 			font-size: 16px;
@@ -2226,17 +2251,17 @@ section{
 	margin-top: -112px;
 	background: #19b5fe;
 	color: #fff;
-	padding: 40px 0 30px 40px;
+	padding: 20px 0 30px 20px;
 	@include xs{
 		margin-top: 40px;
 		padding: 5px 0 5px 0px;
 	}
 	th{
-		padding: 10px;
+		padding: 6px;
 		text-align: center;
 	}
 	td{
-		padding: 10px;
+		padding: 6px 0;
 		text-align: center;
 		a{
 			&:hover{
@@ -2252,7 +2277,7 @@ section{
 	}
 	.ui-datepicker-next{
 		position: absolute;
-		right: 45px;
+		right: 28px;
 		top: -2px;
 		span{
 			display: none;
@@ -2265,7 +2290,7 @@ section{
 	}
 	.ui-datepicker-prev{
 		position: absolute;
-		right: 80px;
+		right: 65px;
 		top: -2px;
 		span{
 			display: none;

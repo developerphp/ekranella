@@ -108,7 +108,7 @@
     </section>
     <div class="container">
         <div class="row dates">
-            <div class="col-md-8">
+            <div class="col-lg-9 col-md-8">
                 <div class="main_title">GEÇMİŞ REYTİNGLER</div>
                 <?php 
                 if($count>9) $count = 10;
@@ -120,7 +120,7 @@
                 <div class="date_box"><a href="{{action('front.rating.index',['type'=>'total'])}}">{{date('d/m/Y', time() - 60 * 60 * 24)}}</a></div>
                 @endif
             </div>
-            <div class="col-md-8 share">
+            <div class="col-lg-9 col-md-8 col-sm-7 share">
                 <div class="main_title">PAYLAŞ</div>
                 <a target="_blank" href="http://www.facebook.com/share.php?u={{Request::url()}}"><img src="{{asset('assets/img/share/ratings/facebook.png')}}" alt="share"></a>
                 <a target="_blank" href="https://plus.google.com/share?url={{Request::url()}}"><img src="{{asset('assets/img/share/ratings/google.png')}}" alt="share"></a>
@@ -128,7 +128,7 @@
                 <a target="_blank" href="http://www.tumblr.com/share/link?url={{Request::url()}}"><img src="{{asset('assets/img/share/ratings/tumblr.png')}}" alt="share"></a>
                 <a target="_blank" href="http://www.twitter.com/share?url={{Request::url()}}"><img src="{{asset('assets/img/share/ratings/twitter.png')}}" alt="share"></a>                
             </div>
-            <div class="col-md-4 calendar">
+            <div class="col-lg-3 col-md-4 calendar">
                 <div id="datepicker"></div>
             </div>
         </div>

@@ -19,7 +19,7 @@
         <div class="row">
             <div id="newsCarousel" class="carousel slide">
                 <div class="indicators">
-                    <a class="ind_title news_title">TÜM HABERLER</a>
+                    <a class="all_news news_title">TÜM HABERLER</a>
                     <ul>
                         <li data-target="#newsCarousel" data-slide-to="0" class="active"><span>1</span></li>
                         <li data-target="#newsCarousel" data-slide-to="1" ><span>2</span></li>
@@ -311,7 +311,7 @@
                         <div class="icon"><img src="assets/img/homepage/interview.png" alt="icon"></div>
                         <div class="title">THE WALKING DEAD</div>
                         <div class="desc">TWD’den Andrew Lincoln ve Greg Nicotero’yla konuştuk!</div>
-                        <a href="" class="button">RÖPORTAJLAR</a>
+                        <div href="" class="button">RÖPORTAJLAR</div>
                     </div>
                 </div>
             </div>   
@@ -423,7 +423,7 @@
                 <div class="banner" style="background-image: url(assets/img/homepage/banner2.jpg);">
                     <div class="txt2">
                         <img src="assets/img/homepage/best_250.png" alt="banner_img">
-                        <a href="" class="button">İNCELE</a>
+                        <div href="" class="button">İNCELE</div>
                     </div>
                 </div>
             </div>
