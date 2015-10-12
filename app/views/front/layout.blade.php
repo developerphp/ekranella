@@ -141,7 +141,7 @@
             <div class="m_menu_close"></div>
             <div class="m_search"></div>
         </div>
-        <nav>
+        <nav class="top">
             <a href="{{action('FrontSerialController@getLocalSerial')}}">YERLİ DİZİLER</a>
             <a href="{{action('FrontSerialController@getForeignSerial')}}">YABANCI DİZİLER</a>
             <a href="{{action('FrontSerialController@getProgram')}}">PROGRAMLAR</a>
@@ -154,7 +154,7 @@
             <a href="{{action('front.authors.index')}}">YAZARLAR</a>
             <a href="{{action('front.featured.archive')}}">DOSYALAR</a>
         </nav>
-        <div class="social">
+        <div id="m10" class="social">
             @if($social['facebook'] != '')<a href="{{$social['facebook']}}" target="_blank"><img src="{{ asset('assets/img/header/facebook.png') }}" alt="logo"></a>@endif
             @if($social['twitter'] != '')<a href="{{$social['twitter']}}" target="_blank"><img src="{{ asset('assets/img/header/twitter.png') }}" alt="logo"></a>@endif
             @if($social['instagram'] != '')<a href="{{$social['instagram']}}" target="_blank"><img src="{{ asset('assets/img/header/instagram.png') }}" alt="logo"></a>@endif

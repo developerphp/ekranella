@@ -72,12 +72,17 @@ $(document).ready(function(){
     });
 
     $(".m_menu_button").click(function() {
-        $(".mobile_menu").fadeIn();
         $(document.body).css("overflow-y","hidden");
+        $(".mobile_menu").animate({opacity:"1", height:"100%"}, 500);
+        $(".mobile_menu .top").delay(200).animate({opacity:"1"}, 500);
+        $(".mobile_menu .bottom").delay(400).animate({opacity:"1"}, 500);
+        $(".mobile_menu .social").delay(600).animate({opacity:"1"}, 500);
     });
     $(".m_menu_close").click(function() {
-        $(".mobile_menu").fadeOut();
         $(document.body).css("overflow-y","auto");
+        $(".mobile_menu").delay(600).animate({height:"0", opacity:"0"}, 500);
+        $(".mobile_menu .top").delay(400).animate({opacity:"0"}, 500);
+        $(".mobile_menu .bottom").delay(200).animate({opacity:"0"}, 500);
+        $(".mobile_menu .social").animate({opacity:"0"}, 500);
     });
-
 });
