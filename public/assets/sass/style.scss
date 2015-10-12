@@ -29,6 +29,12 @@ body{
 	font-family: $f_osans;
 	font-weight: normal;
 	line-height: normal;
+	@include sm{
+		margin-top: 89px;
+	}
+	@include xs{
+		margin-top: 89px;
+	}
 }
 
 strong{
@@ -742,6 +748,25 @@ header{
 		padding-bottom: 20px;
 		@include sm{
 			width: 100%;
+			position: fixed;
+			top: 0;
+		    left: 0;
+		    z-index: 9;
+		    background: #fff;
+		    -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+		    -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+		    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+		}
+		@include xs{
+			width: 100%;
+			position: fixed;
+			top: 0;
+		    left: 0;
+		    z-index: 9;
+		    background: #fff;
+		    -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.05);
+		    -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.05);
+		    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.05);
 		}
 		.logo{
 			width: 300px;
@@ -765,6 +790,9 @@ header{
 			    font-weight: bold;
 			    position: relative;
 			    transition: all ease 0.3s;
+			    @include md{
+			    	margin-left: 10px;
+			    }
 			    &:after{
    					content:"";
    					position: absolute;
@@ -934,6 +962,10 @@ footer{
 		padding-bottom: 60px;
 		.logo{
 			margin-bottom: 50px;
+			span{
+				float: left;
+    			margin-top: 5px;
+			}
 		}
 		nav{
 			margin-top: 30px;
@@ -1246,6 +1278,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
     	}
     	@include sm{
     		padding: 0;
+    	}
+    	.glyphicon{
+    		font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+    	}
+    	.carousel-control{
+    		width: 10%;
     	}
 		.carousel-indicators{
 			left: 5%;
@@ -1840,7 +1878,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 			margin: 20px 0 10px 0;
 		}
 		a{	
-		margin-left: 20px;
+		margin-left: 25px;
 		margin-top: 2px;
 		display: inline-block;
 			img{
@@ -1849,7 +1887,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 		}
 		span{
 			font-weight: 400;
-			display: inline-block;
+			display: block;
+			float: left;
 			@include xs{
 				display: none;
 			}

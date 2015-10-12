@@ -348,6 +348,18 @@ body {
   line-height: normal;
 }
 
+@media (min-width: 768px) and (max-width: 991px) {
+  body {
+    margin-top: 89px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  body {
+    margin-top: 89px;
+  }
+}
+
 strong {
   font-weight: bold;
 }
@@ -1010,6 +1022,28 @@ header .bottom {
 @media (min-width: 768px) and (max-width: 991px) {
   header .bottom {
     width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    background: #fff;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  header .bottom {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    background: #fff;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.05);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.05);
   }
 }
 
@@ -1047,6 +1081,12 @@ header .bottom nav a {
   font-weight: bold;
   position: relative;
   transition: all ease 0.3s;
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  header .bottom nav a {
+    margin-left: 10px;
+  }
 }
 
 header .bottom nav a:after {
@@ -1264,6 +1304,11 @@ footer .top {
 
 footer .top .logo {
   margin-bottom: 50px;
+}
+
+footer .top .logo span {
+  float: left;
+  margin-top: 5px;
 }
 
 footer .top nav {
@@ -1683,6 +1728,14 @@ section {
   #home_slider .slider {
     padding: 0;
   }
+}
+
+#home_slider .slider .glyphicon {
+  font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+}
+
+#home_slider .slider .carousel-control {
+  width: 10%;
 }
 
 #home_slider .slider .carousel-indicators {
@@ -2402,7 +2455,7 @@ section {
 }
 
 .share_box .share a {
-  margin-left: 20px;
+  margin-left: 25px;
   margin-top: 2px;
   display: inline-block;
 }
@@ -2413,7 +2466,8 @@ section {
 
 .share_box .share span {
   font-weight: 400;
-  display: inline-block;
+  display: block;
+  float: left;
 }
 
 @media only screen and (max-width: 767px) {

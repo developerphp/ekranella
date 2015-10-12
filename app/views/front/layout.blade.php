@@ -174,6 +174,7 @@
                     <div class="col-md-5">
                         <div class="logo">
                             <img src="{{ asset('assets/img/logo_wh.png')}}" alt="logo">
+                            <span>Okuması izlemesinden daha heyecanlı!</span>
                         </div>
                         <div class="desc">
                             Bu sitede yer alan yazılardan yazarların kendisi sorumludur.<br>Referans vermeden kullanmayınız.
