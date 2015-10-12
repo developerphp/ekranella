@@ -33,10 +33,7 @@
                     @endif
                     @if($authorsocial['twitter'] != "")
                         <a href="{{$social['twitter']}}"><img src="{{ asset('assets/img/share/twitter.png')}}"></a>
-                    @endif
-                    @if($authorsocial['googleplus'] != "")
-                        <a href="{{$social['googleplus']}}"><img src="{{ asset('assets/img/share/google.png')}}"></a>
-                    @endif
+                    @endif                    
                     @if($authorsocial['instagram'] != "")
                         <a href="{{$social['instagram']}}"><img src="{{ asset('assets/img/share/instagram.png')}}"></a>
                     @endif

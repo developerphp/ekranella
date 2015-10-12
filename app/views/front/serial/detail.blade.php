@@ -69,7 +69,7 @@
                     <ul class="tabs-head">
                         <?php $i = true; ?>
                         @foreach($episodes as $key => $value)
-                            <li @if($i) class="active" @endif ><a onclick="$('.tab').hide();$('#tab{{$key}}').show(0)">SEZON {{$key}}</a>
+                            <li @if($i) class="active" @endif ><a onclick="$('.tab').hide();$('#tab{{$key}}').show(0);$('.tabs-head li').removeClass('active');$(this).parent('li').addClass('active')">SEZON {{$key}}</a>
                             </li> <?php $i = false; ?>
                         @endforeach
                     </ul>
