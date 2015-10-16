@@ -20,8 +20,11 @@
                             switch ($slide['item']['enumNumber']) {
                                 case 1:
                                     $url = 'subEnum';
-                                    $subfolder = 'bolum';
-                                    $categorie_title= 'BÖLÜM';
+                                    $subfolder = 'bolum';                                    
+                                    if ($slide['item']['enum']==1) { $categorie_title= 'ÖZEL'; }
+                                    elseif ($slide['item']['enum']==2) { $categorie_title= 'ÖZETLİYORUM'; }
+                                    elseif ($slide['item']['enum']==4) { $categorie_title= 'GALERİ'; }
+                                    else { $categorie_title= 'BÖLÜM'; }
                                     break;
                                 case 2:
                                     $url = action('front.interviews.interviewDetail', ['permalink' => $slide['item']['permalink']]);
@@ -31,7 +34,8 @@
                                 case 3:
                                     $url = action('front.news.newsDetail', ['permalink' => $slide['item']['permalink']]);
                                     $subfolder = 'haber';
-                                    $categorie_title= 'HABERLER';
+                                    if ($slide['item']['type']==2) { $categorie_title="ÖZEL"; }
+                                    else { $categorie_title= 'HABER'; }                                    
                                     break;
                                 case 4:
                                     $url = action('front.article.articleDetail', ['permalink' => $slide['item']['permalink']]);
@@ -96,7 +100,16 @@
                         </a>
                     </div>
                     <div class="col-md-12 col-sm-6 slider_boxes">
-                        <iframe src="http://www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fekranella&amp;width=262&amp;height=235&amp;colorscheme=light&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=false" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100%; height:235px;" allowtransparency="true"></iframe>
+                        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                        <!-- Slider Yani 250-250 -->
+                        <ins class="adsbygoogle"
+                             style="display:inline-block;width:250px;height:250px"
+                             data-ad-client="ca-pub-2693683830637074"
+                             data-ad-slot="6278302948"></ins>
+                        <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                        <!-- <iframe src="http://www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fekranella&amp;width=262&amp;height=235&amp;colorscheme=light&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=false" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100%; height:235px;" allowtransparency="true"></iframe> -->
                     </div>
                 </div>
             </div>

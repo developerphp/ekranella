@@ -99,7 +99,7 @@ class FrontNewsController extends \FrontController
             }
         }
         $enum = \Config::get('enums.news');
-        $limit = 5;
+        $limit = 102;
         $offset = ($page - 1) * $limit;
         $newsQuery = admin\News::where('published', 1)->where('type', 1);
         if(isset($serial)){
@@ -109,7 +109,9 @@ class FrontNewsController extends \FrontController
         foreach ($news as $key => $newsSingle) {
             $news[$key] = $this->addAction($newsSingle);
         }
-        $alias = \Config::get('alias.' . $enum);
+        
+        $alias = \Config::get('alias.' . $enum);        
+
         $data = [
             'as' => $alias,
             'permalink' => $serial_permalink,
