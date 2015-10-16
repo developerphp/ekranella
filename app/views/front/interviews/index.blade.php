@@ -21,7 +21,7 @@
                 <div class="col-md-4 col-sm-6 home_boxes">
                     <a href="{{action('front.interviews.interviewDetail',['permalink'=>$interview->permalink])}}" class="box square" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$interview->img.'_thumb.jpg')}})">
                         <div class="txt">
-                            <div class="box_title interview_title">RÖPORTAJLAR</div>
+                            <div class="box_title interview_title">RÖPORTAJ</div>
                             <div class="desc">{{\BaseController::shorten($interview->title,40)}}</div>
                             <div class="alt_desc">
                             {{\BaseController::shorten($interview->summary, 150)}}<br/>

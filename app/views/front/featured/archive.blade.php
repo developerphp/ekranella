@@ -21,7 +21,7 @@
                 <div class="col-md-4 home_boxes">
                     <a href="{{action('front.featured.featuredDetail', ['permalink' => $archive->permalink])}}" class="box square" style="background-image: url({{asset('http://www.ekranella.com/'.$archive->img)}});">
                         <div class="txt">
-                            <div class="box_title ekranella_title">DOSYALAR</div>
+                            <div class="box_title ekranella_title">DOSYA</div>
                             <div class="desc">{{$archive->title}}</div>
                         </div>
                     </a>

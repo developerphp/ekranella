@@ -62,6 +62,7 @@ Route::get('rating/{type?}/{skip?}', ['uses' => 'FrontRatingController@getRating
 Route::get('haber/{permalink}/{galleryPage?}/{page?}', ['uses' => 'FrontNewsController@getNews', 'as' => 'front.news.newsDetail']);
 Route::get('ozel/{permalink}/{galleryPage?}', ['uses' => 'FrontNewsController@getNews', 'as' => 'front.news.specialNewsDetail']);
 Route::get('haberliste/{permalink?}/{page?}', ['uses' => 'FrontNewsController@listNews', 'as' => 'front.list.newsIndex']);
+Route::get('haberler', ['uses' => 'FrontNewsController@allNews', 'as' => 'front.list.newsAllIndex']);
 Route::get('ara', ['uses' => 'SearchController@getSearch', 'as' => 'front.search.index']);
 
 Route::post('ajax/facebook', ['uses' => 'VisitorController@postAjaxFacebookUser', 'as' => 'front.ajax.facebook.user']);

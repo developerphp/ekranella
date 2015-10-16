@@ -167,7 +167,7 @@
                         <div class="col-md-6 home_boxes">
                             <a class="box square" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$new['img'].'_square.jpg')}});" href="{{action('front.news.newsDetail', ['permalink' => $new['permalink'], 'enum' => $new['type']])}}">
                                 <div class="txt">
-                                    <div class="box_title exclusive_title">HABERLER</div>
+                                    <div class="box_title exclusive_title">HABER</div>
                                     <div class="desc">{{$new['title']}}</div>
                                 </div>
                             </a>
@@ -196,7 +196,7 @@
                         <div class="col-md-6 home_boxes">
                             <a class="box square" style="background-image: url({{asset('http://www.ekranella.com.tr/uploads/'.$new['img'].'_square.jpg')}});" href="{{action('front.news.newsDetail', ['permalink' => $new['permalink'], 'enum' => $new['type']])}}">
                                 <div class="txt">
-                                    <div class="box_title exclusive_title">HABERLER</div>
+                                    <div class="box_title exclusive_title">HABER</div>
                                     <div class="desc">{{$new['title']}}</div>
                                 </div>
                             </a>
@@ -226,7 +226,7 @@
                         <div class="col-md-6 home_boxes">
                             <a class="box square" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$sgallery['img'].'_square.jpg')}});" href="{{action('front.serial.sgalleryDetail', ['permalink' => $sgallery['permalink']])}}">
                                 <div class="txt">
-                                    <div class="box_title exclusive_title">GALERİLER</div>
+                                    <div class="box_title exclusive_title">GALERİ</div>
                                     <div class="desc">{{$sgallery['title']}}</div>
                                 </div>
                             </a>
@@ -256,7 +256,7 @@
                         <div class="col-md-6 home_boxes">
                             <a class="box square" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$sgallery['img'].'_square.jpg')}});" href="{{action('front.serial.trailerDetail', ['permalink' => $sgallery['permalink']])}}">
                                 <div class="txt">
-                                    <div class="box_title exclusive_title">FRAGMANLAR</div>
+                                    <div class="box_title exclusive_title">FRAGMAN</div>
                                     <div class="desc">{{$sgallery['title']}}</div>
                                     <div class="alt_desc">{{$sgallery['season']}}. Sezon {{$sgallery['number']}}.Bölüm</div>
                                 </div>
@@ -287,7 +287,7 @@
                         <div class="col-md-6 home_boxes">
                             <a class="box square" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$interview['img'].'_thumb.jpg')}});" href="{{action('front.interviews.interviewDetail', ['permalink' => $interview['permalink']])}}">
                                 <div class="txt">
-                                    <div class="box_title exclusive_title">RÖPORTAJLAR</div>
+                                    <div class="box_title exclusive_title">RÖPORTAJ</div>
                                     <div class="desc">{{$interview['title']}}</div>
                                 </div>
                             </a>
@@ -336,7 +336,7 @@
                         <div class="col-md-12 home_boxes">
                             <a class="box rectangle" style="background-image: url({{asset('http://www.ekranella.com/uploads/'. $latest->img . '_thumb.jpg')}});" href="{{action('FrontNewsController@getNews', ['permalink' => $latest->permalink])}}">
                                 <div class="txt">
-                                    <div class="box_title news_title">HABERLER</div>
+                                    <div class="box_title news_title">HABER</div>
                                     <div class="desc">{{$latest->title}}</div>
                                 </div>
                             </a>
@@ -412,7 +412,7 @@
                         <div class="col-md-12 home_boxes">
                             <a href="{{action('front.article.articleDetail', ['permalink' => $article->permalink])}}" class="box rectangle" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$article->img.'_thumb.jpg')}});">
                                 <div class="txt">
-                                    <div class="box_title news_title">KÖSE YAZILARI</div>
+                                    <div class="box_title news_title">KÖSE YAZISI</div>
                                     <div class="desc">{{ $article->title }}</div>
                                 </div>
                             </a>

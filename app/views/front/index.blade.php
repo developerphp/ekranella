@@ -19,7 +19,7 @@
         <div class="row">
             <div id="newsCarousel" class="carousel slide">
                 <div class="indicators">
-                    <a class="all_news news_title">TÜM HABERLER</a>
+                    <a href="{{url('haberliste/tum')}}" class="all_news news_title">TÜM HABERLER</a>
                     <ul>
                         <li data-target="#newsCarousel" data-slide-to="0" class="active"><span>1</span></li>
                         <li data-target="#newsCarousel" data-slide-to="1" ><span>2</span></li>
@@ -52,7 +52,7 @@
                                     $created_at = date('d/m/Y H:i', $time);
                                     ?>data-date="{{$created_at}}">
                                     <div class="txt">
-                                        <div class="box_title news_title">HABERLER</div>
+                                        <div class="box_title news_title">HABER</div>
                                         <div class="desc">{{$new['title']}}</div>
                                         <div class="alt_desc">{{$created_at}}</div>
                                     </div>
@@ -127,25 +127,25 @@
                                     $url = 'subEnum';
                                     $subfolder = 'bolum';
                                     $class_name="series_title";
-                                    $bolum_title= "DİZİLER";
+                                    $bolum_title= "DİZİ";
                                     break;
                                 case 2:
                                     $url = action('front.interviews.interviewDetail', ['permalink' => $like['permalink']]);
                                     $subfolder = 'roportaj';
                                     $class_name="interview_title";
-                                    $bolum_title= "RÖPORTAJLAR";
+                                    $bolum_title= "RÖPORTAJ";
                                     break;
                                 case 3:
                                     $url = action('front.news.newsDetail', ['permalink' => $like['permalink']]);
                                     $subfolder = 'haber';
                                     $class_name="news_title";
-                                    $bolum_title="HABERLER";
+                                    $bolum_title="HABER";
                                     break;
                                 case 4:
                                     $url = action('front.article.articleDetail', ['permalink' => $like['permalink']]);
                                     $subfolder = 'kose';
                                     $class_name="interview_title";
-                                    $bolum_title= "KÖŞE YAZILARI";
+                                    $bolum_title= "KÖŞE YAZISI";
                                     break;
                                 default;
                             }
@@ -239,25 +239,25 @@
                                     $url = 'subEnum';
                                     $subfolder = 'bolum';
                                     $class_name="series_title";
-                                    $bolum_title= "DİZİLER";
+                                    $bolum_title= "DİZİ";
                                     break;
                                 case 2:
                                     $url = action('front.interviews.interviewDetail', ['permalink' => $late['permalink']]);
                                     $subfolder = 'roportaj';
                                     $class_name="interview_title";
-                                    $bolum_title= "RÖPORTAJLAR";
+                                    $bolum_title= "RÖPORTAJ";
                                     break;
                                 case 3:
                                     $url = action('front.news.newsDetail', ['permalink' => $late['permalink']]);
                                     $subfolder = 'haber';
                                     $class_name="news_title";
-                                    $bolum_title="HABERLER";
+                                    $bolum_title="HABER";
                                     break;
                                 case 4:
                                     $url = action('front.article.articleDetail', ['permalink' => $late['permalink']]);
                                     $subfolder = 'kose';
                                     $class_name="interview_title";
-                                    $bolum_title= "KÖŞE YAZILARI";
+                                    $bolum_title= "KÖŞE YAZISI";
                                     break;
                                 default;
                             }
@@ -352,7 +352,7 @@
                             <div class="col-md-<?php echo $class ?> home_boxes @if($i==1)  pull-right @endif">
                                 <a class="box <?php echo $subclass ?>" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$gallery['img'].'_'.$imageclass.'.jpg')}});" href="{{action('front.serial.sgalleryDetail', ['permalink'=>$gallery['permalink']])}}">
                                     <div class="txt">
-                                        <div class="box_title gallery_title">GALERİLER</div>
+                                        <div class="box_title gallery_title">GALERİ</div>
                                         <div class="desc">{{$gallery['title']}}</div>
                                         <div class="alt_desc">{{$gallery['season']}}. Sezon {{$gallery['number']}}.Bölüm</div>
                                     </div>
@@ -402,7 +402,7 @@
                             <div class="col-md-<?php echo $class ?> home_boxes @if($i==1)  pull-right @endif">
                                 <a class="box <?php echo $subclass ?>" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$trailer['img'].'_'.$imageclass.'.jpg')}});" href="{{action('front.serial.trailerDetail', ['permalink'=>$trailer['permalink']])}}">
                                     <div class="txt">
-                                        <div class="box_title trailers_title">FRAGMANLAR</div>
+                                        <div class="box_title trailers_title">FRAGMAN</div>
                                         <div class="desc">{{$trailer['title']}}</div>
                                         <div class="alt_desc"></div>
                                     </div>
@@ -468,7 +468,7 @@
                                 <a class="box <?php echo $subclass ?>" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$local['img'].'_'.$imageclass.'.jpg')}});"
                                    href="{{action('FrontSerialController@getEpisode', ['permalink' =>$local['permalink'] ])}}">
                                     <div class="txt">
-                                        <div class="box_title series_title">YERLİ DİZİLER</div>
+                                        <div class="box_title series_title">YERLİ DİZİ</div>
                                         <div class="desc">{{$local['serial']}}</div>
                                         <div class="alt_desc">{{$local['season']}}. Sezon {{$local['number']}}. Bölüm</div>
                                     </div>
@@ -522,7 +522,7 @@
                                 <a class="box <?php echo $subclass ?>" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$foreign['img'].'_'.$imageclass.'.jpg')}});"
                                    href="{{action('FrontSerialController@getEpisode', ['permalink' =>$foreign['permalink'] ])}}">
                                     <div class="txt">
-                                        <div class="box_title series2_title">YABANCI DİZİLER</div>
+                                        <div class="box_title series2_title">YABANCI DİZİ</div>
                                         <div class="desc">{{$foreign['serial']}}</div>
                                         <div class="alt_desc">{{$foreign['season']}}. Sezon {{$foreign['number']}}. Bölüm</div>
                                     </div>
@@ -576,7 +576,7 @@
                                 <a class="box <?php echo $subclass ?>" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$program['img'].'_'.$imageclass.'.jpg')}});"
                                    href="{{action('FrontSerialController@getEpisode', ['permalink' =>$program['permalink'] ])}}">
                                     <div class="txt">
-                                        <div class="box_title shows_title">PROGRAMLAR</div>
+                                        <div class="box_title shows_title">PROGRAM</div>
                                         <div class="desc">{{$program['serial']}}</div>
                                         <div class="alt_desc">{{$program['season']}}. Sezon {{$program['number']}}. Bölüm</div>
                                     </div>

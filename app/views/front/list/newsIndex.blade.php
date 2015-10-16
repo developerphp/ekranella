@@ -7,7 +7,11 @@
             <div class="col-md-12">
                 <div class="page_select news_selected">
                     <div class="button active">
-                        <small>@if(isset($serial)){{$serial->title}}@endif</small>
+                        <small>
+                        @if(isset($serial))
+                        {{$serial->title}}
+                        @else HABERLER
+                        @endif</small>
                     </div>
                     <div class="search">
                         <div class="icon">

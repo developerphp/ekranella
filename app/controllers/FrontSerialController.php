@@ -10,7 +10,7 @@ class FrontSerialController extends FrontController
     public function getLocalSerial()
     {
         $data = [
-            'as' => 'YERLİ DİZİLER',
+            'as' => 'YERLİ DİZİ',
             'type' => 2,
             'social' => ConfigController::getSocial(),
             // 'popularSerials' => \admin\Serials::where('type', 2)->where('is_popular', 1)->orderBy('title', 'ASC')->limit(8)->get(),
@@ -22,7 +22,7 @@ class FrontSerialController extends FrontController
     public function getForeignSerial()
     {
         $data = [
-            'as' => 'YABANCI DİZİLER',
+            'as' => 'YABANCI DİZİ',
             'type' => 1,
             'social' => ConfigController::getSocial(),
             'popularSerials' => \admin\Serials::where('type', 1)->where('is_popular', 1)->orderBy('views', 'DESC')->limit(8)->get(),
@@ -34,7 +34,7 @@ class FrontSerialController extends FrontController
     public function getProgram()
     {
         $data = [
-            'as' => 'PROGRAMLAR',
+            'as' => 'PROGRAM',
             'type' => 3,
             'social' => ConfigController::getSocial(),
             'popularSerials' => \admin\Serials::where('type', 3)->where('is_popular', 1)->orderBy('views', 'DESC')->limit(8)->get(),
