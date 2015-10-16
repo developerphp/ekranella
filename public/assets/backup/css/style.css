@@ -370,11 +370,11 @@ a {
 
 /*titles*/
 .ekranella_title {
-  color: #ea158c;
+  color: #d25380;
 }
 
 .ekranella_title:after {
-  background: #ea158c;
+  background: #d25380;
 }
 
 .news_title {
@@ -564,19 +564,19 @@ a {
 }
 
 .ekranella_h_selected .page_select {
-  border-bottom: 3px solid #ea158c !important;
+  border-bottom: 3px solid #d25380 !important;
 }
 
 .ekranella_h_selected .page_select .button:after {
-  border-color: transparent transparent #ea158c transparent !important;
+  border-color: transparent transparent #d25380 transparent !important;
 }
 
 .ekranella_h_selected .page_select .active {
-  background: #ea158c !important;
+  background: #d25380 !important;
 }
 
 .ekranella_h_selected .indicators ul li {
-  background: #ea158c !important;
+  background: #d25380 !important;
 }
 
 .interview_h_selected .page_select {
@@ -790,19 +790,19 @@ a {
 }
 
 .ekranella_selected {
-  border-bottom: 3px solid #ea158c !important;
+  border-bottom: 3px solid #d25380 !important;
 }
 
 .ekranella_selected .button:after {
-  border-color: transparent transparent #ea158c transparent !important;
+  border-color: transparent transparent #d25380 transparent !important;
 }
 
 .ekranella_selected .active {
-  background: #ea158c !important;
+  background: #d25380 !important;
 }
 
 .ekranella_selected .indicators ul li {
-  background: #ea158c !important;
+  background: #d25380 !important;
 }
 
 .interview_selected {
@@ -940,7 +940,7 @@ header {
 }
 
 header .top {
-  background: #ea158c;
+  background: #d25380;
   padding-top: 10px;
   padding-bottom: 10px;
 }
@@ -1095,14 +1095,14 @@ header .bottom nav a:after {
   left: 0;
   bottom: -15px;
   height: 3px;
-  background: #ea158c;
+  background: #d25380;
   width: 100%;
   opacity: 0;
   transition: all ease 0.3s;
 }
 
 header .bottom nav a:hover {
-  color: #ea158c;
+  color: #d25380;
   transition: all ease 0.3s;
 }
 
@@ -1298,7 +1298,7 @@ footer {
 }
 
 footer .top {
-  background: #ea158c;
+  background: #d25380;
   padding-top: 60px;
   padding-bottom: 60px;
 }
@@ -1335,31 +1335,13 @@ footer .top nav {
 
 footer .top nav a {
   font-weight: bold;
-  display: table;
+  display: block;
   margin-bottom: 10px;
-  position: relative;
-}
-
-footer .top nav a:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -8px;
-  height: 2px;
-  background: #fff;
-  width: 100%;
-  opacity: 0;
-  transition: all ease 0.3s;
 }
 
 footer .top nav a:hover {
   color: #fff;
-}
-
-footer .top nav a:hover:after {
-  opacity: 1;
-  bottom: -3px;
-  transition: all ease 0.3s;
+  text-decoration: underline;
 }
 
 footer .top .last {
@@ -1369,7 +1351,7 @@ footer .top .last {
 footer .bottom {
   padding-top: 10px;
   padding-bottom: 5px;
-  background: #cc127a;
+  background: #ab355f;
 }
 
 footer .bottom .social {
@@ -1775,7 +1757,7 @@ section {
 }
 
 #home_slider .slider .carousel-indicators .active {
-  background: #ea158c;
+  background: #d25380;
 }
 
 #home_slider .slider .item {
@@ -2388,7 +2370,7 @@ section {
   display: inline-block;
   color: #fff;
   padding: 10px 30px;
-  background: #ea158c;
+  background: #d25380;
 }
 
 /*404*/
@@ -2731,7 +2713,7 @@ section {
 
 .news_page .news_box .txt .author, .news_page .news_box #home_banner1 .banner .txt2 .author, #home_banner1 .banner .news_page .news_box .txt2 .author, .news_page .news_box #home_banner2 .banner .txt2 .author, #home_banner2 .banner .news_page .news_box .txt2 .author {
   margin: 20px 0;
-  color: #ea158c;
+  color: #d25380;
 }
 
 .news_page .news_box .txt .author .date, .news_page .news_box #home_banner1 .banner .txt2 .author .date, #home_banner1 .banner .news_page .news_box .txt2 .author .date, .news_page .news_box #home_banner2 .banner .txt2 .author .date, #home_banner2 .banner .news_page .news_box .txt2 .author .date {
@@ -2854,7 +2836,7 @@ section {
   position: absolute;
   top: 128px;
   left: 0;
-  background: #ea158c;
+  background: #d25380;
   width: 100%;
   z-index: 100;
 }
@@ -3018,7 +3000,7 @@ section {
   width: calc(20% - 20px);
   padding: 8px 0;
   margin: 0 10px 10px 10px;
-  background: #ea158c;
+  background: #d25380;
   color: #fff;
   font-size: 14px;
   float: left;
