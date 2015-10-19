@@ -1,6 +1,5 @@
 <section id="home_slider" class="container">
-        <div class="row">
-            <div class="col-md-9 slider">
+            <div class="slider">
                 <div id="myCarousel" class="carousel slide" data-ride="carousel">
 
                     <ol class="carousel-indicators">
@@ -93,25 +92,21 @@
                     </a>
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="row">
-                    <div class="col-md-12 col-sm-6 slider_boxes">
-                        <a href="{{url('guncel/anketler')}}" class="box" style="background-image: url({{asset('http://www.ekranella.com/assets/img/anket.png')}}); background-position: left top;">
+                    <div class="slider_boxes">
+                        <a href="{{url('guncel/anketler')}}" class="box">
+                            <img src="{{asset('http://www.ekranella.com/assets/img/anket.png')}}" alt="anketler">
                         </a>
-                    </div>
-                    <div class="col-md-12 col-sm-6 slider_boxes">
-                        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                        <!-- Slider Yani 250-250 -->
-                        <ins class="adsbygoogle"
-                             style="display:inline-block;width:250px;height:250px"
-                             data-ad-client="ca-pub-2693683830637074"
-                             data-ad-slot="6278302948"></ins>
-                        <script>
-                        (adsbygoogle = window.adsbygoogle || []).push({});
-                        </script>
-                        <!-- <iframe src="http://www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fekranella&amp;width=262&amp;height=235&amp;colorscheme=light&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=false" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100%; height:235px;" allowtransparency="true"></iframe> -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                        <div class="box">
+                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                            <!-- Slider Yani 250-250 -->
+                            <ins class="adsbygoogle"
+                                 style="display:inline-block;width:250px;height:250px"
+                                 data-ad-client="ca-pub-2693683830637074"
+                                 data-ad-slot="6278302948"></ins>
+                            <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                            </script>
+                            <!-- <iframe src="http://www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fekranella&amp;width=262&amp;height=235&amp;colorscheme=light&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=false" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100%; height:235px;" allowtransparency="true"></iframe> -->
+                        </div>
+                    </div> 
+</section>

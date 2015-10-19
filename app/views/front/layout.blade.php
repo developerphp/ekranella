@@ -31,7 +31,7 @@
     <meta property="fb:admins" content="1492102499,574488986"/>
     <meta property="fb:app_id" content="1559952917583872"/>
 
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700&subset=latin-ext' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,300,700,700italic,300italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}" />
 

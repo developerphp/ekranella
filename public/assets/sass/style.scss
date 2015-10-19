@@ -41,6 +41,10 @@ strong{
 	font-weight: bold;
 }
 
+em{
+	font-style: italic !important;
+}
+
 a{
 	text-decoration: none;
 }
@@ -963,14 +967,28 @@ footer{
 		padding-bottom: 60px;
 		.logo{
 			margin-bottom: 50px;
+			@include sm{
+    			display: block;
+    		}
+    		@include xs{
+    			display: block;
+    		}
 			span{
 				float: left;
     			margin-top: 5px;
+    			@include sm{
+    				display: block;
+    				float: none;
+    			}
+    			@include xs{
+    				display: block;
+    				float: none;
+    			}
 			}
 		}
 		nav{
 			margin-top: 30px;
-			border-right: 1px solid #de7da0;
+			border-right: 1px solid #fff;
 			padding-left: 30px;
 			padding-right: 0px;
 			@include sm{
@@ -1023,7 +1041,7 @@ footer{
 				text-align: center;
 				padding-bottom: 20px;
 				margin-bottom: 20px;
-				border-bottom: 1px solid #de7da0;
+				border-bottom: 1px solid #fff;
 			}
 			a{
 				margin-right: 20px;
@@ -1287,13 +1305,26 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 #home_slider{
 	@include sm{
     	width: 100%;
+    	padding: 0;
+    }
+    @include xs{
+    	width: 100%;
+    	padding: 0;
     }
 	.slider{
+		width: 860px;
+		margin-right: 30px;
+		float: left;
 		transition: all ease 0.5s;
-		@include xs{
-    		padding: 0;
+		@include md{
+    		width: 660px;
     	}
     	@include sm{
+    		width: 100%;
+    		padding: 0;
+    	}
+    	@include xs{
+			width: 100%;
     		padding: 0;
     	}
     	.glyphicon{
@@ -1318,7 +1349,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
     		}
 		}
 		.item{
-			height: 500px;
+			height: 530px;
 			overflow: hidden;
 			img{
 				height: 100%;
@@ -1401,6 +1432,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 		}
 	}
 	.slider_boxes{
+		width: 250px;
+		float: left;
 		@include sm{
 			display: none;
 		}
@@ -1409,18 +1442,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 		}
 		.box{
 			display: block;
-			height: 235px;
+			width: 250px;
+			height: 250px;
 			margin-bottom: 30px;
 			background-size: cover;
 			background-position: center;
 			position: relative;
-			@include sm{
-				margin: 15px 0;
-				height: 300px;
-			}
-			@include xs{
-				margin: 15px 0;
-				height: 300px;
+			overflow: hidden;
+			float: right;
+			img{
+				height: 100%;
 			}
 			.txt{
 				position: absolute;
@@ -1434,16 +1465,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 					color: #fff;
 				}
 			}
-			/*&:after{
-				content: "";
-				width: 100%;
-				height: 100%;
-				position: absolute;
-				background: rgba(0,0,0,0.4);
-				z-index: 1;
-				top: 0;
-				left:0;
-			}*/
 		}
 	}
 }
