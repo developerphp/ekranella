@@ -92,10 +92,7 @@
                     </a>
                 </div>
             </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-            <div class="col-md-3">
-                <div class="row">
+            <div class="slider_boxes">
                     <div class="col-md-12 col-sm-6 slider_boxes">
                     <?php 
                     $featured = admin\Featured::where('permalink', 'anketler')->with('tags')->first();
@@ -103,13 +100,13 @@
                     $polls = $featured->news()->whereIn('featured_item.tag_id', $tags)->with(['featured_tags', 'user'])->where('published', 1)->orderBy('id','desc')->take(1)->get();
                     foreach($polls as $pool) { ?>
                         <div class="col-md-12 slider_boxes">
-                        <a href="{{action('front.news.newsDetail', ['permalink' => $pool['permalink']])}}" class="box" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$pool['img'].'_thumb.jpg')}}););">
-                            <div class="txt">
-                                <div class="box_title ekranella_title">ANKET</div>
-                                <div class="desc"><?php echo $pool->title ?></div>
-                            </div>
-                        </a>
-                    </div>
+                            <a href="{{action('front.news.newsDetail', ['permalink' => $pool['permalink']])}}" class="box" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$pool['img'].'_thumb.jpg')}}););">
+                                <div class="txt">
+                                    <div class="box_title ekranella_title">ANKET</div>
+                                    <div class="desc"><?php echo $pool->title ?></div>
+                                </div>
+                            </a>
+                        </div>
                     <?php } ?>                    
                     </div>
                     <div class="col-md-12 col-sm-6 slider_boxes">
@@ -124,37 +121,5 @@
                         </script>
                         <!-- <iframe src="http://www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fekranella&amp;width=262&amp;height=235&amp;colorscheme=light&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=false" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100%; height:235px;" allowtransparency="true"></iframe> -->
                     </div>
-                </div>
             </div>
-        </div>
-    </section>
-=======
-                    <div class="slider_boxes">
-                        <a href="{{url('guncel/anketler')}}" class="box">
-                            <img src="{{asset('http://www.ekranella.com/assets/img/anket.png')}}" alt="anketler">
-                        </a>
-=======
-                    <div class="slider_boxes">
-                        <a href="{{url('guncel/anketler')}}" class="box">
-                            <img src="{{asset('http://www.ekranella.com/assets/img/anket.png')}}" alt="anketler">
-                        </a>
->>>>>>> origin/master
-                        <div class="box">
-                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                            <!-- Slider Yani 250-250 -->
-                            <ins class="adsbygoogle"
-                                 style="display:inline-block;width:250px;height:250px"
-                                 data-ad-client="ca-pub-2693683830637074"
-                                 data-ad-slot="6278302948"></ins>
-                            <script>
-                            (adsbygoogle = window.adsbygoogle || []).push({});
-                            </script>
-                            <!-- <iframe src="http://www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fekranella&amp;width=262&amp;height=235&amp;colorscheme=light&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=false" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100%; height:235px;" allowtransparency="true"></iframe> -->
-                        </div>
-                    </div> 
-<<<<<<< HEAD
 </section>
->>>>>>> origin/master
-=======
-</section>
->>>>>>> origin/master
