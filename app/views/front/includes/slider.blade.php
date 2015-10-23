@@ -93,6 +93,7 @@
                 </div>
             </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
             <div class="col-md-3">
                 <div class="row">
                     <div class="col-md-12 col-sm-6 slider_boxes">
@@ -132,6 +133,12 @@
                         <a href="{{url('guncel/anketler')}}" class="box">
                             <img src="{{asset('http://www.ekranella.com/assets/img/anket.png')}}" alt="anketler">
                         </a>
+=======
+                    <div class="slider_boxes">
+                        <a href="{{url('guncel/anketler')}}" class="box">
+                            <img src="{{asset('http://www.ekranella.com/assets/img/anket.png')}}" alt="anketler">
+                        </a>
+>>>>>>> origin/master
                         <div class="box">
                             <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                             <!-- Slider Yani 250-250 -->
@@ -145,5 +152,9 @@
                             <!-- <iframe src="http://www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fekranella&amp;width=262&amp;height=235&amp;colorscheme=light&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=false" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100%; height:235px;" allowtransparency="true"></iframe> -->
                         </div>
                     </div> 
+<<<<<<< HEAD
+</section>
+>>>>>>> origin/master
+=======
 </section>
 >>>>>>> origin/master
