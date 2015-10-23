@@ -1333,6 +1333,22 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
     	.carousel-control{
     		width: 10%;
     	}
+    	.left{
+				background: none !important;
+				background-image: none !important;
+				&:hover{
+					background: none !important;
+					background-image: none !important;
+				}
+			}
+			.right{
+				background: none !important;
+				background-image: none !important;
+				&:hover{
+					background: none !important;
+					background-image: none !important;
+				}
+			}
 		.carousel-indicators{
 			left: 5%;
 			margin-left: 0;
@@ -1354,6 +1370,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 			img{
 				height: 100%;
 				max-width: none;
+				@include xs{
+			    	margin-left: -50%;
+			    }
 			}
 			&:after{
 				content: "";
@@ -1395,14 +1414,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 				@include xs{
     				font-size: 13px;
     			}
-			}
-		}
-		.carousel-control{
-			.left{
-				background-image: none;
-			}
-			.right{
-				background-image: none;
 			}
 		}
 		.glyphicon-chevron-right{
