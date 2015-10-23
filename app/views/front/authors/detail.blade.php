@@ -29,16 +29,22 @@
                     <?php $authorsocial = unserialize($author->social); ?>
 
                     @if($authorsocial['facebook'] != "")
-                        <a href="{{$social['facebook']}}"><img src="{{ asset('assets/img/share/facebook.png')}}"></a>
+                        <a href="{{$authorsocial['facebook']}}"><img src="{{ asset('assets/img/share/facebook.png')}}"></a>
                     @endif
                     @if($authorsocial['twitter'] != "")
-                        <a href="{{$social['twitter']}}"><img src="{{ asset('assets/img/share/twitter.png')}}"></a>
-                    @endif                    
+                        <a href="{{$authorsocial['twitter']}}"><img src="{{ asset('assets/img/share/twitter.png')}}"></a>
+                    @endif
+                    @if($authorsocial['googleplus'] != "")
+                        <a href="{{$authorsocial['googleplus']}}" class="icn-gplus small-icn" target="_blank"><img src="{{ asset('assets/img/share/google.png')}}"></a></li>
+                    @endif
+                    @if($authorsocial['blog'] != "")
+                        <a href="{{$authorsocial['blog']}}" class="icn-blog small-icn" target="_blank"><img src="{{ asset('assets/img/share/blog.png')}}"></a>
+                    @endif
                     @if($authorsocial['instagram'] != "")
-                        <a href="{{$social['instagram']}}"><img src="{{ asset('assets/img/share/instagram.png')}}"></a>
+                        <a href="{{$authorsocial['instagram']}}"><img src="{{ asset('assets/img/share/instagram.png')}}"></a>
                     @endif
                     @if($authorsocial['tumblr'] != "")
-                        <a href="{{$social['tumblr']}}"><img src="{{ asset('assets/img/share/tumblr.png')}}"></a>
+                        <a href="{{$authorsocial['tumblr']}}"><img src="{{ asset('assets/img/share/tumblr.png')}}"></a>
                     @endif
                 </div>
             </div>

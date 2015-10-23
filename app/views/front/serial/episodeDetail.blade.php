@@ -53,7 +53,7 @@
                 <div class="row share_box">
                     <div class="col-md-4">
                         <a href="{{action('front.serial.detail',['permalink' => $serial->permalink])}}">
-                        <div class="col-md-4 col-sm-4">
+                        <div class="col-lg-8 col-md-7 col-sm-7">
                             {{$serial->title}}
                         </div>
                         </a>
@@ -162,7 +162,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="page_select news_selected">
-                            <div class="button active">DİĞER YAZILAR</div>
+                            <div class="button active">BUNLAR DA VAR</div>
                         </div>
                     </div>
                 </div>

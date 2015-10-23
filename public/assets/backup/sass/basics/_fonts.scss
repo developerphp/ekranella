@@ -1,0 +1,11 @@
+@mixin osans(){
+	font-family: 'Open Sans', sans-serif; font-weight: 400; font-style: normal;
+}
+
+@mixin osansl(){
+	font-family: 'Open Sans', sans-serif; font-weight: 300; font-style: normal;
+}
+
+@mixin osansb(){
+	font-family: 'Open Sans', sans-serif; font-weight: 700; font-style: normal;
+}

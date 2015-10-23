@@ -17,7 +17,7 @@
                         <div class="col-md-12 col-sm-6 home_boxes">
                             <a class="box rectangle" style="background-image: url({{asset('http://www.ekranella.com/uploads/'. $latest->img . '_thumb.jpg')}});" href="{{action('FrontNewsController@getNews', ['permalink' => $latest->permalink])}}">
                                 <div class="txt">
-                                    <div class="box_title news_title">HABERLER</div>
+                                    <div class="box_title news_title">HABER</div>
                                     <div class="desc">{{$latest->title}}</div>
                                 </div>
                             </a>

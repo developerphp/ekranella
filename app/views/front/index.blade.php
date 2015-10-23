@@ -12,7 +12,7 @@
                 <div class="page_select">
                     <div class="button active" data-href="#home_news">HABERLER</div>
                     <div class="button" data-href="#home_liked">BEĞENİLENLER</div>
-                    <div class="button" data-href="#home_latest">SON YAZILAR</div>
+                    <div class="button" data-href="#home_latest">SON EKLENENLER</div>
                 </div>
             </div>
         </div>
@@ -85,13 +85,14 @@
                 <div class="page_select">
                     <div class="button" data-href="#home_news">HABERLER</div>
                     <div class="button active" data-href="#home_liked">BEĞENİLENLER</div>        
-                    <div class="button" data-href="#home_latest">SON YAZILAR</div>            
+                    <div class="button" data-href="#home_latest">SON EKLENENLER</div>            
                 </div>
             </div>
         </div>
         <div class="row">
             <div id="likedCarousel" class="carousel slide">
                 <div class="indicators">
+                    <a href="{{url('begenilenler')}}" class="all_news likes_title">TÜM BEĞENİLENLER</a>
                         <ul>
                             <li data-target="#likedCarousel" data-slide-to="0" class="active"><span>1</span></li>
                             <li data-target="#likedCarousel" data-slide-to="1" ><span>2</span></li>
@@ -197,7 +198,7 @@
                 <div class="page_select">
                     <div class="button" data-href="#home_news">HABERLER</div>
                     <div class="button" data-href="#home_liked">BEĞENİLENLER</div>        
-                    <div class="button active" data-href="#home_latest">SON YAZILAR</div>            
+                    <div class="button active" data-href="#home_latest">SON EKLENENLER</div>            
                 </div>
             </div>
         </div>
@@ -311,7 +312,7 @@
                         <div class="icon"><img src="assets/img/homepage/interview.png" alt="icon"></div>
                         <div class="title">THE WALKING DEAD</div>
                         <div class="desc">TWD’den Andrew Lincoln ve Greg Nicotero’yla konuştuk!</div>
-                        <div href="" class="button">RÖPORTAJLAR</div>
+                        <div href="" class="button">RÖPORTAJ</div>
                     </div>
                 </div>
             </div>   
@@ -329,6 +330,7 @@
         <div class="row">
             <div id="galleryCarousel" class="carousel slide">
                 <div class="indicators">
+                        <a href="{{url('diziliste/tum/4')}}" class="all_news gallery_title">TÜM GALERİLER</a>
                         <ul>
                             <li data-target="#galleryCarousel" data-slide-to="0" class="active"><span>1</span></li>
                             <li data-target="#galleryCarousel" data-slide-to="1" ><span>2</span></li>

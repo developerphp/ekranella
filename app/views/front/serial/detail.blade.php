@@ -17,7 +17,7 @@
         <div class="row">
             <div class="col-md-9">
                 <div class="row share_box">
-                    <div class="col-md-4 col-sm-4">
+                    <div class="col-lg-8 col-md-7 col-sm-7">
                         GENEL BİLGİ
                     </div>
                     @include('front.includes.share')
@@ -57,6 +57,68 @@
                         @endif
                     </div>
                 </div>
+
+                @if(count($sgalleries)>0)
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="page_select gallery_selected">
+                                <div class="button active">GALERİLER</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        @foreach($sgalleries as $sgallery)
+                        <div class="col-md-6 home_boxes">
+                            <a class="box square" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$sgallery['img'].'_square.jpg')}});" href="{{action('front.serial.sgalleryDetail', ['permalink' => $sgallery['permalink']])}}">
+                                <div class="txt">
+                                    <div class="box_title exclusive_title">GALERİ</div>
+                                    <div class="desc">{{$sgallery['title']}}</div>
+                                </div>
+                            </a>
+                        </div>
+                        @endforeach
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 more_button">
+                            <div class="more_button">
+                                <a href="{{action('front.serial.enumIndex', ['permalink' => $serial->permalink, 'enum' => $enums['sgallery']])}}" class="more">DEVAMI</a>
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                    </div>
+                @endif
+
+                @if(count($trailers)>0)
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="page_select trailers_selected">
+                                <div class="button active">FRAGMANLAR</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                    @foreach($trailers as $sgallery)                    
+                        <div class="col-md-6 home_boxes">
+                            <a class="box square" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$sgallery['img'].'_square.jpg')}});" href="{{action('front.serial.trailerDetail', ['permalink' => $sgallery['permalink']])}}">
+                                <div class="txt">
+                                    <div class="box_title exclusive_title">FRAGMAN</div>
+                                    <div class="desc">{{$sgallery['title']}}</div>
+                                    <div class="alt_desc">{{$sgallery['season']}}. Sezon {{$sgallery['number']}}.Bölüm</div>
+                                </div>
+                            </a>
+                        </div>                    
+                    @endforeach
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 more_button">
+                            <div class="more_button">
+                                <a class="more" href="{{action('front.serial.enumIndex', ['permalink' => $serial->permalink, 'enum' => $enums['trailer']])}}">DEVAMI</a>
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                    </div>
+                @endif
+
                 @if(count($episodes)>0)
                 <div class="row">
                     <div class="col-md-12">
@@ -213,67 +275,6 @@
                     </div>
                 @endif
 
-                @if(count($sgalleries)>0)
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="page_select gallery_selected">
-                                <div class="button active">GALERİLER</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        @foreach($sgalleries as $sgallery)
-                        <div class="col-md-6 home_boxes">
-                            <a class="box square" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$sgallery['img'].'_square.jpg')}});" href="{{action('front.serial.sgalleryDetail', ['permalink' => $sgallery['permalink']])}}">
-                                <div class="txt">
-                                    <div class="box_title exclusive_title">GALERİ</div>
-                                    <div class="desc">{{$sgallery['title']}}</div>
-                                </div>
-                            </a>
-                        </div>
-                        @endforeach
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12 more_button">
-                            <div class="more_button">
-                                <a href="{{action('front.serial.enumIndex', ['permalink' => $serial->permalink, 'enum' => $enums['sgallery']])}}" class="more">DEVAMI</a>
-                                <div class="line"></div>
-                            </div>
-                        </div>
-                    </div>
-                @endif
-
-                @if(count($trailers)>0)
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="page_select trailers_selected">
-                                <div class="button active">FRAGMANLAR</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                    @foreach($trailers as $sgallery)                    
-                        <div class="col-md-6 home_boxes">
-                            <a class="box square" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$sgallery['img'].'_square.jpg')}});" href="{{action('front.serial.trailerDetail', ['permalink' => $sgallery['permalink']])}}">
-                                <div class="txt">
-                                    <div class="box_title exclusive_title">FRAGMAN</div>
-                                    <div class="desc">{{$sgallery['title']}}</div>
-                                    <div class="alt_desc">{{$sgallery['season']}}. Sezon {{$sgallery['number']}}.Bölüm</div>
-                                </div>
-                            </a>
-                        </div>                    
-                    @endforeach
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12 more_button">
-                            <div class="more_button">
-                                <a class="more" href="{{action('front.serial.enumIndex', ['permalink' => $serial->permalink, 'enum' => $enums['trailer']])}}">DEVAMI</a>
-                                <div class="line"></div>
-                            </div>
-                        </div>
-                    </div>
-                @endif
-
                 @if(count($interviews)>0)
                     <div class="row">
                         <div class="col-md-12">
@@ -329,7 +330,8 @@
                     </div>
                     <div class="row">
                         <?php 
-                        $latestsnews = admin\News::limit(5)->where('published', 1)->where('serial_id',$serial->id)->orderBy('id','desc')->with('user')->get();
+                        use Carbon\Carbon;
+                        $latestsnews = admin\News::limit(5)->where('published', 1)->where('serial_id',$serial->id)->where('created_at', '>=', Carbon::now()->subDays(7))->orderBy('id','desc')->with('user')->get();
                         ?>
 
                         @foreach($latestsnews as $latest)

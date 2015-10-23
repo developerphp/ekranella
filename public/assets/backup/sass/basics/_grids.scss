@@ -1,0 +1,258 @@
+@import "media";
+@import "colors";
+@import "devices";
+
+
+$grid-system:100%;
+$responsive : 100%;
+.row{
+	width: 100%;
+	margin:0 auto;
+	background:transparent;
+}
+
+
+$grid-12: $grid-system ;
+$grid-11: $grid-system / 12 * 11 ;
+$grid-10: $grid-system / 12 * 10 ;
+ $grid-9: $grid-system / 12 * 9 ;
+ $grid-8: $grid-system / 12 * 8 ;
+ $grid-7: $grid-system / 12 * 7 ;
+ $grid-6: $grid-system / 12 * 6 ;
+ $grid-5: $grid-system / 12 * 5 ;
+ $grid-4: $grid-system / 12 * 4 ;
+ $grid-3: $grid-system / 12 * 3 ;
+ $grid-2: $grid-system / 12 * 2 ;
+ $grid-1: $grid-system / 12 * 1 ;
+
+$rgrid-12: $responsive ;
+$rgrid-11: $responsive / 12 * 11 ;
+$rgrid-10: $responsive / 12 * 10 ;
+ $rgrid-9: $responsive / 12 * 9 ;
+ $rgrid-8: $responsive / 12 * 8 ;
+ $rgrid-7: $responsive / 12 * 7 ;
+ $rgrid-6: $responsive / 12 * 6 ;
+ $rgrid-5: $responsive / 12 * 5 ;
+ $rgrid-4: $responsive / 12 * 4 ;
+ $rgrid-3: $responsive / 12 * 3 ;
+ $rgrid-2: $responsive / 12 * 2 ;
+ $rgrid-1: $responsive / 12 * 1 ;
+
+.row:before, .row:after {content:""; display: table;}
+.row:after{clear:both;}
+.row{*zoom:1;}
+
+.grid1, .grid2, .grid3, .grid4, .grid5, .grid6, .grid7, .grid8, .grid9, .grid10, .grid11, .grid12{
+	float:left;
+	position: relative;
+	margin-right:2%;
+	margin-left:2%;
+	padding-right:0;
+	padding-left:0;
+  	min-height: 1px;
+	// background: $body-background;
+}
+
+
+.grid1{
+ 	width:$grid-1 - 4;
+ 	@include belowContainer{
+ 		width:$rgrid-1 - 4;
+ 	}
+}
+.grid2{
+ 	width:$grid-2 - 4;
+ 	@include belowContainer{
+ 		width:$rgrid-2 - 4;
+ 	}
+}
+.grid3{
+	width:$grid-3 - 4;
+	@include belowContainer{
+		width:$rgrid-3 - 4;
+	}
+}
+.grid4{
+	width:$grid-4 - 4;
+	@include belowContainer{
+		width:$rgrid-4 - 4;
+	}
+}
+.grid5{
+	width:$grid-5 - 4;
+	@include belowContainer{
+		width:$rgrid-5 - 4;
+	}
+}
+.grid6{
+ 	width:$grid-6 - 4;
+ 	@include belowContainer{
+ 		width:$rgrid-6 - 4;
+ 	}
+}
+.grid7{
+	width:$grid-7 - 4;
+	@include belowContainer{
+		width:$rgrid-7 - 4;
+	}
+}
+.grid8{
+	width:$grid-8 - 4;
+	@include belowContainer{
+		width:$rgrid-8 - 4;
+	}
+}
+.grid9{
+	width:$grid-9 - 4;
+	@include belowContainer{
+		width:$rgrid-9 - 4;
+	}
+}
+.grid10{
+	width:$grid-10 - 4;
+	@include belowContainer{
+		width:$rgrid-10 - 4;
+	}
+}
+.grid11{
+	width:$grid-11 - 4;
+	@include belowContainer{
+		width:$rgrid-11 - 4;
+	}
+}
+.grid12{
+	width:$grid-12 - 4;
+	@include belowContainer{
+		width:$rgrid-12 - 4;
+	}
+}
+
+
+.push1{
+ 	left:$grid-1;
+}
+.push2{
+ 	left:$grid-2;
+}
+.push3{
+	left:$grid-3;
+}
+.push4{
+	left:$grid-4;
+}
+.push5{
+	left:$grid-5;
+}
+.push6{
+ 	left:$grid-6;
+}
+.push7{
+	left:$grid-7;
+}
+.push8{
+	left:$grid-8;
+}
+.push9{
+	left:$grid-9;
+}
+.push10{
+	left:$grid-10;
+}
+.push11{
+	left:$grid-11;
+}
+.push12{
+	left:$grid-12;
+}
+/*Pull*/
+.pull1{
+ 	right:$grid-1;
+}
+.pull2{
+ 	right:$grid-2;
+}
+.pull3{
+	right:$grid-3;
+}
+.pull4{
+	right:$grid-4;
+}
+.pull5{
+	right:$grid-5;
+}
+.pull6{
+ 	right:$grid-6;
+}
+.pull7{
+	right:$grid-7;
+}
+.pull8{
+	right:$grid-8;
+}
+.pull9{
+	right:$grid-9;
+}
+.pull10{
+	right:$grid-10;
+}
+.pull11{
+	right:$grid-11;
+}
+.pull12{
+	right:$grid-12;
+}
+
+/*offset*/
+.offset1{
+ 	margin-left:$grid-1;
+}
+.offset2{
+ 	margin-left:$grid-2;
+}
+.offset3{
+	margin-left:$grid-3;
+}
+.offset4{
+	margin-left:$grid-4;
+}
+.offset5{
+	margin-left:$grid-5;
+}
+.offset6{
+ 	margin-left:$grid-6;
+}
+.offset7{
+	margin-left:$grid-7;
+}
+.offset8{
+	margin-left:$grid-8;
+}
+.offset9{
+	margin-left:$grid-9;
+}
+.offset10{
+	margin-left:$grid-10;
+}
+.offset11{
+	margin-left:$grid-11;
+}
+.offset12{
+	margin-left:$grid-12;
+}
+
+@include xs{
+	.grid1, .grid2, .grid3, .grid4, .grid5, .grid6, .grid7, .grid8, .grid9, .grid10, .grid11, .grid12{
+		width:97%;
+		float:none;
+		margin-top:20px;
+		margin-bottom:20px;
+	}
+
+	.push,.push1, .push2, .push3, .push4, .push5, .push6, .push7, .push8, .push9, .push10, .push11, .push12{
+		left:0;
+	}
+	.pull1, .pull2, .pull3, .pull4, .pull5, .pull6, .pull7, .pull8, .pull9, .pull10, .pull11, .pull12{
+		left:0;
+	}
+}
+

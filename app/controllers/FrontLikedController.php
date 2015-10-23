@@ -11,7 +11,8 @@ class FrontLikedController extends FrontController{
         $liked = $this->getLikedItems();
         $data = [
             'as' => 'Beğenilenler',
-            'list' => $liked
+            'list' => $liked,
+            'social' => ConfigController::getSocial(),
         ];
         return View::make('front.list.likedIndex', $data);
     }
