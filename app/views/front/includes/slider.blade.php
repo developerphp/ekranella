@@ -93,23 +93,21 @@
                 </div>
             </div>
             <div class="slider_boxes">
-                    <div class="col-md-12 col-sm-6 slider_boxes">
                     <?php 
                     $featured = admin\Featured::where('permalink', 'anketler')->with('tags')->first();
                     $tags = $featured->tags()->select(DB::raw('`tags`.`id` as tagid'))->lists('tagid');
                     $polls = $featured->news()->whereIn('featured_item.tag_id', $tags)->with(['featured_tags', 'user'])->where('published', 1)->orderBy('id','desc')->take(1)->get();
                     foreach($polls as $pool) { ?>
-                        <div class="col-md-12 slider_boxes">
+                        <div class="box top_box">
                             <a href="{{action('front.news.newsDetail', ['permalink' => $pool['permalink']])}}" class="box" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$pool['img'].'_thumb.jpg')}}););">
                                 <div class="txt">
-                                    <div class="box_title ekranella_title">ANKET</div>
+                                    <div class="box_title cases_title">ANKET</div>
                                     <div class="desc"><?php echo $pool->title ?></div>
                                 </div>
                             </a>
                         </div>
                     <?php } ?>                    
-                    </div>
-                    <div class="col-md-12 col-sm-6 slider_boxes">
+                    <div class="box">
                         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                         <!-- Slider Yani 250-250 -->
                         <ins class="adsbygoogle"
