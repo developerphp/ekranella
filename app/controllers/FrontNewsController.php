@@ -200,7 +200,7 @@ class FrontNewsController extends \FrontController
             return strtotime($b['created_at']) - strtotime($a['created_at']);
         });
         $data = [
-            'as' => 'Özel',
+            'as' => 'ÖZEL',
             'permalink' => $serial_permalink,
             'itemList' => $itemList,
             'social' => ConfigController::getSocial(),
@@ -238,7 +238,7 @@ class FrontNewsController extends \FrontController
             $news->toArray();
             $news['action'] = 'front.news.specialNewsDetail';
             $news['username'] = $username;
-            $news['alias'] = 'Özel';
+            $news['alias'] = 'ÖZEL';
             array_push($itemList, $news);
         }
         foreach ($specialsList as $special) {
@@ -257,7 +257,7 @@ class FrontNewsController extends \FrontController
         if (!(count($itemList) > 0))
             return 'false';
         $data = [
-            'as' => 'Özel',
+            'as' => 'ÖZEL',
             'itemList' => $itemList
         ];
         return View::make('front.news.ajax', $data);
@@ -306,7 +306,7 @@ class FrontNewsController extends \FrontController
         $item['date'] = $date;
         $item['action'] = 'front.news.newsDetail';
         if ($item['type'] == 2)
-            $item['alias'] = 'Özel';
+            $item['alias'] = 'ÖZEL';
         else
             $item['alias'] = \Config::get('alias.' . \Config::get('enums.news'));
 

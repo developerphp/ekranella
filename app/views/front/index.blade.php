@@ -622,7 +622,7 @@
                             <span class="time">{{$total->start}} - {{$total->end}}</span>
                         </div>
                         <div class="col-md-2 perc_box col-xs-4">
-                            <span class="percentage">{{$total->rating}}</span>
+                            <span class="percentage">{{$total->rating}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;%{{$total->share}}</span>
                         </div>
                     </div>    
                 @endforeach
@@ -661,7 +661,7 @@
                             <span class="time">{{$ab->start}} - {{$ab->end}}</span>
                         </div>
                         <div class="col-md-2 perc_box">
-                            <span class="percentage">{{$ab->rating}}</span>
+                            <span class="percentage">{{$ab->rating}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;%{{$ab->share}}</span>
                         </div>
                     </div>    
                 @endforeach
@@ -700,7 +700,7 @@
                             <span class="time">Somera Share: {{$somera->share}}</span>
                         </div>
                         <div class="col-md-2 perc_box">
-                            <span class="percentage">{{$somera->rating}}</span>
+                            <span class="percentage">{{$somera->rating}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;%{{$somera->share}}</span>
                         </div>
                     </div>    
                 @endforeach
