@@ -2400,7 +2400,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 		.buttons{
 			.button{
 				float: right;
-
+				@include sm{
+		    		width: 130px;
+		    	}
 			}
 		}
 	}

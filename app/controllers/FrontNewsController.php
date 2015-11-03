@@ -200,7 +200,7 @@ class FrontNewsController extends \FrontController
             return strtotime($b['created_at']) - strtotime($a['created_at']);
         });
         $data = [
-            'as' => 'Özel',
+            'as' => 'ÖZEL',
             'permalink' => $serial_permalink,
             'itemList' => $itemList,
             'social' => ConfigController::getSocial(),

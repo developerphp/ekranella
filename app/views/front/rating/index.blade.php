@@ -19,16 +19,16 @@
             <div class="col-md-12">
                 @foreach($rating['total'] as $total)
                     <div class="ratings_row">
-                        <div class="col-md-5 col-md-offset-1 title_box">
+                        <div class="col-md-5 col-md-offset-1 col-sm-4 title_box">
                             <span class="number">{{$total->order}}.</span>
                             <span class="title">{{$total->title}}</span>
                         </div>
-                        <div class="col-md-4 channel_box">
+                        <div class="col-md-4 col-sm-6 channel_box">
                             <span class="channel">{{$total->channel}}</span>
                             <span class="line">|</span>
                             <span class="time">{{$total->start}} - {{$total->end}}</span>
                         </div>
-                        <div class="col-md-2 perc_box">
+                        <div class="col-md-2 col-sm-2 perc_box">
                             <span class="percentage">{{$total->rating}}</span>
                         </div>
                     </div>    
@@ -54,16 +54,16 @@
             <div class="col-md-12">
                 @foreach($rating['ab'] as $ab)
                     <div class="ratings_row">
-                        <div class="col-md-5 col-md-offset-1 title_box">
+                        <div class="col-md-5 col-md-offset-1 col-sm-4 title_box">
                             <span class="number">{{$ab->order}}.</span>
                             <span class="title">{{$ab->title}}</span>
                         </div>
-                        <div class="col-md-4 channel_box">
+                        <div class="col-md-4 col-sm-6 channel_box">
                             <span class="channel">{{$ab->channel}}</span>
                             <span class="line">|</span>
                             <span class="time">{{$ab->start}} - {{$ab->end}}</span>
                         </div>
-                        <div class="col-md-2 perc_box">
+                        <div class="col-md-2 col-sm-2 perc_box">
                             <span class="percentage">{{$ab->rating}}</span>
                         </div>
                     </div>    
@@ -89,16 +89,16 @@
             <div class="col-md-12">
                 @foreach($rating['somera'] as $somera)
                     <div class="ratings_row">
-                        <div class="col-md-5 col-md-offset-1 title_box">
+                        <div class="col-md-5 col-md-offset-1 col-sm-4 title_box">
                             <span class="number">{{$somera->order}}.</span>
                             <span class="title">{{$somera->title}}</span>
                         </div>
-                        <div class="col-md-4 channel_box">
+                        <div class="col-md-4 col-sm-6 channel_box">
                             <span class="channel">{{$somera->channel}}</span>
                             <span class="line">|</span>
                             <span class="time">Somera Share: {{$somera->share}}</span>
                         </div>
-                        <div class="col-md-2 perc_box">
+                        <div class="col-md-2 col-sm-2 perc_box">
                             <span class="percentage">{{$somera->rating}}</span>
                         </div>
                     </div>    
