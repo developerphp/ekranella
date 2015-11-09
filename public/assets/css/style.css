@@ -2533,6 +2533,7 @@ section {
   color: #fff;
   font-size: 14px;
   font-weight: bold;
+  margin-bottom: 20px;
 }
 
 .share_box div:first-child a:hover {
@@ -2541,9 +2542,7 @@ section {
 
 @media only screen and (max-width: 767px) {
   .share_box div:first-child {
-    border-bottom: 1px solid;
-    width: 80%;
-    padding: 30px 0;
+    padding: 10px 0;
     margin: 0 auto;
     font-size: 20px;
     text-transform: uppercase;
@@ -2571,6 +2570,12 @@ section {
   margin-left: 25px;
   margin-top: 2px;
   display: inline-block;
+}
+
+@media only screen and (max-width: 767px) {
+  .share_box .share a {
+    margin: 0 10px;
+  }
 }
 
 .share_box .share a img {
