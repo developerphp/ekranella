@@ -20,7 +20,9 @@
                     <div class="col-lg-8 col-md-7 col-sm-7">
                         GENEL BİLGİ
                     </div>
-                    @include('front.includes.share')
+                    <span class="hidden-xs">
+                        @include('front.includes.share')
+                    </span>
                 </div>
                 <div class="row">
                     <div class="col-md-12 show_desc">
@@ -57,7 +59,9 @@
                         @endif
                     </div>
                 </div>
-
+                <div class="row share_box hidden-lg hidden-md hidden-sm">
+                    @include('front.includes.share')
+                </div>
                 @if(count($sgalleries)>0)
                     <div class="row">
                         <div class="col-md-12">

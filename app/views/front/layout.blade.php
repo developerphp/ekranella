@@ -37,6 +37,8 @@
 
     <link rel="icon" type="image/png" href="{{ asset('assets/img/favicon.png') }}">
 
+    <script async="" src="http://www.google-analytics.com/analytics.js"></script>
+
     <script src="{{ asset('assets/js/jquery.js') }}"></script>
     <script src="{{ asset('assets/js/jquery-ui.js') }}"></script>
     <script src="{{ asset('assets/js/jquery.mobile.js') }}"></script>
@@ -106,6 +108,7 @@
             <div class="row">
                 <div class="col-md-4">
                     <a href="{{url()}}"><img class="logo" src="{{asset('assets/img/logo.gif')}}" alt="logo"></a>
+                    <span class="motto">Okuması izlemesinden daha heyecanlı!</span>
                     <div class="m_menu_button"></div>
                 </div>
                 <nav class="col-md-8">

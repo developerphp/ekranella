@@ -1051,14 +1051,28 @@ header .bottom {
   }
 }
 
+header .bottom .motto {
+  position: absolute;
+  left: 16px;
+  bottom: -2px;
+}
+
+@media only screen and (max-width: 767px) {
+  header .bottom .motto {
+    bottom: -4px;
+    font-size: 11px;
+  }
+}
+
 header .bottom .logo {
-  width: 300px;
-  margin-top: 8px;
+  width: 235px;
+  padding-bottom: 16px;
 }
 
 @media only screen and (max-width: 767px) {
   header .bottom .logo {
     width: 200px;
+    padding-bottom: 8px;
   }
 }
 
