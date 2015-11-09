@@ -690,11 +690,11 @@
             <div class="col-md-12">
                 @foreach($rating['somera'] as $somera)
                     <div class="ratings_row">
-                        <div class="col-md-5 col-md-offset-1 title_box">
+                        <div class="col-md-5 col-md-offset-1 col-sm-4 title_box">
                             <span class="number">{{$somera->order}}.</span>
                             <span class="title">{{$somera->title}}</span>
                         </div>
-                        <div class="col-md-4 channel_box">
+                        <div class="col-md-4 col-sm-6 channel_box">
                             <span class="channel">{{$somera->channel}}</span>
                             <span class="line">|</span>
                             <span class="time">Somera Share: {{$somera->share}}</span>

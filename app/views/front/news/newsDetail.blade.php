@@ -34,7 +34,9 @@
                             <a href="{{$url}}">{{$related['title']}}</a>
                         @endif
                     </div>
-                    @include('front.includes.share')
+                    <span class="hidden-xs">
+                        @include('front.includes.share')
+                    </span>
                 </div>
                 <div class="row">
                     <div class="col-md-10 col-md-offset-1 news_box">
@@ -107,6 +109,9 @@
                         </div>
                         @endif
                     </div>
+                </div>
+                <div class="row share_box hidden-lg hidden-md hidden-sm">
+                    @include('front.includes.share')
                 </div>
                 <div class="row">
                     <div class="col-md-12">
