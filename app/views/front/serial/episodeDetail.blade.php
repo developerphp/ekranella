@@ -33,7 +33,7 @@
     <section class="main_banner" style="background-image:url('{{asset('http://www.ekranella.com/'.$serial->cover)}}')">
         <div class="container txt">
             @if($episode->enum == $enums['trailer'])
-            <div class="box_title trailers_title">FRAGMANLAR</div> 
+            <div class="box_title trailers_title">FRAGMAN</div> 
             @elseif($episode->enum==1) <div class="box_title exclusive_title">ÖZEL</div> 
             @elseif($episode->enum==2) <div class="box_title ekranella_title">ÖZETLİYORUM</div> 
             @elseif($episode->enum==4) <div class="box_title gallery_title">GALERİ</div> 
