@@ -85,4 +85,20 @@ $(document).ready(function(){
         $(".mobile_menu .bottom").delay(200).animate({opacity:"0"}, 500);
         $(".mobile_menu .social").animate({opacity:"0"}, 500);
     });
+
+    if ($('.txt').length > 0) {
+        $('.txt').find('img').each(function () {            
+            if ($(this).attr('alt') != "" && $(this).attr('alt') != " " && $(this).attr('alt') != "image") {
+                var caption = $('<i/>', {
+                    style: 'border-bottom: 1px dotted #ea158c; width:100%; font-weight: 500; font-size:15px; display: block;font-style: normal;'
+                }).text($(this).attr('alt'));
+                $(this).after(caption);
+            }
+        });
+
+        if ($('.txt').find('.referans').length > 0) {
+            $('.txt').find('.referans').attr('style', 'font-size: 14px');
+        }
+    }
+
 });
