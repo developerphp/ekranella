@@ -2742,6 +2742,15 @@ section {
   }
 }
 
+#show_detail .show_desc h1 {
+  margin-top: 40px;
+  font-weight: bold;
+}
+
+#show_detail .show_desc p span {
+  margin-left: 0;
+}
+
 #show_detail .show_desc .main_title {
   font-size: 16px;
   margin-bottom: 20px;
