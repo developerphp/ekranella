@@ -605,7 +605,7 @@
         </div>
         <div class="row" style="position:relative;">
             <div class="indicators">
-                <div class="ind_title ratings_title">REYTİNGLER</div>
+                <div class="ind_title ratings_title" style="display: block;">REYTİNGLER</div>
             </div>
         </div>
         <div class="row">
@@ -644,7 +644,7 @@
         </div>
         <div class="row" style="position:relative;">
             <div class="indicators">
-                <div class="ind_title ratings_title">REYTİNGLER</div>
+                <div class="ind_title ratings_title" style="display: block;">REYTİNGLER</div>
             </div>
         </div>
         <div class="row">
@@ -683,7 +683,7 @@
         </div>
         <div class="row" style="position:relative;">
             <div class="indicators">
-                <div class="ind_title ratings_title">REYTİNGLER</div>
+                <div class="ind_title ratings_title" style="display: block;">REYTİNGLER</div>
             </div>
         </div>
         <div class="row">

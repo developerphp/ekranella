@@ -1556,6 +1556,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 		@include xs{
 			padding: 100px 0;
 		}
+		i{
+			display: none !important;
+		}
 		a{
 			&:hover{
 				color: #fff;
@@ -1932,12 +1935,17 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 	color: #fff;
 	font-size: 14px;
 	font-weight: bold;
-	margin-bottom: 20px;
+	@include xs{
+		margin-bottom: 20px;
+	}
 	div:first-child { 
 		a{
 			&:hover{
 				color: #fff;
 			}
+		}
+		&:empty{
+			display: none;
 		}
     	@include xs{
 			padding: 10px 0;
@@ -2547,3 +2555,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 }
 
 /*ratings_page*/
+
+.txt{
+	i{
+		border: 0 !important;
+	    font-weight: 400 !important;
+	    margin-top: -38px !important;
+	    margin-bottom: 30px !important;
+	    background: #eee !important;
+	    padding: 10px 20px !important;
+	}
+}

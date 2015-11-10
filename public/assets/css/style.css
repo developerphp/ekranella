@@ -2108,6 +2108,10 @@ section {
   }
 }
 
+#home_banner1 .banner i, #home_banner2 .banner i {
+  display: none !important;
+}
+
 #home_banner1 .banner a:hover, #home_banner2 .banner a:hover {
   color: #fff;
 }
@@ -2533,11 +2537,20 @@ section {
   color: #fff;
   font-size: 14px;
   font-weight: bold;
-  margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 767px) {
+  .share_box {
+    margin-bottom: 20px;
+  }
 }
 
 .share_box div:first-child a:hover {
   color: #fff;
+}
+
+.share_box div:first-child:empty {
+  display: none;
 }
 
 @media only screen and (max-width: 767px) {
@@ -3264,3 +3277,11 @@ section {
 }
 
 /*ratings_page*/
+.txt i, #home_banner1 .banner .txt2 i, #home_banner2 .banner .txt2 i {
+  border: 0 !important;
+  font-weight: 400 !important;
+  margin-top: -38px !important;
+  margin-bottom: 30px !important;
+  background: #eee !important;
+  padding: 10px 20px !important;
+}
