@@ -10,19 +10,19 @@ $c_lightGrey: #fbfafa;
 
 $c_ekranella: #ea158c;
 
-$c_news: #913d88;
-$c_ratings: #663399;
-$c_series: #3498db;
-$c_trailers: #19b5fe;
-$c_gallery: #66cc99;
-$c_series2: #2ecc71;
+$c_news: #bf55ed;
+$c_ratings: #663398;
+$c_series: #e3256b;
+$c_trailers: #4b77be;
+$c_gallery: #66cc9a;
+$c_series2: #2dcc70;
 $c_exclusive: #f1c40f;
-$c_interview: #f1a9a0;
-$c_likes: #f72459;
+$c_interview: #f99406;
+$c_likes: #d25380;
 $c_shows: #bf3a2b;
-$c_cases: #95a5a6;
+$c_cases: #95a5a5;
 $c_editors: #f9bf3a;
-$c_fotohaber: #e74c3c;
+$c_fotohaber: #e84c3d;
 
 body{
 	margin: 0;
@@ -1257,6 +1257,9 @@ section{
 				left: 30px;
 				right: 30px;
 				z-index: 2;
+				i{
+					display: none;
+				}
 				.desc{
 					font-size: 22px;
 					color: #fff;
@@ -2565,4 +2568,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 	    background: #eee !important;
 	    padding: 10px 20px !important;
 	}
+	p{
+		margin-bottom: 10px;
+	}
+}
+
+.devil-icon{
+	background: url(../img/interview_icon.png) no-repeat !important;
 }

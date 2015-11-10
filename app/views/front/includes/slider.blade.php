@@ -101,7 +101,7 @@
                         <div class="box top_box">
                             <a href="{{action('front.news.newsDetail', ['permalink' => $pool['permalink']])}}" class="box" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$pool['img'].'_thumb.jpg')}}););">
                                 <div class="txt">
-                                    <div class="box_title cases_title">ANKET</div>
+                                    <div class="box_title ekranella_title">ANKET</div>
                                     <div class="desc"><?php echo $pool->title ?></div>
                                 </div>
                             </a>
