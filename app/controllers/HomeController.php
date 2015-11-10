@@ -148,10 +148,10 @@ class HomeController extends FrontController
         $liked = $controller->getItems();
         return $liked['items'];*/
         $controller = new FrontAuthorsController();
-        $episodes = admin\Episodes::where('published', 1)->where('created_at', '>=', Carbon\Carbon::now()->subMonth())->orderBy('views', 'desc')->limit(10)->get();
-        $news = admin\News::where('published', 1)->where('created_at', '>=', Carbon\Carbon::now()->subMonth())->orderBy('views', 'desc')->limit(10)->get();
-        $interviews = admin\Interviews::where('published', 1)->where('created_at', '>=', Carbon\Carbon::now()->subMonth())->orderBy('views', 'desc')->limit(10)->get();
-        $articles = admin\Article::where('published', 1)->where('created_at', '>=', Carbon\Carbon::now()->subMonth())->orderBy('views', 'desc')->limit(10)->get();
+        $episodes = admin\Episodes::where('published', 1)->where('created_at', '>=', Carbon\Carbon::now()->subDays(10))->orderBy('views', 'desc')->limit(10)->get();
+        $news = admin\News::where('published', 1)->where('created_at', '>=', Carbon\Carbon::now()->subDays(10))->orderBy('views', 'desc')->limit(10)->get();
+        $interviews = admin\Interviews::where('published', 1)->where('created_at', '>=', Carbon\Carbon::now()->subDays(10))->orderBy('views', 'desc')->limit(10)->get();
+        $articles = admin\Article::where('published', 1)->where('created_at', '>=', Carbon\Carbon::now()->subDays(10))->orderBy('views', 'desc')->limit(10)->get();
 
         $collection = [];
         $collection = $controller->getOrderedArray($collection, $news, \Config::get('enums.news'));
@@ -174,10 +174,10 @@ class HomeController extends FrontController
         $liked = $controller->getItems();
         return $liked['items'];*/
         $controller = new FrontAuthorsController();
-        $episodes = admin\Episodes::where('published', 1)->where('created_at', '>=', Carbon\Carbon::now()->subMonth())->orderBy('created_at', 'desc')->limit(10)->get();
-        $news = admin\News::where('published', 1)->where('created_at', '>=', Carbon\Carbon::now()->subMonth())->orderBy('created_at', 'desc')->limit(10)->get();
-        $interviews = admin\Interviews::where('published', 1)->where('created_at', '>=', Carbon\Carbon::now()->subMonth())->orderBy('created_at', 'desc')->limit(10)->get();
-        $articles = admin\Article::where('published', 1)->where('created_at', '>=', Carbon\Carbon::now()->subMonth())->orderBy('created_at', 'desc')->limit(10)->get();
+        $episodes = admin\Episodes::where('published', 1)->where('created_at', '>=', Carbon\Carbon::now()->subDays(10))->orderBy('created_at', 'desc')->limit(10)->get();
+        $news = admin\News::where('published', 1)->where('created_at', '>=', Carbon\Carbon::now()->subDays(10))->orderBy('created_at', 'desc')->limit(10)->get();
+        $interviews = admin\Interviews::where('published', 1)->where('created_at', '>=', Carbon\Carbon::now()->subDays(10))->orderBy('created_at', 'desc')->limit(10)->get();
+        $articles = admin\Article::where('published', 1)->where('created_at', '>=', Carbon\Carbon::now()->subDays(10))->orderBy('created_at', 'desc')->limit(10)->get();
 
         $collection = [];
         $collection = $controller->getOrderedArray($collection, $news, \Config::get('enums.news'));

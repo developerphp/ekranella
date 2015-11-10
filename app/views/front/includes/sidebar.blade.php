@@ -10,7 +10,7 @@
                     <div class="row">
                         <?php 
                         use Carbon\Carbon;
-                        $latestsnews = admin\News::limit(5)->where('published', 1)->where('created_at', '>=', Carbon::now()->subDays(7))->orderBy(DB::raw('RAND()'))->with('user')->get();
+                        $latestsnews = admin\News::limit(5)->where('published', 1)->where('created_at', '>=', Carbon::now()->subDays(10))->orderBy(DB::raw('RAND()'))->with('user')->get();
                         ?>
 
                         @foreach($latestsnews as $latest)

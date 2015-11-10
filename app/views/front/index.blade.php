@@ -175,7 +175,7 @@
                                 <a class="box <?php echo $subclass ?>" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$like['img'].'_'.$imageclass.'.jpg')}});"
                                     href="{{ $url }}">
                                     <div class="txt">
-                                        <div class="box_title <?php echo $class_name ?>"><?php echo $bolum_title ?></div>
+                                        <div class="box_title likes_title">BEĞENİLENLER</div>
                                         <div class="desc">{{$like['title']}}</div>
                                         <div class="alt_desc">{{$created_at}}</div>
                                     </div>
@@ -287,7 +287,7 @@
                                 <a class="box <?php echo $subclass ?>" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$late['img'].'_'.$imageclass.'.jpg')}});"
                                     href="{{ $url }}">
                                     <div class="txt">
-                                        <div class="box_title <?php echo $class_name ?>"><?php echo $bolum_title ?></div>
+                                        <div class="box_title ekranella_title">SON EKLENENLER</div>
                                         <div class="desc">{{$late['title']}}</div>
                                         <div class="alt_desc">{{$created_at}}</div>
                                     </div>
@@ -381,6 +381,7 @@
         <div class="row">
             <div id="trailerCarousel" class="carousel slide">
                 <div class="indicators">
+                        <a href="{{url('diziliste/tum/3')}}" class="all_news trailers_title">TÜM FRAGMANLAR</a>
                         <ul>
                             <li data-target="#trailerCarousel" data-slide-to="0" class="active"><span>1</span></li>
                             <li data-target="#trailerCarousel" data-slide-to="1" ><span>2</span></li>
