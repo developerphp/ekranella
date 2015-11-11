@@ -51,7 +51,9 @@ Log::useDailyFiles(storage_path().'/logs/'.$logFile);
 
 App::error(function(Exception $exception, $code)
 {
-	Log::error($exception);
+	// Log::error($exception);
+	$datas=array('social' => ConfigController::getSocial());
+    return View::make('404',$datas);
 });
 
 /*
@@ -81,5 +83,7 @@ App::down(function()
 | definitions instead of putting them all in the main routes file.
 |
 */
+
+
 
 require app_path().'/filters.php';
