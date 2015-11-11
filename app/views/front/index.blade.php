@@ -613,16 +613,16 @@
             <div class="col-md-12">
                 @foreach($rating['total'] as $total)
                     <div class="ratings_row">
-                        <div class="col-md-5 col-md-offset-1 title_box">
+                        <div class="col-md-5 col-md-offset-1 col-xs-12 title_box">
                             <span class="number">{{$total->order}}.</span>
                             <span class="title">{{$total->title}}</span>
                         </div>
-                        <div class="col-md-4 channel_box col-xs-8">
+                        <div class="col-md-4 channel_box col-xs-6">
                             <span class="channel">{{$total->channel}}</span>
                             <span class="line">|</span>
                             <span class="time">{{$total->start}} - {{$total->end}}</span>
                         </div>
-                        <div class="col-md-2 perc_box col-xs-4">
+                        <div class="col-md-2 perc_box col-xs-6">
                             <span class="percentage">{{$total->rating}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;%{{$total->share}}</span>
                         </div>
                     </div>    

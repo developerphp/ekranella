@@ -57,7 +57,7 @@
                         <span class="title">YAPIMCI:</span>
                         <span class="desc">{{$serial->producer}}</span>
                         @endif
-                        <span class="desc">{{$serial->info}}</span>
+                        <div class="info">{{$serial->info}}</div>
                     </div>
                 </div>
                 <div class="row share_box hidden-lg hidden-md hidden-sm">

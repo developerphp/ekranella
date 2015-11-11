@@ -103,8 +103,8 @@
                                 @endif
 
                                 <div class="author">
-                                    <span class="date">{{$created_at}}</span>
-                                    @if($episode->is_author)<a href="{{action('front.authors.detail', ['id' => $episode->user->id])}}">{{$episode->user->name}}</a> @else {{$episode->guest_author}} @endif 
+                                    @if($episode->is_author)<a href="{{action('front.authors.detail', ['id' => $episode->user->id])}}">{{$episode->user->name}}</a> @else {{$episode->guest_author}} @endif<br>
+                                    <span class="date">{{$created_at}}</span> 
                                 </div>
                         </div>
                         @if($contentTotalPage > 1)

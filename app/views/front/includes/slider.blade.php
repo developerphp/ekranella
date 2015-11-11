@@ -75,7 +75,8 @@
                                     <div class="title">{{$slide['title']}}</div>
                                     <div class="desc">{{strip_tags($slide['text'])}}</div>
                                 </div>
-                                <img src="{{asset('http://www.ekranella.com/uploads/'.$slide['img'].'_slideThumb.jpg')}}" alt="{{$slide['title']}}">
+                                <div class="img" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$slide['img'].'_slideThumb.jpg')}});"></div>
+                                <!--<img src="{{asset('http://www.ekranella.com/uploads/'.$slide['img'].'_slideThumb.jpg')}}" alt="{{$slide['title']}}">-->
                             </a> 
                         <?php                         
                         $i++;                        

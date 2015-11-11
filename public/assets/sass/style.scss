@@ -1378,16 +1378,21 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
     		}
 		}
 		.item{
-			height: 530px;
-			overflow: hidden;
+			height: 530px;			
 			img{
 				height: 100%;
 				max-width: none;
-				@include xs{
-			    	margin-left: -50%;
-			    }
+				opacity: 0;
+			}
+			.img{
+				position: relative;
+				width: 100%;
+				height: 100%;
+				background-size: cover;
+				background-position: center;
 			}
 			&:after{
+				opacity: 0;
 				content: "";
 				width: 100%;
 				height: 100%;
@@ -2103,6 +2108,26 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 			margin-bottom: 20px;
 			font-weight: 300;
 		}
+		.info{
+			margin-top: 40px;
+			h1{
+				padding: 10px 15px;
+			    background: #000;
+			    color: #fff;
+			    font-size: 14px;
+			    font-weight: bold;
+			}
+			p{
+				font-size: 16px;
+				margin-left: 40px;
+				span{
+					margin-left:0;
+				}
+				@include xs{
+					margin-left: 0;
+				}
+			}
+		}
 	}
 	.home_boxes{
 		.square{
@@ -2282,6 +2307,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 				padding-left:40px;
 				font-size: 16px;
 				line-height: 28px;
+				.devil-icon{
+					background: none !important;
+				}
 				p {
 					margin-bottom:10px;
 				}
@@ -2570,6 +2598,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 	}
 	p{
 		margin-bottom: 10px;
+	}
+	a{
+		color: $c_ekranella;
 	}
 }
 

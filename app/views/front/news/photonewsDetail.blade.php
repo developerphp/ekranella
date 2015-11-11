@@ -43,7 +43,7 @@
                         @if($galleryPage == 1 ||  $galleryPage == 'all')
                         <div class="txt">
                                 {{$content}}
-                                <div class="author">
+                            <div class="author">
                                 <span class="date">{{$created_at}}</span>
                             </div>
                         </div>
