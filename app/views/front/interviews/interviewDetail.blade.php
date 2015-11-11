@@ -82,7 +82,7 @@
                 <br/>
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="page_select news_selected">
+                        <div class="page_select interview_selected">
                             <div class="button active">DİĞER RÖPORTAJLAR</div>
                         </div>
                     </div>
