@@ -1895,6 +1895,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 			color:#fff;
 			padding: 10px 30px;
 			background: $c_ekranella;
+			transition: all ease 0.3s;
+			&:hover{
+				color: $c_ekranella;
+				background: #fff;
+			}
 		}
 	}
 }

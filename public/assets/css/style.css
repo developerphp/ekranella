@@ -2494,6 +2494,12 @@ section {
   color: #fff;
   padding: 10px 30px;
   background: #ea158c;
+  transition: all ease 0.3s;
+}
+
+#fourofour .banner .button:hover {
+  color: #ea158c;
+  background: #fff;
 }
 
 /*404*/
