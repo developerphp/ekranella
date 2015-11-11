@@ -45,10 +45,10 @@
                         <div class="txt">
                                 {{$content}}
                                 <div class="author">
-                                    <span class="date">{{$created_at}}</span>
                                     @if($news->is_author)
                                     <a href="{{action('front.authors.detail', ['id' => $news->user->id])}}">{{$news->user->name}}</a>
-                                    @else {{$news->guest_author}} @endif
+                                    @else {{$news->guest_author}} @endif<br>
+                                    <span class="date">{{$created_at}}</span>
                                 </div>
                         </div>
                             @if($contentTotalPage > 1)

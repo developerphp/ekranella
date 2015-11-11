@@ -1867,21 +1867,24 @@ section {
 
 #home_slider .slider .item {
   height: 530px;
-  overflow: hidden;
 }
 
 #home_slider .slider .item img {
   height: 100%;
   max-width: none;
+  opacity: 0;
 }
 
-@media only screen and (max-width: 767px) {
-  #home_slider .slider .item img {
-    margin-left: -50%;
-  }
+#home_slider .slider .item .img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
 }
 
 #home_slider .slider .item:after {
+  opacity: 0;
   content: "";
   width: 100%;
   height: 100%;
@@ -2742,15 +2745,6 @@ section {
   }
 }
 
-#show_detail .show_desc h1 {
-  margin-top: 40px;
-  font-weight: bold;
-}
-
-#show_detail .show_desc p span {
-  margin-left: 0;
-}
-
 #show_detail .show_desc .main_title {
   font-size: 16px;
   margin-bottom: 20px;
@@ -2766,6 +2760,33 @@ section {
 #show_detail .show_desc .desc {
   margin-bottom: 20px;
   font-weight: 300;
+}
+
+#show_detail .show_desc .info {
+  margin-top: 40px;
+}
+
+#show_detail .show_desc .info h1 {
+  padding: 10px 15px;
+  background: #000;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+#show_detail .show_desc .info p {
+  font-size: 16px;
+  margin-left: 40px;
+}
+
+#show_detail .show_desc .info p span {
+  margin-left: 0;
+}
+
+@media only screen and (max-width: 767px) {
+  #show_detail .show_desc .info p {
+    margin-left: 0;
+  }
 }
 
 #show_detail .home_boxes .square {
@@ -2959,6 +2980,10 @@ section {
   padding-left: 40px;
   font-size: 16px;
   line-height: 28px;
+}
+
+.interview_page .news_box .txt .interview .devil-icon, .interview_page .news_box #home_banner1 .banner .txt2 .interview .devil-icon, #home_banner1 .banner .interview_page .news_box .txt2 .interview .devil-icon, .interview_page .news_box #home_banner2 .banner .txt2 .interview .devil-icon, #home_banner2 .banner .interview_page .news_box .txt2 .interview .devil-icon {
+  background: none !important;
 }
 
 .interview_page .news_box .txt .interview p, .interview_page .news_box #home_banner1 .banner .txt2 .interview p, #home_banner1 .banner .interview_page .news_box .txt2 .interview p, .interview_page .news_box #home_banner2 .banner .txt2 .interview p, #home_banner2 .banner .interview_page .news_box .txt2 .interview p {
@@ -3301,6 +3326,10 @@ section {
 
 .txt p, #home_banner1 .banner .txt2 p, #home_banner2 .banner .txt2 p {
   margin-bottom: 10px;
+}
+
+.txt a, #home_banner1 .banner .txt2 a, #home_banner2 .banner .txt2 a {
+  color: #ea158c;
 }
 
 .devil-icon {
