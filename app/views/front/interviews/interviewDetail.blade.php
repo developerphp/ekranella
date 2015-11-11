@@ -79,9 +79,10 @@
                 </div>
 
                 @if(count($others)>0)
+                <br/>
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="page_select news_selected">
+                        <div class="page_select interview_selected">
                             <div class="button active">DİĞER RÖPORTAJLAR</div>
                         </div>
                     </div>
@@ -91,7 +92,7 @@
                     <div class="col-md-6 home_boxes">                        
                         <a href="{{action('FrontInterviewsController@getInterview', ['permalink' => $other->permalink])}}" class="box square" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$other->img.'_thumb.jpg')}});">
                             <div class="txt">
-                                <div class="box_title interview_title">RÖPORTAJLAR</div>
+                                <div class="box_title interview_title">RÖPORTAJ</div>
                                 <div class="desc">{{$other->title}}</div>
                                 <div class="alt_desc">{{$other->date}}</div>
                             </div>

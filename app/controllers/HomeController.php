@@ -221,8 +221,9 @@ class HomeController extends FrontController
     }
 
     public function missingMethod($parameters = array())
-    {
-        dd($parameters);
+    {   
+        $datas=array('social' => ConfigController::getSocial());
+        return View::make('404',$datas);
     }
 
 }

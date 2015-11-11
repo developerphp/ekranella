@@ -133,3 +133,4 @@ Route::get('sitemap', function(){
 });
 
 Route::controller('/', 'HomeController');
+

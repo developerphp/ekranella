@@ -261,7 +261,7 @@
                     <div class="row">
                         @foreach($photoNews as $new)
                         <div class="col-md-6 home_boxes">
-                            <a class="box square" style="background-image: url({{asset('http://www.ekranella.com.tr/uploads/'.$new['img'].'_square.jpg')}});" href="{{action('front.news.newsDetail', ['permalink' => $new['permalink'], 'enum' => $new['type']])}}">
+                            <a class="box square" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$new['img'].'_square.jpg')}});" href="{{action('front.news.newsDetail', ['permalink' => $new['permalink'], 'enum' => $new['type']])}}">
                                 <div class="txt">
                                     <div class="box_title exclusive_title">HABER</div>
                                     <div class="desc">{{$new['title']}}</div>
