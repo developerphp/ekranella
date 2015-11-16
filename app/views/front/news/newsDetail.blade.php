@@ -44,12 +44,6 @@
                         @if($galleryPage == 1 ||  $galleryPage == 'all')
                         <div class="txt">
                                 {{$content}}
-                                <div class="author">
-                                    @if($news->is_author)
-                                    <a href="{{action('front.authors.detail', ['id' => $news->user->id])}}">{{$news->user->name}}</a>
-                                    @else {{$news->guest_author}} @endif<br>
-                                    <span class="date">{{$created_at}}</span>
-                                </div>
                         </div>
                             @if($contentTotalPage > 1)
                             <div class="row">
@@ -57,6 +51,12 @@
                                     @for($i = 1; $i < $contentTotalPage + 1; $i++)
                                     <a href="/haber/{{ $permalink }}/{{ $galleryPage }}/{{$i}}#headtitle" class="page_select @if($i == $page) active @endif"><span>{{ $i }}</span></a>
                                     @endfor
+                                </div>
+                                <div class="author col-md-12">
+                                    @if($news->is_author)
+                                    <a href="{{action('front.authors.detail', ['id' => $news->user->id])}}">{{$news->user->name}}</a>
+                                    @else {{$news->guest_author}} @endif<br>
+                                    <span class="date">{{$created_at}}</span>
                                 </div>
                             </div>
                             @endif

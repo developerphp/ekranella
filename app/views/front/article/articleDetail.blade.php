@@ -30,10 +30,6 @@
                     <div class="col-md-10 col-md-offset-1 news_box">
                         <div class="txt">
                             {{$content}}
-                            <div class="author">   
-                                @if($article->is_author) / <a href="{{action('front.authors.detail', ['id' => $article->user->id])}}" style="text-decoration: none"><strong class="pink">{{$article->user->name}}</strong></a>@else<strong class="pink">{{$article->guest_author}}</strong>@endif<br>
-                                <span class="date">{{$created_at}}</span>
-                            </div>
                         </div>
                         @if($contentTotalPage > 1)
                         <div class="row">
@@ -41,6 +37,10 @@
                                 @for($i = 1; $i < $contentTotalPage + 1; $i++)
                                 <a href="/kose/{{ $permalink }}/{{$i}}#headtitle" class="page_select @if($i == $page) active @endif"><span>{{ $i }}</span></a>
                                 @endfor
+                            </div>
+                            <div class="col-md-12 author">
+                                @if($article->is_author) / <a href="{{action('front.authors.detail', ['id' => $article->user->id])}}" style="text-decoration: none"><strong class="pink">{{$article->user->name}}</strong></a>@else<strong class="pink">{{$article->guest_author}}</strong>@endif<br>
+                                <span class="date">{{$created_at}}</span>
                             </div>
                         </div>
                         @endif

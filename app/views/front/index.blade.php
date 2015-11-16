@@ -41,7 +41,7 @@
                             elseif ($i>3) { $class="4"; $subclass="small_square"; $imageclass="square"; }
                             ?>
 
-                            <div class="col-md-<?php echo $class ?> home_boxes @if($i==1)  pull-right @endif">
+                            <div class="col-md-<?php echo $class ?> home_boxes @if($i==1) pull-right @endif col-sm-12 col-xs-12">
                                 <a class="box <?php echo $subclass ?>" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$new['img'].'_'.$imageclass.'.jpg')}});"
                                     href="{{action('front.news.newsDetail', ['permalink' => $new['permalink']])}}"
                                     data-title="{{$new['title']}}"
@@ -171,7 +171,7 @@
                             }
                             ?>
 
-                            <div class="col-md-<?php echo $class ?> home_boxes @if($i==1)  pull-right @endif">
+                            <div class="col-md-<?php echo $class ?> home_boxes @if($i==1)  pull-right @endif col-sm-12 col-xs-12">
                                 <a class="box <?php echo $subclass ?>" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$like['img'].'_'.$imageclass.'.jpg')}});"
                                     href="{{ $url }}">
                                     <div class="txt">
@@ -283,7 +283,7 @@
                             }
                             ?>
 
-                            <div class="col-md-<?php echo $class ?> home_boxes @if($i==1)  pull-right @endif">
+                            <div class="col-md-<?php echo $class ?> home_boxes @if($i==1)  pull-right @endif col-sm-12 col-xs-12">
                                 <a class="box <?php echo $subclass ?>" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$late['img'].'_'.$imageclass.'.jpg')}});"
                                     href="{{ $url }}">
                                     <div class="txt">
@@ -351,7 +351,7 @@
                             elseif (($i>1) && ($i<=3) ) { $class="5"; $subclass="rectangle"; $imageclass="thumbl"; }
                             elseif ($i>3) { $class="4"; $subclass="small_square"; $imageclass="square"; }
                             ?>
-                            <div class="col-md-<?php echo $class ?> home_boxes @if($i==1)  pull-right @endif">
+                            <div class="col-md-<?php echo $class ?> home_boxes @if($i==1) pull-right @endif col-sm-12 col-xs-12">
                                 <a class="box <?php echo $subclass ?>" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$gallery['img'].'_'.$imageclass.'.jpg')}});" href="{{action('front.serial.sgalleryDetail', ['permalink'=>$gallery['permalink']])}}">
                                     <div class="txt">
                                         <div class="box_title gallery_title">GALERİ</div>
@@ -402,7 +402,7 @@
                             elseif (($i>1) && ($i<=3) ) { $class="5"; $subclass="rectangle"; $imageclass="thumbl"; }
                             elseif ($i>3) { $class="4"; $subclass="small_square"; $imageclass="square"; }
                             ?>
-                            <div class="col-md-<?php echo $class ?> home_boxes @if($i==1)  pull-right @endif">
+                            <div class="col-md-<?php echo $class ?> home_boxes @if($i==1)  pull-right @endif col-sm-12 col-xs-12">
                                 <a class="box <?php echo $subclass ?>" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$trailer['img'].'_'.$imageclass.'.jpg')}});" href="{{action('front.serial.trailerDetail', ['permalink'=>$trailer['permalink']])}}">
                                     <div class="txt">
                                         <div class="box_title trailers_title">FRAGMAN</div>
@@ -467,7 +467,7 @@
                             elseif ($i>3) { $class="4"; $subclass="small_square"; $imageclass="square"; }
                             ?>
 
-                            <div class="col-md-<?php echo $class ?> home_boxes @if($i==1)  pull-right @endif">
+                            <div class="col-md-<?php echo $class ?> home_boxes @if($i==1)  pull-right @endif col-sm-12 col-xs-12">
                                 <a class="box <?php echo $subclass ?>" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$local['img'].'_'.$imageclass.'.jpg')}});"
                                    href="{{action('FrontSerialController@getEpisode', ['permalink' =>$local['permalink'] ])}}">
                                     <div class="txt">
@@ -521,7 +521,7 @@
                             elseif ($i>3) { $class="4"; $subclass="small_square"; $imageclass="square"; }
                             ?>
 
-                            <div class="col-md-<?php echo $class ?> home_boxes @if($i==1)  pull-right @endif">
+                            <div class="col-md-<?php echo $class ?> home_boxes @if($i==1)  pull-right @endif col-sm-12 col-xs-12">
                                 <a class="box <?php echo $subclass ?>" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$foreign['img'].'_'.$imageclass.'.jpg')}});"
                                    href="{{action('FrontSerialController@getEpisode', ['permalink' =>$foreign['permalink'] ])}}">
                                     <div class="txt">
@@ -575,7 +575,7 @@
                             elseif ($i>3) { $class="4"; $subclass="small_square"; $imageclass="square"; }
                             ?>
 
-                            <div class="col-md-<?php echo $class ?> home_boxes @if($i==1)  pull-right @endif">
+                            <div class="col-md-<?php echo $class ?> home_boxes @if($i==1)  pull-right @endif col-sm-12 col-xs-12">
                                 <a class="box <?php echo $subclass ?>" style="background-image: url({{asset('http://www.ekranella.com/uploads/'.$program['img'].'_'.$imageclass.'.jpg')}});"
                                    href="{{action('FrontSerialController@getEpisode', ['permalink' =>$program['permalink'] ])}}">
                                     <div class="txt">

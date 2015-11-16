@@ -102,10 +102,7 @@
                                 </div>
                                 @endif
 
-                                <div class="author">
-                                    @if($episode->is_author)<a href="{{action('front.authors.detail', ['id' => $episode->user->id])}}">{{$episode->user->name}}</a> @else {{$episode->guest_author}} @endif<br>
-                                    <span class="date">{{$created_at}}</span> 
-                                </div>
+                                
                         </div>
                         @if($contentTotalPage > 1)
                         <div class="row">
@@ -113,6 +110,10 @@
                                 @for($i = 1; $i < $contentTotalPage + 1; $i++)
                                 <a href="/bolum/{{ $permalink }}/{{ $galleryPage }}/{{$i}}#headtitle" class="page_select @if($i == $page) active @endif"><span>{{ $i }}</span></a>
                                 @endfor
+                            </div>
+                            <div class="author col-md-12">
+                                @if($episode->is_author)<a href="{{action('front.authors.detail', ['id' => $episode->user->id])}}">{{$episode->user->name}}</a> @else {{$episode->guest_author}} @endif<br>
+                                <span class="date">{{$created_at}}</span> 
                             </div>
                         </div>
                         @endif
